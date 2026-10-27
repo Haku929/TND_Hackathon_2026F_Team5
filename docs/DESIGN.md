@@ -71,7 +71,7 @@ sequenceDiagram
 
 | 候補 | 次元数 | 確認すること |
 | --- | --- | --- |
-| [Ruri v3 30m](https://huggingface.co/0x3/ruri-v3-30m) | 256 | Transformers.js で動く ONNX 版があるか、なければ自分で変換できるか |
+| [Ruri v3 30m](https://huggingface.co/cl-nagoya/ruri-v3-30m) | 256 | Transformers.js で動く ONNX 版があるか、なければ自分で変換できるか |
 | [multilingual-e5-small](https://huggingface.co/Xenova/multilingual-e5-small) | 384 | 日本語の問いと研究課題の結びつきの精度 |
 
 - どちらも、検索する側とされる側で決まった接頭辞を付ける（Ruri：`検索クエリ: ` / `検索文書: `、e5：`query: ` / `passage: `）。接頭辞と正規化のルールは `shared/embedding.json` のような設定ファイル 1 つにまとめ、Python と TypeScript の両方から読む。
