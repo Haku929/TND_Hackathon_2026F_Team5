@@ -7,6 +7,7 @@
 - [共有ドライブ](https://drive.google.com/drive/folders/1w2jBpdN3dWKbkCe_TKRRFrbeO4pKPhCL?usp=sharing)（議事録などの資料置き場）
 - [仕様書（Spec）](docs/SPEC.md)
 - [設計書（Design）](docs/DESIGN.md)
+- [開発計画（Plan）](docs/PLAN.md)
 - [要件まとめ（Requirements）](docs/REQUIREMENTS.md)
 
 ## アプリ名
