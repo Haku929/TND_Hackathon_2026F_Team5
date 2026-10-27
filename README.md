@@ -6,6 +6,7 @@
 
 - [共有ドライブ](https://drive.google.com/drive/folders/1w2jBpdN3dWKbkCe_TKRRFrbeO4pKPhCL?usp=sharing)（議事録などの資料置き場）
 - [要件まとめ（Requirements）](docs/REQUIREMENTS.md)
+- [開発ルール（Contributing）](docs/CONTRIBUTING.md)
 
 ## アプリ名
 
