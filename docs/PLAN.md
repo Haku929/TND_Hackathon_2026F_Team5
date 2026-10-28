@@ -75,7 +75,7 @@ gantt
 | ✅ 完了 | T-S2 | — | ラベル 5 種類（feature / bug / docs / security / chore）を作る | P0 | 河合 | 10/28 | — |
 | ✅ 完了 | T-S3 | — | Issue・PR のテンプレートと開発環境の雛形をマージする（[PR #3](https://github.com/Haku929/TND_Hackathon_2026F_Team5/pull/3)） | P0 | 河合 | 10/28 | — |
 | ✅ 完了 | T-S5 | — | タスク一覧を GitHub Issues に登録する（#4〜#37） | P0 | 河合 | 10/28 | — |
-| 未完了 | T-S4 | [#13](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/13) | `main` のブランチ保護（PR 必須・CI の成功を必須に。レビューの承認は求めない） | P0 | 河合 | 11/1 | — |
+| ✅ 完了 | T-S4 | [#13](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/13) | `main` のブランチ保護 → 無料プランの非公開リポジトリでは設定できないため、保護なしで運用する（PR を経由し、CI が落ちた PR はマージしない） | P0 | 河合 | 11/1 | — |
 | 未完了 | T-S6 | [#14](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/14) | Vercel・Neon をどのアカウントに置くかを決める。Vercel の無料プラン（Hobby）は非公開リポジトリでの共同開発に対応しておらず、オーナー以外のコミットはデプロイされない。リポジトリを公開にするか、オーナーのコミットだけでデプロイするか、有料プランにするかを選ぶ。無料枠と、超えたときの費用も確かめる | P0 | 大澤 | 11/1 | — |
 
 ### 開発（11/2〜11/11）
