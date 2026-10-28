@@ -91,7 +91,7 @@ gantt
 | 未完了 | T-16 | [#21](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/21) | KAKEN から立命館大学の研究データを取得し、研究者ごとに整理する | P0 | 上原 | 11/6 | T-01, T-03 |
 | 未完了 | T-17 | [#22](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/22) | KAKEN の審査区分と 30 分野の対応表を作り、分野付けする | P0 | 上原 | 11/7 | T-16 |
 | 未完了 | T-18 | [#23](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/23) | 埋め込みを計算し、DB に投入する | P0 | 上原 | 11/9 | T-11, T-17 |
-| 未完了 | T-19 | [#24](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/24) | 分野カード 30 分野を作り、互いに確認する（各自の専攻に近い分野を担当） | P0 | 全員 | 11/9 | T-03 |
+| 未完了 | T-19 | [#24](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/24) | 分野カード 30 分野を用意する | P0 | 全員 | 11/9 | T-03 |
 | 未完了 | T-20 | [#25](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/25) | 「AI」表示と「アプリの外」表示 | P1 | 高橋 | 11/10 | T-14 |
 | 未完了 | T-21 | [#26](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/26) | 「このアプリについて」画面（AI の場所・問いを保存しないこと・出典） | P1 | 河合 | 11/10 | — |
 | 未完了 | T-22 | [#27](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/27) | サーバーでモデルを動かす保険と、切り替えの条件 | P1 | 大澤 | 11/11 | T-12 |
