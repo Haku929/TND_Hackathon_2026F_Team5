@@ -69,9 +69,20 @@
 
 ## セットアップ
 
+Node.js 22 以上が必要（バージョンは `.nvmrc` を参照）。
+
 ```bash
-# （未定）
+npm install
+cp .env.example .env.local   # 値はチームから受け取って書き込む
+npm run dev                  # http://localhost:3000
 ```
+
+| コマンド | 内容 |
+| --- | --- |
+| `npm run dev` | 開発サーバーを起動 |
+| `npm run build` | 本番用にビルド |
+| `npm run lint` | ESLint でチェック |
+| `npm run format` | Prettier で整形（`format:check` は確認のみ） |
 
 ## 開発計画
 
