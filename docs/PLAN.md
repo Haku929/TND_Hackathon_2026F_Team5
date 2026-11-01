@@ -86,7 +86,7 @@ gantt
 | 未完了 | T-11 | [#16](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/16) | 埋め込みの共有設定（`shared/embedding.json`）と、ブラウザの埋め込み処理（Web Worker） | P0 | 高橋 | 11/4 | T-04 |
 | 未完了 | T-12 | [#17](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/17) | 検索 API（分野・用語・先生の取得、隣の分野の選び方） | P0 | 大澤 | 11/6 | T-06 |
 | 未完了 | T-13 | [#18](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/18) | 画面：問いの入力（読み込み中も入力できる） | P0 | 高橋 | 11/5 | T-11 |
-| 未完了 | T-14 | [#19](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/19) | 画面：結果（分野カード・先生、スマートフォンでは横スワイプ） | P0 | 高橋 | 11/7 | T-12 |
+| 未完了 | T-14 | [#19](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/19) | 画面：結果（分野タブ・分野カード・先生の折りたたみ） | P0 | 高橋 | 11/7 | T-12 |
 | 未完了 | T-15 | [#20](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/20) | 画面：深める（質問文の組み立て・コピー） | P0 | 河合 | 11/7 | T-14 |
 | 未完了 | T-16 | [#21](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/21) | KAKEN から立命館大学の研究データを取得し、研究者ごとに整理する | P0 | 上原 | 11/6 | T-01, T-03 |
 | 未完了 | T-17 | [#22](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/22) | KAKEN の審査区分と 30 分野の対応表を作り、分野付けする | P0 | 上原 | 11/7 | T-16 |
