@@ -58,7 +58,7 @@ gantt
 | 状態 | ID | Issue | タスク | 優先度 | 担当 | 期限 | 依存 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 未完了 | T-01 | [#4](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/4) | KAKEN API のアプリケーション ID を申請する | P0 | 河合 | 11/1 | — |
-| 未完了 | T-02 | [#5](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/5) | researchmap API・シラバス・KAKEN データの利用規約を確かめる | P1 | 河合 | 11/1 | — |
+| 未完了 | T-02 | [#5](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/5) | KAKEN データの利用規約を確かめる（researchmap は使わない・シラバスは #28 で確認） | P1 | 河合 | 11/1 | — |
 | 未完了 | T-03 | [#6](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/6) | デモで扱う 30 分野を決める（案・役割分担・対象大学は決定済み） | P0 | 高橋 | 11/1 | — |
 | 未完了 | T-04 | [#7](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/7) | モデルを比較する：Ruri v3 30m と multilingual-e5-small を Transformers.js で動かし、PC とスマートフォンで読み込み時間・計算速度を測る | P0 | 高橋 | 11/1 | — |
 | 未完了 | T-05 | [#8](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/8) | 精度を確かめる：問いの例 10 個と研究課題のサンプルで、意味の近さの順位が妥当かを見る | P0 | 上原 | 11/1 | T-09 |
