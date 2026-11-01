@@ -5,7 +5,7 @@
 :root {
   --bg: #FDFCFA;
   --ink: #2B2A28;
-  --muted: #77746E;
+  --muted: #6A6761;
   --line: #E8E6E1;
   --callout: #F3F1EC;
   --blue-bg: #DDE8F4; --blue-ink: #1D3F66;
@@ -60,7 +60,7 @@ h1 { margin: 2px 0 10px; font-size: clamp(27px, 7.6vw, 38px); line-height: 1.45;
 .panels::-webkit-scrollbar { display: none; }
 .panel { flex: 0 0 100%; scroll-snap-align: start; padding: 28px var(--gr) 8px var(--gl); min-width: 0; }
 .panel h2 { margin: 0 0 8px; font-size: 26px; line-height: 1.5; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
-.panel p { margin: 0 0 12px; }
+.panel p { margin: 0 0 12px; text-wrap: pretty; }
 mark { background: var(--blue-bg); color: var(--blue-ink); font-weight: 700; padding: 0 5px; border-radius: 3px; }
 .callout { background: var(--callout); border-radius: 6px; padding: 12px 14px; margin: 18px 0 28px; }
 .callout b { display: block; font-size: 13px; color: var(--muted); font-weight: 500; }
@@ -90,7 +90,7 @@ details[open] > summary::before { transform: rotate(90deg); }
 .copy { background: var(--outer-ink); color: var(--outer-bg); border: 0; border-radius: 6px; padding: 10px 16px; font-weight: 700; cursor: pointer; min-height: 44px; }
 
 footer { margin-top: 28px; font-size: 12.5px; color: var(--muted); line-height: 1.9; }
-footer p { margin: 0; }
+footer p { margin: 0; text-wrap: pretty; }
 </style>
 
 <main>
@@ -115,7 +115,7 @@ footer p { margin: 0; }
 
   <footer>
     <p>出典: KAKEN（国立情報学研究所） <a href="https://kaken.nii.ac.jp/" target="_blank" rel="noopener">https://kaken.nii.ac.jp/</a> ／ 加工して表示しています。</p>
-    <p>先生との「近さ」は AI による推定で、確かな評価ではありません。</p>
+    <p>先生との「近さ」は AI による推定です。入試やカリキュラムの情報ではありません。進路を決めるときは、大学の公式な情報も確かめてください。</p>
     <p>非公式のハッカソン作品です。大学の公式サービスではありません。 <a href="#about">このアプリについて</a></p>
   </footer>
 </main>
@@ -152,7 +152,7 @@ document.getElementById("tabs").innerHTML = FIELDS.map(function (f, i) {
 
 document.getElementById("panels").innerHTML = FIELDS.map(function (f, i) {
   var people = f.people.map(function (p, j) {
-    return '<details' + (i === 0 && j === 0 ? " open" : "") + '><summary><span></span><span class="who">' + esc(p.n) + ' 先生<small>' + esc(p.a) + '</small></span><span class="rtheme">' + esc(p.t) + '</span></summary>' +
+    return '<details' + (i === 0 && j === 0 ? " open" : "") + '><summary><span class="who">' + esc(p.n) + ' 先生 <span class="tag warm">' + esc(p.a) + '</span></span><span class="rtheme">' + esc(p.t) + '</span></summary>' +
       '<div class="more">' + (p.q ? '<p class="quote">' + esc(p.q) + "</p>" : "") +
       '<p class="near">問いとの近さ：' + esc(p.m) + ' <span class="tag">AI の推定</span></p>' +
       '<p><a href="#" onclick="return false">KAKEN で研究者ページを見る ↗</a></p></div></details>';
@@ -162,8 +162,8 @@ document.getElementById("panels").innerHTML = FIELDS.map(function (f, i) {
     "<p>" + esc(f.say) + "</p>" +
     "<p>あなたの問いは、この分野では <mark>" + esc(f.term) + "</mark> と呼ばれます。</p>" +
     '<div class="callout"><b>よくある誤解</b>「' + esc(f.misread) + "」と思われがちです。</div>" +
-    '<h3>この分野で会える先生 <span class="tag warm">' + f.people.length + "人</span></h3>" +
-    '<p class="sub">問いに近いテーマを研究している順です。</p>' + people + "</section>";
+    '<h3>この大学で学べる先生 <span class="tag">' + f.people.length + "人</span></h3>" +
+    '<p class="sub">問いに近いテーマを研究している順です（AI の推定）。</p>' + people + "</section>";
 }).join("");
 
 var tabs = [].slice.call(document.querySelectorAll(".tab"));
@@ -186,7 +186,7 @@ panels.addEventListener("scroll", function () {
   tick = setTimeout(function () { select(Math.round(panels.scrollLeft / panels.clientWidth), false); }, 80);
 });
 
-var PROMPT = "最近、こんなことが気になっています。\n他者とは、自分にとってどういう存在なのだろうか。\n哲学では「他者論」という言葉で語られるそうです。\n\n私の大学では、次の先生がこれに近いテーマを研究しています。\n- ○○ ○○ 先生（現象学における他者経験）\n- ○○ ○○ 先生（対話と承認の倫理）\n\nこの先生たちの研究の方向性も手がかりにして、詳しく教えてください。\nほかの分野に面白いつながりがあれば、それも知りたいです。\n\nそれから、この分野の研究者が、自分の研究の面白さやロマンを語っている記事やインタビューがあれば、出典のURLを添えて引用・紹介してください。\n見つからなければ、無理に作らないでください。\n本や人の名前を出すときも、確かなものだけにしてください。";
+var PROMPT = "最近、こんなことが気になっています。\n他者とは、自分にとってどういう存在なのだろうか。\n哲学では「他者論」という言葉で語られるそうです。\n\nこの大学では、次の先生がこれに近いテーマを研究しています。\n- ○○ ○○ 先生（現象学における他者経験）\n- ○○ ○○ 先生（対話と承認の倫理）\n\nこの先生たちの研究の方向性も手がかりにして、詳しく教えてください。\nほかの分野に面白いつながりがあれば、それも知りたいです。\n\nそれから、この分野の研究者が、自分の研究の面白さやロマンを語っている記事やインタビューがあれば、出典のURLを添えて引用・紹介してください。\n見つからなければ、無理に作らないでください。\n本や人の名前を出すときも、確かなものだけにしてください。";
 document.getElementById("prompt").textContent = PROMPT;
 document.getElementById("copy").addEventListener("click", function () {
   var b = this;
