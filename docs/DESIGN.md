@@ -69,12 +69,15 @@ sequenceDiagram
 
 ## 4. 埋め込みモデル
 
-| 候補 | 次元数 | 確認すること |
-| --- | --- | --- |
-| [Ruri v3 30m](https://huggingface.co/cl-nagoya/ruri-v3-30m) | 256 | Transformers.js で動く ONNX 版があるか、なければ自分で変換できるか |
-| [multilingual-e5-small](https://huggingface.co/Xenova/multilingual-e5-small) | 384 | 日本語の問いと研究課題の結びつきの精度 |
+**決定（2026-11-01）：[multilingual-e5-small](https://huggingface.co/Xenova/multilingual-e5-small)（384 次元）。** 比較した Ruri v3 30m（256 次元）は採用しない。
 
-- どちらも、検索する側とされる側で決まった接頭辞を付ける（Ruri：`検索クエリ: ` / `検索文書: `、e5：`query: ` / `passage: `）。接頭辞と正規化のルールは `shared/embedding.json` のような設定ファイル 1 つにまとめ、Python と TypeScript の両方から読む。
+| 項目 | 内容 |
+| --- | --- |
+| 次元数 | 384 |
+| 接頭辞 | 問いに `query: `、分野・用語・研究テーマに `passage: ` |
+| 確認すること | 量子化版（q8 など）のファイルサイズが初回読み込みの予算（120MB 以内）に収まるか。スマートフォンでの読み込み時間と速度 |
+
+- 検索する側とされる側で決まった接頭辞を付ける（上の表）。接頭辞と正規化のルールは `shared/embedding.json` のような設定ファイル 1 つにまとめ、Python と TypeScript の両方から読む。
 - ベクトルは L2 正規化して保存・送信する。近さはコサイン類似度（pgvector の `<=>` 演算子）で測る。
 - モデルファイルは自前で配信する（`public/models/` など）。外部 CDN に頼らず、CSP の許可先も絞れる。
 - WebGPU が使えれば WebGPU、なければ WASM で動かす。どちらでも動かない端末向けに、同じモデルをサーバーで動かす保険を用意する（発表用 PC 対策）。
@@ -108,7 +111,7 @@ Python のスクリプトで、次の順に処理する。結果は DB に投入
 
 ## 6. DB スキーマ
 
-次元数はモデルで決まる（例は Ruri v3 30m の 256 次元）。
+次元数はモデルで決まる（multilingual-e5-small の 384 次元）。
 
 ```sql
 create extension if not exists vector;
@@ -119,7 +122,7 @@ create table fields (
   name          text not null,
   summary       text not null,
   misconception text not null,
-  embedding     vector(256) not null       -- name + summary + 用語から作る
+  embedding     vector(384) not null       -- name + summary + 用語から作る
 );
 
 -- 分野ごとの専門用語（「あなたの問いの、この分野での呼び名」）
@@ -128,7 +131,7 @@ create table terms (
   field_id    text not null references fields(id),
   term        text not null,
   description text not null,
-  embedding   vector(256) not null
+  embedding   vector(384) not null
 );
 
 -- 先生（KAKEN の研究者）
@@ -138,7 +141,7 @@ create table researchers (
   affiliation text not null,               -- 学部・学科
   theme       text not null,               -- 画面に出す研究テーマ
   kaken_url   text not null,
-  embedding   vector(256) not null
+  embedding   vector(384) not null
 );
 
 -- 先生と分野の対応（1 人が複数分野に属することがある）
@@ -254,7 +257,7 @@ KAKEN から取得した生データはリポジトリに入れない（`data/` 
 
 ## 11. 未決事項
 
-- [ ] 埋め込みモデル（Ruri v3 30m / multilingual-e5-small）と次元数
+- [x] 埋め込みモデル：multilingual-e5-small（384 次元）に決定（2026-11-01）
 - [ ] 分野の選び方のパラメータ（上位何分野・隣の分野を何枠）
 - [ ] KAKEN の審査区分と 30 分野の対応表
 - [ ] サーバー側でモデルを動かす保険の実装方法と、切り替える条件（読み込み失敗・時間切れ）

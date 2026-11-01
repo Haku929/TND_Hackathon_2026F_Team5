@@ -32,6 +32,7 @@ gantt
   section 開発
   縦に一本通す                :b1, 2026-11-02, 5d
   一通り動く                  :milestone, 2026-11-07, 0d
+  MTG（20:00・結合の確認）    :milestone, 2026-11-08, 0d
   分野・データを広げる・仕上げ :b2, 2026-11-07, 5d
   機能凍結                    :milestone, 2026-11-11, 0d
 
@@ -45,8 +46,9 @@ gantt
 | 状態 | 期日 | マイルストーン | 完了の条件 |
 | --- | --- | --- | --- |
 | ✅ 完了 | 10/28（水） | MTG | 案・役割分担・対象大学（立命館大学）が決まっている（決定済み） |
-| 未完了 | 11/1（日） | 中間発表 | 30 分野とモデルを決め、問いと研究課題が結びつくことを確かめている。スライドに背景・テーマ・開発計画・役割分担がある |
+| ✅ 完了 | 11/1（日） | 中間発表 | 30 分野とモデルを決め、問いと研究課題が結びつくことを確かめている。スライドに背景・テーマ・開発計画・役割分担がある |
 | 未完了 | 11/7（土） | 一通り動く | 数分野で 4 段階が端から端まで動き、Vercel 上で触れる |
+| 未完了 | 11/8（日）20:00 | MTG | 各自「一通り動く」の担当分を終えている。結合の状況と、11/9 以降の分担を確認する |
 | 未完了 | 11/11（水） | 機能凍結 | 30 分野と立命館大学のデータが入り、P0・P1 の機能がそろっている。以降はバグ修正とテストのみ |
 | 未完了 | 11/14（土）13:00 | 提出 | README が完成し、リポジトリ URL を提出済み |
 | 未完了 | 11/15（日） | 最終発表 | 発表用 PC でデモが動く |
@@ -57,15 +59,15 @@ gantt
 
 | 状態 | ID | Issue | タスク | 優先度 | 担当 | 期限 | 依存 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 未完了 | T-01 | [#4](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/4) | KAKEN API のアプリケーション ID を申請する | P0 | 河合 | 11/1 | — |
-| 未完了 | T-02 | [#5](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/5) | KAKEN データの利用規約を確かめる（researchmap は使わない・シラバスは #28 で確認） | P1 | 河合 | 11/1 | — |
-| 未完了 | T-03 | [#6](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/6) | デモで扱う 30 分野を決める（案・役割分担・対象大学は決定済み） | P0 | 高橋 | 11/1 | — |
-| 未完了 | T-04 | [#7](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/7) | モデルを比較する：Ruri v3 30m と multilingual-e5-small を Transformers.js で動かし、PC とスマートフォンで読み込み時間・計算速度を測る | P0 | 高橋 | 11/1 | — |
-| 未完了 | T-05 | [#8](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/8) | 精度を確かめる：問いの例 10 個と研究課題のサンプルで、意味の近さの順位が妥当かを見る | P0 | 上原 | 11/1 | T-09 |
-| 未完了 | T-06 | [#9](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/9) | Next.js の雛形（用意済み）を Vercel と Neon につなぐ | P0 | 大澤 | 11/1 | T-S6 |
-| 未完了 | T-07 | [#10](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/10) | 中間発表のスライドを作る | P0 | 河合 | 11/1 | — |
-| 未完了 | T-08 | [#11](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/11) | 中間発表のリハーサル | P1 | 全員 | 11/1 | T-07 |
-| 未完了 | T-09 | [#12](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/12) | 精度検証の合格ラインを決める（例：問いの例 10 個のうち何個で、妥当な分野が上位 3 件に入れば合格か）。検証の前に決める | P0 | 上原 | 11/1 | — |
+| ✅ 完了 | T-01 | [#4](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/4) | KAKEN API のアプリケーション ID を申請する | P0 | 河合 | 11/1 | — |
+| ✅ 完了 | T-02 | [#5](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/5) | KAKEN データの利用規約を確かめる（researchmap は使わない・シラバスは #28 で確認） | P1 | 河合 | 11/1 | — |
+| ✅ 完了 | T-03 | [#6](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/6) | デモで扱う 30 分野を決める（案・役割分担・対象大学は決定済み） | P0 | 高橋 | 11/1 | — |
+| ✅ 完了 | T-04 | [#7](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/7) | モデルを比較する：Ruri v3 30m と multilingual-e5-small を Transformers.js で動かし、PC とスマートフォンで読み込み時間・計算速度を測る | P0 | 高橋 | 11/1 | — |
+| ✅ 完了 | T-05 | [#8](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/8) | 精度を確かめる：問いの例 10 個と研究課題のサンプルで、意味の近さの順位が妥当かを見る | P0 | 上原 | 11/1 | T-09 |
+| ✅ 完了 | T-06 | [#9](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/9) | Next.js の雛形（用意済み）を Vercel と Neon につなぐ | P0 | 大澤 | 11/1 | T-S6 |
+| ✅ 完了 | T-07 | [#10](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/10) | 中間発表のスライドを作る | P0 | 河合 | 11/1 | — |
+| ✅ 完了 | T-08 | [#11](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/11) | 中間発表のリハーサル | P1 | 全員 | 11/1 | T-07 |
+| ✅ 完了 | T-09 | [#12](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/12) | 精度検証の合格ラインを決める（例：問いの例 10 個のうち何個で、妥当な分野が上位 3 件に入れば合格か）。検証の前に決める | P0 | 上原 | 11/1 | — |
 
 ### 案が決まったらすぐ（〜11/1）
 
