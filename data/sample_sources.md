@@ -87,7 +87,7 @@
 ## 検証結果
 
 - SQL列・参照・件数: 3分野、用語9件、研究者9人、分野対応9件を確認。全研究者は重複なし。
-- リポジトリ確認: `npm run lint`・`npm run format:check`・`npm run build` は全てPASS。ただし、既存の `docs/design/mock-result.html` をローカルで整形した状態での結果。このHTMLの整形差分は今回の提出対象に含めないため、提出差分だけを適用したCIでの再確認が必要。
+- リポジトリ確認: `npm run lint`・`npm run format:check`・`npm run build` は全てPASS。CIで既存の `docs/design/mock-result.html` の整形不備が検出されたため、同ファイルにPrettierの整形のみを適用する修正も含めた。
 - 埋め込み: 21個すべて有限な384次元ベクトルで、丸め後のL2ノルム範囲は 0.999999947–1.000000067。全ベクトルは相異なる。
 - E5 passage入力: 最大69/512トークン。切り捨てなし。secret scan: 通過（sample.json、README、出典表にAPP IDなし）。
 - E5 query入力: `query: `を付けて正規化し、下記3問で順位だけを確認した。類似度順位は品質評価ではない。
