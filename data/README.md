@@ -44,3 +44,17 @@ APIが提供する概要は保持し、報告書PDFの全文は取得・利用�
 ```powershell
 python -m unittest discover -s data -p test_fetch_kaken.py -v
 ```
+
+## 研究者の分野付け（#22）
+
+`fields_catalog.json` は [#6](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/6) を基にチーム了承済みの見直しを反映した30分野、`field_map.csv` はKAKENの分類から分野IDへの対応表です。実行時は対応表の完全一致で分類し、LLM・研究テーマの文章・外部APIは使いません。Python 3.10以上の標準ライブラリだけで実行できます。
+
+```powershell
+python data/assign_fields.py
+npx prettier --write data/fields_catalog.json data/researcher_fields.json data/field_mapping_report.json
+python -m unittest discover -s data -p test_assign_fields.py -v
+```
+
+出力は `researcher_fields.json`（研究者IDと分野IDの組）、`field_mapping_report.json`（件数・未分類者・使用した分類）、`field_mapping_report.md`（一覧）です。入力の `researchers.json` は変更しません。研究者のうち1,157人／1,201人（96.3%）に分野が付き、44人が未分類でした。対応方法と制約は [FIELD_MAPPING.md](FIELD_MAPPING.md) を参照してください。
+
+`sample.json` は旧3分野の画面確認用データとして独立しています。本番データを投入する #23 では、新しい `fields_catalog.json` のIDと `researcher_fields.json` を組にして使用してください。
