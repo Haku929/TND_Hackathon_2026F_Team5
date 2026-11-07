@@ -1,0 +1,6832 @@
+{
+  "source": "data/researchers.json",
+  "mapping": "data/field_map.csv",
+  "catalog": "data/fields_catalog.json",
+  "researcher_count": 1201,
+  "researcher_fields": [
+    {
+      "researcher_id": "00118001",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "00118001",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "00118001",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "00118001",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "00127036",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "00127036",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "00164690",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "00168840",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "00172255",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "00192641",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "00192641",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "00238536",
+      "field_id": "mathematics"
+    },
+    {
+      "researcher_id": "00241258",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "00241258",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "00241258",
+      "field_id": "pharmacy-drug-discovery"
+    },
+    {
+      "researcher_id": "00241258",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "00241282",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "00241282",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "00242587",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "00244286",
+      "field_id": "mathematics"
+    },
+    {
+      "researcher_id": "00247785",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "00247785",
+      "field_id": "pharmacy-drug-discovery"
+    },
+    {
+      "researcher_id": "00252479",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "00252479",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "00261389",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "00261389",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "00261389",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "00262832",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "00268129",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "00273003",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "00273483",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "00275348",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "00275348",
+      "field_id": "tourism-studies"
+    },
+    {
+      "researcher_id": "00288036",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "00288614",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "00294744",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "00308769",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "00313370",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "00313453",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "00314261",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "00314261",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "00316085",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "00316085",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "00321547",
+      "field_id": "linguistics"
+    },
+    {
+      "researcher_id": "00325549",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "00325549",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "00325549",
+      "field_id": "linguistics"
+    },
+    {
+      "researcher_id": "00325979",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "00330382",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "00340480",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "00340753",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "00342717",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "00342717",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "00345315",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "00345315",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "00351312",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "00351320",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "00351338",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "00362567",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "00363416",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "00367989",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "00368284",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "00371716",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "00374108",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "00374108",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "00374108",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "00374108",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "00388125",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "00388125",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "00388125",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "00388125",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "00388133",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "00388133",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "00388787",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "00388787",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "00388787",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "00398009",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "00399073",
+      "field_id": "mathematics"
+    },
+    {
+      "researcher_id": "00415720",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "00434647",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "00434704",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "00434704",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "00434704",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "00435786",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "00435786",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "00444654",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "00444654",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "00452384",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "00454504",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "00454504",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "00454504",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "00461468",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "00461468",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "00461468",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "00466434",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "00467458",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "00467458",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "00511221",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "00512443",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "00512443",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "00513144",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "00513144",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "00514837",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "00516833",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "00536120",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "00538978",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "00551524",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "00551566",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "00580680",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "00580680",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "00582545",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "00588402",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "00588923",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "00599516",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "00608466",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "00608466",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "00609688",
+      "field_id": "tourism-studies"
+    },
+    {
+      "researcher_id": "00609836",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "00609836",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "00611360",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "00634627",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "00636962",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "00638231",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "00649478",
+      "field_id": "international-relations"
+    },
+    {
+      "researcher_id": "00706616",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "00706616",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "00708000",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "00708977",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "00709313",
+      "field_id": "linguistics"
+    },
+    {
+      "researcher_id": "00710716",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "00722050",
+      "field_id": "tourism-studies"
+    },
+    {
+      "researcher_id": "00723785",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "00732900",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "00732900",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "00733057",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "00734766",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "00734766",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "00735293",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "00771693",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "00771693",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "00772485",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "00772485",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "00778946",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "00783911",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "00826159",
+      "field_id": "linguistics"
+    },
+    {
+      "researcher_id": "00849763",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "00852344",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "00945355",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "00976178",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "00979627",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "00999237",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "01018119",
+      "field_id": "international-relations"
+    },
+    {
+      "researcher_id": "01019480",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "01019480",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "01019670",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "01039090",
+      "field_id": "archaeology-cultural-heritage"
+    },
+    {
+      "researcher_id": "10167439",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "10168297",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "10179731",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "10179731",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "10184243",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "10184243",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "10184615",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "10187726",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "10187726",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "10187726",
+      "field_id": "pharmacy-drug-discovery"
+    },
+    {
+      "researcher_id": "10202409",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "10202409",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "10202409",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "10202409",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "10204041",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "10204041",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "10212036",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "10212036",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "10234725",
+      "field_id": "geography"
+    },
+    {
+      "researcher_id": "10252470",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "10252470",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "10253767",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "10258494",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "10259450",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "10259450",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "10263352",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "10268146",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "10268146",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "10268154",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "10268154",
+      "field_id": "archaeology-cultural-heritage"
+    },
+    {
+      "researcher_id": "10268154",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "10268154",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "10268485",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "10278484",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "10278484",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "10278484",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "10283615",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "10283615",
+      "field_id": "pharmacy-drug-discovery"
+    },
+    {
+      "researcher_id": "10288623",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "10288623",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "10288623",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "10292137",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "10292781",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "10293581",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "10293581",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "10293581",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "10294034",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "10294034",
+      "field_id": "archaeology-cultural-heritage"
+    },
+    {
+      "researcher_id": "10294034",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "10294034",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "10298721",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "10309099",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "10309099",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "10309099",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "10311193",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "10312480",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "10312480",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "10312480",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "10319486",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "10320152",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "10320152",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "10321150",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "10321184",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "10323122",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "10325300",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "10325300",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "10326522",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "10330010",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "10330010",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "10332040",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "10351313",
+      "field_id": "archaeology-cultural-heritage"
+    },
+    {
+      "researcher_id": "10351751",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "10363996",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "10363996",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "10364837",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "10368011",
+      "field_id": "archaeology-cultural-heritage"
+    },
+    {
+      "researcher_id": "10368011",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "10374092",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "10374092",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "10379216",
+      "field_id": "linguistics"
+    },
+    {
+      "researcher_id": "10380578",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "10390709",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "10434713",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "10434713",
+      "field_id": "geography"
+    },
+    {
+      "researcher_id": "10445968",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "10453979",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "10456436",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "10467425",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "10469067",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "10469182",
+      "field_id": "linguistics"
+    },
+    {
+      "researcher_id": "10512725",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "10514862",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "10514862",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "10534365",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "10534365",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "10543514",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "10543514",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "10543952",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "10543952",
+      "field_id": "pharmacy-drug-discovery"
+    },
+    {
+      "researcher_id": "10546708",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "10546708",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "10549299",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "10551137",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "10555072",
+      "field_id": "linguistics"
+    },
+    {
+      "researcher_id": "10576151",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "10576151",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "10576151",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "10576151",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "10576151",
+      "field_id": "tourism-studies"
+    },
+    {
+      "researcher_id": "10589956",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "10609209",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "10609936",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "10620966",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "10623358",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "10625007",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "10646558",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "10646558",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "10646764",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "10646764",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "10722762",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "10722762",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "10722796",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "10722796",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "10727671",
+      "field_id": "archaeology-cultural-heritage"
+    },
+    {
+      "researcher_id": "10732555",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "10733321",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "10733321",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "10739212",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "10757032",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "10757058",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "10757818",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "10760324",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "10760514",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "10773864",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "10773864",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "10774416",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "10778913",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "10779036",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "10779036",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "10781940",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "10784001",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "10793771",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "10813719",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "10830359",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "10848675",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "10848675",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "10869233",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "10875925",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "10875941",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "10875941",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "10897622",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "10961930",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "10965776",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "10965776",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "10979462",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "10979488",
+      "field_id": "pharmacy-drug-discovery"
+    },
+    {
+      "researcher_id": "10983182",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "10994519",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "10994519",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "10999147",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "10999147",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "10999163",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "11019035",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "11019506",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "11019506",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "11020537",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "11038481",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "11041351",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "20127129",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "20127129",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "20137128",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "20150964",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "20186141",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "20186141",
+      "field_id": "archaeology-cultural-heritage"
+    },
+    {
+      "researcher_id": "20186141",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "20186141",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "20188402",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "20188402",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "20202301",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "20202301",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "20202319",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "20210221",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "20210221",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "20212227",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "20215875",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "20221921",
+      "field_id": "archaeology-cultural-heritage"
+    },
+    {
+      "researcher_id": "20221921",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "20222284",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "20222284",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "20222284",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "20222284",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "20237308",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "20247810",
+      "field_id": "mathematics"
+    },
+    {
+      "researcher_id": "20250532",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "20252710",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "20252710",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "20260812",
+      "field_id": "geography"
+    },
+    {
+      "researcher_id": "20260812",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "20260812",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "20260812",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "20268147",
+      "field_id": "international-relations"
+    },
+    {
+      "researcher_id": "20268147",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "20271851",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "20273485",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "20288046",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "20288616",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "20298392",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "20312126",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "20312126",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "20312126",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "20324618",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "20324618",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "20324832",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "20324832",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "20324832",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "20330011",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "20330011",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "20330011",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "20332190",
+      "field_id": "archaeology-cultural-heritage"
+    },
+    {
+      "researcher_id": "20332190",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "20332190",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "20334641",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "20341670",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "20343410",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "20344880",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "20344880",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "20344880",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "20345862",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "20351322",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "20351322",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "20352784",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "20352784",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "20361553",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "20362618",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "20362618",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "20362618",
+      "field_id": "pharmacy-drug-discovery"
+    },
+    {
+      "researcher_id": "20368012",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "20368426",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "20368426",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "20372667",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "20372667",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "20381650",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "20381650",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "20381650",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "20381650",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "20388078",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "20388177",
+      "field_id": "archaeology-cultural-heritage"
+    },
+    {
+      "researcher_id": "20388177",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "20389191",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "20399033",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "20399033",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "20399067",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "20402688",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "20402688",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "20409717",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "20409717",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "20411704",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "20423973",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "20423973",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "20425010",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "20425010",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "20432726",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "20437180",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "20437180",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "20437180",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "20437180",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "20438295",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "20449523",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "20449531",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "20449531",
+      "field_id": "linguistics"
+    },
+    {
+      "researcher_id": "20449531",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "20452485",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "20453582",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "20453582",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "20453582",
+      "field_id": "pharmacy-drug-discovery"
+    },
+    {
+      "researcher_id": "20454506",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "20469183",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "20513146",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "20516421",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "20531867",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "20531867",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "20535843",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "20552699",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "20557433",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "20557433",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "20557433",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "20569826",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "20581490",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "20581490",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "20589709",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "20589733",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "20647341",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "20647341",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "20706626",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "20706626",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "20706676",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "20707286",
+      "field_id": "linguistics"
+    },
+    {
+      "researcher_id": "20707707",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "20709563",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "20709563",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "20719653",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "20723547",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "20728406",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "20731904",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "20731904",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "20737027",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "20737027",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "20738356",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "20738356",
+      "field_id": "linguistics"
+    },
+    {
+      "researcher_id": "20745202",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "20745989",
+      "field_id": "linguistics"
+    },
+    {
+      "researcher_id": "20765515",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "20778948",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "20779029",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "20779061",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "20790059",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "20801913",
+      "field_id": "tourism-studies"
+    },
+    {
+      "researcher_id": "20802119",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "20806442",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "20808216",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "20808216",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "20812514",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "20824676",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "20825690",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "20844278",
+      "field_id": "pharmacy-drug-discovery"
+    },
+    {
+      "researcher_id": "20847149",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "20882426",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "20882426",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "20890106",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "20890461",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "20896831",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "20896831",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "20906747",
+      "field_id": "international-relations"
+    },
+    {
+      "researcher_id": "20916621",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "20916621",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "20948343",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "20962393",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "20962393",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "20962541",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "20979413",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "20999221",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "20999247",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "21001299",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "21018971",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "21041336",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "30165782",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "30182661",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "30197214",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "30197214",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "30198048",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "30198048",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "30198593",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "30198593",
+      "field_id": "linguistics"
+    },
+    {
+      "researcher_id": "30203722",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "30203722",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "30206627",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "30206627",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "30210305",
+      "field_id": "geography"
+    },
+    {
+      "researcher_id": "30210305",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "30218200",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "30227681",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "30227681",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "30227681",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "30227681",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "30227681",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "30234735",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "30235890",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "30236343",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "30245188",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "30245188",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "30247803",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "30247811",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "30247811",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "30247811",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "30247811",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "30247811",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "30257810",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "30268148",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "30268148",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "30273725",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "30278478",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "30288625",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "30291496",
+      "field_id": "archaeology-cultural-heritage"
+    },
+    {
+      "researcher_id": "30301427",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "30303887",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "30303887",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "30303887",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "30309512",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "30314355",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "30314355",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "30319793",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "30319793",
+      "field_id": "pharmacy-drug-discovery"
+    },
+    {
+      "researcher_id": "30322176",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "30324502",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "30324693",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "30324693",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "30324809",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "30324809",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "30324809",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "30324809",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "30330012",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "30330484",
+      "field_id": "geography"
+    },
+    {
+      "researcher_id": "30335591",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "30335591",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "30335591",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "30339519",
+      "field_id": "pharmacy-drug-discovery"
+    },
+    {
+      "researcher_id": "30339519",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "30340483",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "30340491",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "30340491",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "30340491",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "30344691",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "30344691",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "30344691",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "30351315",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "30353543",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "30353543",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "30362833",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "30366546",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "30368021",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "30368021",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "30378525",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "30378830",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "30378830",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "30378830",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "30388079",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "30388128",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "30388649",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "30392054",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "30392054",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "30401425",
+      "field_id": "geography"
+    },
+    {
+      "researcher_id": "30411143",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "30411250",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "30411250",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "30411250",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "30411250",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "30423023",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "30424310",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "30425011",
+      "field_id": "international-relations"
+    },
+    {
+      "researcher_id": "30425011",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "30425011",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "30432363",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "30432363",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "30436662",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "30437371",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "30442015",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "30454507",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "30454507",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "30454515",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "30454515",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "30456694",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "30467279",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "30468813",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "30468813",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "30469100",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "30512446",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "30512446",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "30524467",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "30532262",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "30567756",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "30571393",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "30582358",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "30610589",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "30610589",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "30611628",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "30614523",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "30614523",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "30618468",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "30633359",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "30634232",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "30634232",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "30648556",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "30706586",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "30706586",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "30708673",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "30710131",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "30722251",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "30722780",
+      "field_id": "mathematics"
+    },
+    {
+      "researcher_id": "30725396",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "30758602",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "30759410",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "30761548",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "30772149",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "30772149",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "30780358",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "30780811",
+      "field_id": "pharmacy-drug-discovery"
+    },
+    {
+      "researcher_id": "30795232",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "30796496",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "30797311",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "30802590",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "30807764",
+      "field_id": "linguistics"
+    },
+    {
+      "researcher_id": "30822267",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "30822738",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "30822738",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "30835260",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "30837323",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "30845037",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "30845037",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "30845037",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "30847819",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "30870307",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "30870307",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "30880439",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "30882641",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "30900906",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "30908398",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "30910682",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "30938791",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "30960091",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "30962295",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "30962617",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "30979480",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "30998232",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "31041288",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "40151287",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "40172621",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "40188214",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "40192687",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "40192687",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "40192687",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "40198289",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "40198289",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "40198289",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "40201909",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "40201909",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "40210546",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "40210546",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "40211825",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "40211825",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "40211825",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "40213996",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "40216338",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "40217328",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "40217328",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "40223309",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "40223309",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "40234512",
+      "field_id": "archaeology-cultural-heritage"
+    },
+    {
+      "researcher_id": "40234877",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "40237318",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "40242581",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "40243414",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "40243414",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "40253330",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "40253330",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "40261044",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "40261044",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "40262985",
+      "field_id": "international-relations"
+    },
+    {
+      "researcher_id": "40262985",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "40264957",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "40268149",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "40268149",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "40278487",
+      "field_id": "archaeology-cultural-heritage"
+    },
+    {
+      "researcher_id": "40278495",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "40278495",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "40278495",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "40283494",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "40283494",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "40283494",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "40309076",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "40309084",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "40309084",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "40309084",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "40313580",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "40313738",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "40313738",
+      "field_id": "linguistics"
+    },
+    {
+      "researcher_id": "40318647",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "40318647",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "40322929",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "40322929",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "40323878",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "40329751",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "40331178",
+      "field_id": "international-relations"
+    },
+    {
+      "researcher_id": "40340492",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "40340492",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "40348868",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "40351324",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "40351324",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "40351324",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "40360250",
+      "field_id": "mathematics"
+    },
+    {
+      "researcher_id": "40361290",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "40363717",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "40368022",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "40368270",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "40380141",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "40380141",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "40383400",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "40384721",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "40384721",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "40396825",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "40396825",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "40399283",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "40401161",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "40405931",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "40407169",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "40411566",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "40420369",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "40421234",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "40422993",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "40425038",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "40434708",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "40434708",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "40434708",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "40449525",
+      "field_id": "geography"
+    },
+    {
+      "researcher_id": "40449525",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "40452099",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "40452099",
+      "field_id": "linguistics"
+    },
+    {
+      "researcher_id": "40454483",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "40454508",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "40454508",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "40463202",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "40466909",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "40469094",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "40469896",
+      "field_id": "linguistics"
+    },
+    {
+      "researcher_id": "40507969",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "40513205",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "40533154",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "40548195",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "40551560",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "40551560",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "40580501",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "40582656",
+      "field_id": "archaeology-cultural-heritage"
+    },
+    {
+      "researcher_id": "40584090",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "40611794",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "40617081",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "40617081",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "40632716",
+      "field_id": "international-relations"
+    },
+    {
+      "researcher_id": "40632716",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "40632998",
+      "field_id": "geography"
+    },
+    {
+      "researcher_id": "40633243",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "40633243",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "40645850",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "40646783",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "40647963",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "40648284",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "40707783",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "40707783",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "40734794",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "40735510",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "40737839",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "40747284",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "40751194",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "40757762",
+      "field_id": "international-relations"
+    },
+    {
+      "researcher_id": "40757762",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "40762018",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "40762068",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "40776423",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "40779063",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "40794574",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "40794574",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "40802103",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "40802153",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "40815487",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "40817334",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "40824652",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "40830211",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "40843743",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "40846995",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "40883327",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "40883830",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "40896560",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "40906806",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "40907151",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "40957627",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "40961917",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "40961917",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "40964896",
+      "field_id": "pharmacy-drug-discovery"
+    },
+    {
+      "researcher_id": "40967981",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "40975132",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "40979457",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "40979465",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "40979704",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "40985066",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "40999059",
+      "field_id": "linguistics"
+    },
+    {
+      "researcher_id": "41001465",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "41001465",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "41011563",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "41018973",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "50025491",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "50160560",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "50170254",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "50170254",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "50177250",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "50189908",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "50189908",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "50211735",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "50235529",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "50235529",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "50235529",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "50257812",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "50260998",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "50260998",
+      "field_id": "pharmacy-drug-discovery"
+    },
+    {
+      "researcher_id": "50280706",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "50285508",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "50287562",
+      "field_id": "international-relations"
+    },
+    {
+      "researcher_id": "50287562",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "50288627",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "50288627",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "50288627",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "50288627",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "50288627",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "50288627",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "50288627",
+      "field_id": "pharmacy-drug-discovery"
+    },
+    {
+      "researcher_id": "50288627",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "50289336",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "50289336",
+      "field_id": "international-relations"
+    },
+    {
+      "researcher_id": "50289336",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "50290226",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "50292363",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "50292363",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "50294161",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "50294161",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "50294161",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "50296787",
+      "field_id": "archaeology-cultural-heritage"
+    },
+    {
+      "researcher_id": "50298717",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "50298717",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "50301643",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "50303508",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "50303607",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "50309085",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "50309100",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "50309100",
+      "field_id": "mathematics"
+    },
+    {
+      "researcher_id": "50320122",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "50320122",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "50320122",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "50330014",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "50330014",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "50341988",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "50367992",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "50367992",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "50368015",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "50373105",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "50381025",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "50387867",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "50388112",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "50388112",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "50388112",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "50389615",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "50389615",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "50389615",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "50395125",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "50399127",
+      "field_id": "archaeology-cultural-heritage"
+    },
+    {
+      "researcher_id": "50399127",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "50411137",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "50411137",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "50411137",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "50421227",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "50421227",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "50423116",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "50423116",
+      "field_id": "pharmacy-drug-discovery"
+    },
+    {
+      "researcher_id": "50431888",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "50431888",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "50434593",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "50452800",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "50452917",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "50455581",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "50455581",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "50456753",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "50456919",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "50468914",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "50515921",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "50526051",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "50526051",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "50548592",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "50551850",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "50554317",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "50568110",
+      "field_id": "international-relations"
+    },
+    {
+      "researcher_id": "50568110",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "50587251",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "50609295",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "50609873",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "50609873",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "50613197",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "50622544",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "50632824",
+      "field_id": "international-relations"
+    },
+    {
+      "researcher_id": "50637056",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "50643061",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "50708542",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "50717866",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "50724605",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "50732814",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "50732848",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "50732905",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "50733987",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "50747590",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "50749447",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "50749851",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "50750478",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "50752143",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "50755147",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "50755486",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "50755486",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "50756054",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "50756054",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "50773389",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "50779577",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "50780681",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "50801883",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "50802237",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "50816767",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "50817210",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "50823449",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "50823449",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "50828754",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "50836864",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "50836864",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "50844049",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "50844114",
+      "field_id": "archaeology-cultural-heritage"
+    },
+    {
+      "researcher_id": "50844114",
+      "field_id": "geography"
+    },
+    {
+      "researcher_id": "50850583",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "50851002",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "50851094",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "50866283",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "50892676",
+      "field_id": "international-relations"
+    },
+    {
+      "researcher_id": "50892676",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "50899797",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "50899797",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "50899797",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "50943627",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "50961926",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "50962461",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "50962536",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "50962809",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "50967114",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "50979292",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "50979482",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "50979698",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "50983293",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "50999133",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "51018106",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "60109030",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "60127090",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "60159671",
+      "field_id": "mathematics"
+    },
+    {
+      "researcher_id": "60166387",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "60181351",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "60195295",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "60195295",
+      "field_id": "pharmacy-drug-discovery"
+    },
+    {
+      "researcher_id": "60201919",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "60202157",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "60202157",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "60202371",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "60202371",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "60216108",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "60216108",
+      "field_id": "linguistics"
+    },
+    {
+      "researcher_id": "60232021",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "60236841",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "60236841",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "60236841",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "60236841",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "60247806",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "60249795",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "60249795",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "60249795",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "60251980",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "60251980",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "60251980",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "60252285",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "60252285",
+      "field_id": "linguistics"
+    },
+    {
+      "researcher_id": "60252491",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "60252491",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "60252491",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "60252491",
+      "field_id": "pharmacy-drug-discovery"
+    },
+    {
+      "researcher_id": "60261351",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "60261351",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "60268141",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "60278447",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "60278447",
+      "field_id": "pharmacy-drug-discovery"
+    },
+    {
+      "researcher_id": "60278489",
+      "field_id": "geography"
+    },
+    {
+      "researcher_id": "60278489",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "60280682",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "60288628",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "60288628",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "60288694",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "60288694",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "60297596",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "60297596",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "60298198",
+      "field_id": "archaeology-cultural-heritage"
+    },
+    {
+      "researcher_id": "60298198",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "60301644",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "60303096",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "60305175",
+      "field_id": "linguistics"
+    },
+    {
+      "researcher_id": "60309094",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "60309094",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "60309094",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "60324985",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "60324985",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "60330007",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "60330007",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "60330015",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "60334075",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "60334075",
+      "field_id": "international-relations"
+    },
+    {
+      "researcher_id": "60336500",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "60339653",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "60340486",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "60342424",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "60345965",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "60362472",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "60362472",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "60362539",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "60362539",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "60367133",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "60367993",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "60367993",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "60368008",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "60368008",
+      "field_id": "linguistics"
+    },
+    {
+      "researcher_id": "60368016",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "60379542",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "60384004",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "60384757",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "60387991",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "60388113",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "60388113",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "60401668",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "60411138",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "60412615",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "60413556",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "60413556",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "60418689",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "60418689",
+      "field_id": "pharmacy-drug-discovery"
+    },
+    {
+      "researcher_id": "60425006",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "60425014",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "60434693",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "60434700",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "60437085",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "60437085",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "60437085",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "60440997",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "60440997",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "60440997",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "60443248",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "60443248",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "60443610",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "60443610",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "60449329",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "60449527",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "60452281",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "60452281",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "60452596",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "60452596",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "60452596",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "60465599",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "60467008",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "60467008",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "60467008",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "60467727",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "60508258",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "60511508",
+      "field_id": "archaeology-cultural-heritage"
+    },
+    {
+      "researcher_id": "60511508",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "60511508",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "60516037",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "60516813",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "60518091",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "60524121",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "60533578",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "60537306",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "60542339",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "60547975",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "60560779",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "60560779",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "60571685",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "60572196",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "60581171",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "60581171",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "60587947",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "60587947",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "60615524",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "60615938",
+      "field_id": "archaeology-cultural-heritage"
+    },
+    {
+      "researcher_id": "60615938",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "60631710",
+      "field_id": "archaeology-cultural-heritage"
+    },
+    {
+      "researcher_id": "60631710",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "60642345",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "60714516",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "60722767",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "60727238",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "60739796",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "60772704",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "60774586",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "60774776",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "60778356",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "60802907",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "60803244",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "60815637",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "60815728",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "60823789",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "60825363",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "60843977",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "60844280",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "60844280",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "60844280",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "60846806",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "60847391",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "60865228",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "60865707",
+      "field_id": "pharmacy-drug-discovery"
+    },
+    {
+      "researcher_id": "60876100",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "60882868",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "60899095",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "60907153",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "60907252",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "60913275",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "60974855",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "60979152",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "60983947",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "60999473",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "61011614",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "61018975",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "61019303",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "70157163",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "70157163",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "70157163",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "70157163",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "70182821",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "70184421",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "70193456",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "70202306",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "70212412",
+      "field_id": "archaeology-cultural-heritage"
+    },
+    {
+      "researcher_id": "70212412",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "70212412",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "70212412",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "70217579",
+      "field_id": "pharmacy-drug-discovery"
+    },
+    {
+      "researcher_id": "70217686",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "70222239",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "70224590",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "70229540",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "70230026",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "70230026",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "70230026",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "70230026",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "70234234",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "70237022",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "70240455",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "70248194",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "70248194",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "70251345",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "70251345",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "70251345",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "70251882",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "70253937",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "70257806",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "70263994",
+      "field_id": "linguistics"
+    },
+    {
+      "researcher_id": "70273159",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "70273555",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "70273638",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "70273638",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "70283512",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "70286631",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "70290608",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "70291333",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "70299121",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "70304293",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "70309095",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "70309095",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "70319599",
+      "field_id": "geography"
+    },
+    {
+      "researcher_id": "70330016",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "70330016",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "70335074",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "70335074",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "70335074",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "70340213",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "70340479",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "70340479",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "70343275",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "70343275",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "70343275",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "70343275",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "70343663",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "70343663",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "70343663",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "70344629",
+      "field_id": "linguistics"
+    },
+    {
+      "researcher_id": "70350931",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "70350931",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "70350957",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "70351327",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "70351327",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "70353068",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "70360245",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "70361300",
+      "field_id": "international-relations"
+    },
+    {
+      "researcher_id": "70361748",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "70367134",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "70367134",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "70367134",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "70367134",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "70367986",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "70367986",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "70368017",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "70368017",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "70377761",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "70377761",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "70382455",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "70382455",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "70388081",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "70391448",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "70391448",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "70395169",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "70402485",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "70409316",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "70411204",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "70411204",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "70432698",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "70434454",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "70434701",
+      "field_id": "international-relations"
+    },
+    {
+      "researcher_id": "70434701",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "70434701",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "70444370",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "70444370",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "70452430",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "70456276",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "70460714",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "70460714",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "70511608",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "70511608",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "70512101",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "70512101",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "70512284",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "70512284",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "70512284",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "70512284",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "70512284",
+      "field_id": "pharmacy-drug-discovery"
+    },
+    {
+      "researcher_id": "70516830",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "70516830",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "70534395",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "70543693",
+      "field_id": "archaeology-cultural-heritage"
+    },
+    {
+      "researcher_id": "70551505",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "70569102",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "70569102",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "70582469",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "70584077",
+      "field_id": "geography"
+    },
+    {
+      "researcher_id": "70599323",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "70599985",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "70617183",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "70631919",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "70633254",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "70633254",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "70633808",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "70634096",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "70646372",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "70704922",
+      "field_id": "tourism-studies"
+    },
+    {
+      "researcher_id": "70708073",
+      "field_id": "tourism-studies"
+    },
+    {
+      "researcher_id": "70710044",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "70710044",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "70710044",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "70710581",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "70710581",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "70710581",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "70710698",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "70711125",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "70722396",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "70722396",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "70732452",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "70734151",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "70734151",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "70734771",
+      "field_id": "pharmacy-drug-discovery"
+    },
+    {
+      "researcher_id": "70735513",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "70736511",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "70736511",
+      "field_id": "tourism-studies"
+    },
+    {
+      "researcher_id": "70750008",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "70750008",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "70750008",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "70755850",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "70756147",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "70756501",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "70757195",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "70757195",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "70760479",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "70765495",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "70779628",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "70781988",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "70783794",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "70783794",
+      "field_id": "pharmacy-drug-discovery"
+    },
+    {
+      "researcher_id": "70795963",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "70802635",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "70807495",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "70810159",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "70814888",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "70822716",
+      "field_id": "international-relations"
+    },
+    {
+      "researcher_id": "70834399",
+      "field_id": "mathematics"
+    },
+    {
+      "researcher_id": "70838325",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "70842590",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "70842590",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "70844108",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "70844306",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "70844306",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "70851418",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "70875913",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "70876101",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "70906908",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "70909481",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "70911402",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "70968156",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "70982784",
+      "field_id": "archaeology-cultural-heritage"
+    },
+    {
+      "researcher_id": "70984045",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "70999466",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "70999474",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "71000212",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "71018108",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "71018968",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "71029551",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "71035102",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "71038495",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "71041282",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "80127258",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "80127258",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "80148387",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "80174689",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "80174689",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "80174689",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "80185777",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "80185777",
+      "field_id": "pharmacy-drug-discovery"
+    },
+    {
+      "researcher_id": "80199851",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "80213388",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "80240240",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "80240547",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "80244979",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "80252443",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "80252443",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "80252500",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "80252500",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "80252500",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "80252500",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "80254663",
+      "field_id": "geography"
+    },
+    {
+      "researcher_id": "80257807",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "80269795",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "80269795",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "80269795",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "80269795",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "80274190",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "80274190",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "80278217",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "80278217",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "80278473",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "80278473",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "80278473",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "80278473",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "80280022",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "80303006",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "80303006",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "80303006",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "80309096",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "80309096",
+      "field_id": "archaeology-cultural-heritage"
+    },
+    {
+      "researcher_id": "80309096",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "80309096",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "80309096",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "80312784",
+      "field_id": "linguistics"
+    },
+    {
+      "researcher_id": "80314425",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "80314425",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "80314425",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "80319483",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "80319483",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "80319491",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "80320117",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "80330009",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "80330009",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "80330009",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "80335067",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "80335067",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "80335067",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "80335067",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "80342723",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "80342723",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "80342723",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "80342723",
+      "field_id": "pharmacy-drug-discovery"
+    },
+    {
+      "researcher_id": "80342723",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "80346056",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "80346056",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "80346171",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "80346171",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "80362292",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "80366434",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "80366434",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "80366434",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "80369610",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "80373091",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "80373091",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "80375146",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "80388082",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "80388082",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "80388115",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "80388115",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "80397679",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "80397679",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "80397679",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "80397679",
+      "field_id": "pharmacy-drug-discovery"
+    },
+    {
+      "researcher_id": "80405141",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "80405141",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "80405141",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "80411073",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "80411172",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "80420412",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "80420412",
+      "field_id": "mathematics"
+    },
+    {
+      "researcher_id": "80423599",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "80432590",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "80432847",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "80451201",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "80451863",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "80451863",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "80451863",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "80453463",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "80454510",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "80458009",
+      "field_id": "mathematics"
+    },
+    {
+      "researcher_id": "80464593",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "80467406",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "80469098",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "80469113",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "80507145",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "80510726",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "80512251",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "80512251",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "80512251",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "80513192",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "80513449",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "80513449",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "80524686",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "80533463",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "80546143",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "80548214",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "80584961",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "80606682",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "80606682",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "80609149",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "80609909",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "80610576",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "80624890",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "80629600",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "80629600",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "80629600",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "80629600",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "80629600",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "80635524",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "80645036",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "80706557",
+      "field_id": "mathematics"
+    },
+    {
+      "researcher_id": "80706606",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "80717679",
+      "field_id": "linguistics"
+    },
+    {
+      "researcher_id": "80734433",
+      "field_id": "mathematics"
+    },
+    {
+      "researcher_id": "80737437",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "80738584",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "80751411",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "80755471",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "80755497",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "80756792",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "80775289",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "80777938",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "80778209",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "80782531",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "80782531",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "80784280",
+      "field_id": "tourism-studies"
+    },
+    {
+      "researcher_id": "80807321",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "80824359",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "80837253",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "80842872",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "80845826",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "80846808",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "80867143",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "80867143",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "80876102",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "80881242",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "80882844",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "80899039",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "80906222",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "80910538",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "80910596",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "80929646",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "80932011",
+      "field_id": "international-relations"
+    },
+    {
+      "researcher_id": "80965111",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "80968149",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "80973205",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "80979469",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "80980523",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "80982321",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "80982321",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "80991405",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "80999095",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "81000172",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "81003598",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "81007483",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "81007483",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "81012747",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "81018977",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "81019264",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "81019470",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "81038719",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "90111913",
+      "field_id": "mathematics"
+    },
+    {
+      "researcher_id": "90144047",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "90144047",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "90160689",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "90167891",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "90167891",
+      "field_id": "pharmacy-drug-discovery"
+    },
+    {
+      "researcher_id": "90168328",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "90180017",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "90202035",
+      "field_id": "mathematics"
+    },
+    {
+      "researcher_id": "90206756",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "90206756",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "90212117",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "90212117",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "90212117",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "90212117",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "90212117",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "90212167",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "90212167",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "90212167",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "90215806",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "90215806",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "90215806",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "90215806",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "90215806",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "90217860",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "90217860",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "90217860",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "90217860",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "90240837",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "90240837",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "90243740",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "90243740",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "90243849",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "90247677",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "90268152",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "90268152",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "90268152",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "90273870",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "90273870",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "90274125",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "90274125",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "90275016",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "90278474",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "90278482",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "90278482",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "90284380",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "90284380",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "90293092",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "90298175",
+      "field_id": "mathematics"
+    },
+    {
+      "researcher_id": "90302976",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "90302976",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "90302976",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "90309089",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "90311737",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "90312339",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "90313296",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "90314377",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "90314715",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "90314715",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "90321025",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "90321025",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "90322958",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "90324673",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "90324673",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "90330018",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "90330018",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "90332303",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "90333583",
+      "field_id": "international-relations"
+    },
+    {
+      "researcher_id": "90333583",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "90340489",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "90340489",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "90341073",
+      "field_id": "mathematics"
+    },
+    {
+      "researcher_id": "90341619",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "90347732",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "90347732",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "90351311",
+      "field_id": "archaeology-cultural-heritage"
+    },
+    {
+      "researcher_id": "90351311",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "90359878",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "90368001",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "90368001",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "90368001",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "90375460",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "90375460",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "90380659",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "90382019",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "90382019",
+      "field_id": "tourism-studies"
+    },
+    {
+      "researcher_id": "90386657",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "90388083",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "90393199",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "90393199",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "90396276",
+      "field_id": "mathematics"
+    },
+    {
+      "researcher_id": "90410969",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "90425009",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "90425009",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "90425025",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "90425025",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "90425025",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "90431767",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "90434703",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "90434703",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "90441419",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "90449520",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "90449520",
+      "field_id": "linguistics"
+    },
+    {
+      "researcher_id": "90449520",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "90454511",
+      "field_id": "environmental-science"
+    },
+    {
+      "researcher_id": "90454511",
+      "field_id": "geography"
+    },
+    {
+      "researcher_id": "90454983",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "90461285",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "90461285",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "90469099",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "90469164",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "90511056",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "90511056",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "90511056",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "90511288",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "90511288",
+      "field_id": "regional-studies"
+    },
+    {
+      "researcher_id": "90535874",
+      "field_id": "history"
+    },
+    {
+      "researcher_id": "90535874",
+      "field_id": "international-relations"
+    },
+    {
+      "researcher_id": "90550335",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "90552711",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "90555591",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "90555591",
+      "field_id": "literature"
+    },
+    {
+      "researcher_id": "90571894",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "90572438",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "90572975",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "90599937",
+      "field_id": "arts-media-design"
+    },
+    {
+      "researcher_id": "90611111",
+      "field_id": "international-relations"
+    },
+    {
+      "researcher_id": "90626061",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "90633222",
+      "field_id": "architecture-civil-disaster-science"
+    },
+    {
+      "researcher_id": "90642041",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "90642041",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "90645516",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "90710294",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "90720798",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "90720798",
+      "field_id": "political-science"
+    },
+    {
+      "researcher_id": "90722348",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "90751339",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "90755513",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "90756222",
+      "field_id": "social-welfare"
+    },
+    {
+      "researcher_id": "90757767",
+      "field_id": "geography"
+    },
+    {
+      "researcher_id": "90757832",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "90773987",
+      "field_id": "archaeology-cultural-heritage"
+    },
+    {
+      "researcher_id": "90774050",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "90774050",
+      "field_id": "psychology"
+    },
+    {
+      "researcher_id": "90780552",
+      "field_id": "business-administration"
+    },
+    {
+      "researcher_id": "90783374",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "90802132",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "90809641",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "90822875",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "90822875",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "90896698",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "90896896",
+      "field_id": "economics"
+    },
+    {
+      "researcher_id": "90906976",
+      "field_id": "biology-life-science"
+    },
+    {
+      "researcher_id": "90906976",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "90952888",
+      "field_id": "ai-data-science"
+    },
+    {
+      "researcher_id": "90952888",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "90961938",
+      "field_id": "philosophy-ethics"
+    },
+    {
+      "researcher_id": "90962382",
+      "field_id": "chemistry-materials-nanoscience"
+    },
+    {
+      "researcher_id": "90962465",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "90962473",
+      "field_id": "medicine-health-science"
+    },
+    {
+      "researcher_id": "90964544",
+      "field_id": "education"
+    },
+    {
+      "researcher_id": "90979478",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "90987562",
+      "field_id": "international-relations"
+    },
+    {
+      "researcher_id": "90987596",
+      "field_id": "electrical-electronics-robotics"
+    },
+    {
+      "researcher_id": "90989609",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "90999137",
+      "field_id": "law"
+    },
+    {
+      "researcher_id": "91000165",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "91006816",
+      "field_id": "information-science"
+    },
+    {
+      "researcher_id": "91006882",
+      "field_id": "sociology"
+    },
+    {
+      "researcher_id": "91011451",
+      "field_id": "physics-astronomy-earth-science"
+    },
+    {
+      "researcher_id": "91038504",
+      "field_id": "sports-science"
+    },
+    {
+      "researcher_id": "91041028",
+      "field_id": "sociology"
+    }
+  ]
+}
