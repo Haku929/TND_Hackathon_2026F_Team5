@@ -32,7 +32,7 @@
 
 /* ---- 外枠 ---- */
 .ui-page {
-  min-height: 100vh;
+  flex: 1 0 auto;
   background: var(--ui-bg);
   color: var(--ui-ink);
   font-family:
@@ -291,4 +291,34 @@
   color: var(--ui-muted);
   border: 1px solid var(--ui-line);
   border-radius: 50%;
+}
+
+/* ---- 全ページ共通のフッター（app/layout.tsx） ---- */
+.ui-sitefoot {
+  background: var(--ui-bg);
+  color: var(--ui-muted);
+  border-top: 1px solid var(--ui-line);
+  font-family:
+    "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Yu Gothic",
+    "Meiryo", system-ui, sans-serif;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+.ui-sitefoot-in {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 max(var(--sp-4), env(safe-area-inset-right))
+    env(safe-area-inset-bottom) max(var(--sp-4), env(safe-area-inset-left));
+}
+.ui-sitefoot a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+  color: var(--ui-link);
+  text-underline-offset: 3px;
+}
+.ui-sitefoot :focus-visible {
+  outline: 2px solid var(--ui-link);
+  outline-offset: 2px;
+  border-radius: 3px;
 }

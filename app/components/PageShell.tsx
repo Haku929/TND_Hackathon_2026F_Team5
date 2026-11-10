@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import "../ui.css";
 
 // 結果画面以外の画面に共通の外枠。題名・戻るリンク・「非公式」の注記を持つ。
 export default function PageShell({
