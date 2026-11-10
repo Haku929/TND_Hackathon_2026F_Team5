@@ -153,4 +153,18 @@ SPEC.md に反映済み（ほかに、4.6 伝え方の F-17〜F-19 を追加）�
 - 「アプリの外」は反転色と、外へ出る矢印つきのタグで示す。
 - 文節で改行する（`word-break: auto-phrase`）。対応していないブラウザでは、ふつうの折り返しになる。
 
+**画面の見本**（実装したもの。スマートフォン幅は 390px の枠で表示した。ライトは色変数を上書きして確認。画面左下の「N」は開発用の表示で、本番には出ない）
+
+<table>
+<tr>
+<td align="center"><b>深める（スマートフォン）</b><br><img src="design/img/impl-deepen-mobile-top.jpg" width="240" alt="深める画面の上部（ダーク）"></td>
+<td align="center"><b>質問文とコピー</b><br><img src="design/img/impl-deepen-mobile-quote.jpg" width="240" alt="質問文とコピーボタン（ダーク）"></td>
+<td align="center"><b>ライト</b><br><img src="design/img/impl-deepen-mobile-light.jpg" width="240" alt="深める画面（ライト）"></td>
+</tr>
+<tr>
+<td align="center"><b>このアプリについて</b><br><img src="design/img/impl-about-mobile.jpg" width="240" alt="このアプリについて（ダーク）"></td>
+<td align="center" colspan="2"><b>深める（PC）</b><br><img src="design/img/impl-deepen-pc.jpg" width="480" alt="深める画面（PC、ダーク）"></td>
+</tr>
+</table>
+
 **確認したこと**: スマートフォン幅（526px）と PC 幅（1280px）、ダークとライト（ライトは色変数を上書きして確認）。横スクロールなし。**未確認**: iOS Safari・Android Chrome の実機、画面の読み上げ（スクリーンリーダー）。
