@@ -11,7 +11,7 @@ flowchart LR
   subgraph prep["事前処理（開発者の PC・1 回だけ）"]
     kaken[(KAKEN API)] --> fetch[取得]
     fetch --> tag[分野付け]
-    cards[分野カード<br/>人が作成・確認] --> embedP[埋め込み計算]
+    cards[分野カード<br/>事前に用意] --> embedP[埋め込み計算]
     tag --> embedP
   end
   embedP -->|投入| db[(Neon<br/>Postgres + pgvector)]
@@ -69,12 +69,15 @@ sequenceDiagram
 
 ## 4. 埋め込みモデル
 
-| 候補 | 次元数 | 確認すること |
-| --- | --- | --- |
-| [Ruri v3 30m](https://huggingface.co/cl-nagoya/ruri-v3-30m) | 256 | Transformers.js で動く ONNX 版があるか、なければ自分で変換できるか |
-| [multilingual-e5-small](https://huggingface.co/Xenova/multilingual-e5-small) | 384 | 日本語の問いと研究課題の結びつきの精度 |
+**決定（2026-11-01）：[multilingual-e5-small](https://huggingface.co/Xenova/multilingual-e5-small)（384 次元）。** 比較した Ruri v3 30m（256 次元）は採用しない。
 
-- どちらも、検索する側とされる側で決まった接頭辞を付ける（Ruri：`検索クエリ: ` / `検索文書: `、e5：`query: ` / `passage: `）。接頭辞と正規化のルールは `shared/embedding.json` のような設定ファイル 1 つにまとめ、Python と TypeScript の両方から読む。
+| 項目 | 内容 |
+| --- | --- |
+| 次元数 | 384 |
+| 接頭辞 | 問いに `query: `、分野・用語・研究テーマに `passage: ` |
+| 確認すること | 量子化版（q8 など）のファイルサイズが初回読み込みの予算（120MB 以内）に収まるか。スマートフォンでの読み込み時間と速度 |
+
+- 検索する側とされる側で決まった接頭辞を付ける（上の表）。接頭辞と正規化のルールは `shared/embedding.json` のような設定ファイル 1 つにまとめ、Python と TypeScript の両方から読む。
 - ベクトルは L2 正規化して保存・送信する。近さはコサイン類似度（pgvector の `<=>` 演算子）で測る。
 - モデルファイルは自前で配信する（`public/models/` など）。外部 CDN に頼らず、CSP の許可先も絞れる。
 - WebGPU が使えれば WebGPU、なければ WASM で動かす。どちらでも動かない端末向けに、同じモデルをサーバーで動かす保険を用意する（発表用 PC 対策）。
@@ -87,7 +90,7 @@ Python のスクリプトで、次の順に処理する。結果は DB に投入
 1. **取得**：KAKEN API から対象大学の研究課題を取得し、JSON で保存する。取得は 1 回だけ行い、チームで共有する。1 回の取得件数を多めにし、リクエストの間隔を空ける。
 2. **研究者の整理**：研究課題を研究者ごとにまとめ、研究テーマの文章（課題名 + キーワード + 概要）を作る。
 3. **分野付け**：KAKEN の審査区分・研究分野を、デモで扱う約 30 分野に対応表で割り当てる。LLM は使わず、対応表（`data/field_map.csv`）による手続きで行う。
-4. **分野カードの読み込み**：人が作成・確認した分野カード（`data/fields.yaml`）を読み込む。
+4. **分野カードの読み込み**：事前に用意した分野カード（`data/fields.yaml`）を読み込む。
 5. **埋め込み計算**：研究テーマ・分野の説明・用語をそれぞれベクトルにする。
 6. **投入**：DB に書き込む。
 
@@ -103,14 +106,12 @@ Python のスクリプトで、次の順に処理する。結果は DB に投入
       description: 自分とは異なる心を持つ他者を、どう理解できるかを問う
     - term: 現象学
       description: 経験がどのように現れるかを、その現れのままに記述する
-  reviewed_by: 河合
 ```
 
-`reviewed_by` が空のカードは投入しない（仕様 F-8）。
 
 ## 6. DB スキーマ
 
-次元数はモデルで決まる（例は Ruri v3 30m の 256 次元）。
+次元数はモデルで決まる（multilingual-e5-small の 384 次元）。
 
 ```sql
 create extension if not exists vector;
@@ -121,7 +122,7 @@ create table fields (
   name          text not null,
   summary       text not null,
   misconception text not null,
-  embedding     vector(256) not null       -- name + summary + 用語から作る
+  embedding     vector(384) not null       -- name + summary + 用語から作る
 );
 
 -- 分野ごとの専門用語（「あなたの問いの、この分野での呼び名」）
@@ -130,7 +131,7 @@ create table terms (
   field_id    text not null references fields(id),
   term        text not null,
   description text not null,
-  embedding   vector(256) not null
+  embedding   vector(384) not null
 );
 
 -- 先生（KAKEN の研究者）
@@ -140,7 +141,7 @@ create table researchers (
   affiliation text not null,               -- 学部・学科
   theme       text not null,               -- 画面に出す研究テーマ
   kaken_url   text not null,
-  embedding   vector(256) not null
+  embedding   vector(384) not null
 );
 
 -- 先生と分野の対応（1 人が複数分野に属することがある）
@@ -222,7 +223,7 @@ lib/
   prompt.ts                # テンプレートへの差し込み
 ```
 
-- 画面はスマートフォン幅を基準に作り、PC では広げて表示する（モバイルファースト）。結果画面の分野の列は、スマートフォンでは横スワイプ、PC では横に並べる。
+- 画面はスマートフォン幅を基準に作り、PC では広げて表示する（モバイルファースト）。結果画面は分野をタブで切り替える（スマートフォンでは横スワイプでも切り替えられ、PC ではタブをクリックする）。
 - 埋め込み計算は Web Worker で行い、モデルの読み込み中も画面を固まらせない。読み込みはページを開いた時点で始める（仕様 F-4a）。
 - 問いの文章は React の状態としてブラウザ内に置くだけで、URL のクエリにも入れない（履歴や共有で漏れないように）。
 
@@ -252,12 +253,12 @@ data/                   # 事前処理のスクリプトと中間ファイル（
 docs/                   # 仕様書・設計書など
 ```
 
-KAKEN から取得した生データをリポジトリに入れるかは、利用規約を確かめてから決める。
+KAKEN から取得した生データはリポジトリに入れない（`data/` 配下の取得スクリプトで再現する）。入れるのは、アプリに必要な最小限の加工済みデータだけにする。KAKEN のデータは出典を書けば表示・加工できる（[KAKEN 利用規程](https://support.nii.ac.jp/kaken/about/terms)。文部科学省ウェブサイト利用規約、CC BY 互換）。画面には「出典: KAKEN（国立情報学研究所）https://kaken.nii.ac.jp/ ／ 加工して表示」のように出典と加工した旨を載せる。API の使い方は [KAKEN_API.md](KAKEN_API.md) を参照。
 
 ## 11. 未決事項
 
-- [ ] 埋め込みモデル（Ruri v3 30m / multilingual-e5-small）と次元数
+- [x] 埋め込みモデル：multilingual-e5-small（384 次元）に決定（2026-11-01）
 - [ ] 分野の選び方のパラメータ（上位何分野・隣の分野を何枠）
 - [ ] KAKEN の審査区分と 30 分野の対応表
 - [ ] サーバー側でモデルを動かす保険の実装方法と、切り替える条件（読み込み失敗・時間切れ）
-- [ ] KAKEN の生データをリポジトリに含めるか
+- [x] KAKEN の生データをリポジトリに含めるか → 含めない（10 章参照。#5）

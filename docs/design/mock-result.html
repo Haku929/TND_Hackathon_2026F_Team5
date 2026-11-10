@@ -1,0 +1,681 @@
+<title>結果画面の見本</title>
+<meta name="claude:viewport-fit-sides" content="cover" />
+<style>
+  /* Layout: 文書のように読む。問いが題名、分野はタブ、先生は折りたたみ。枠のカードは使わない。世界(青のタグ)と人(橙のタグ)だけ色を持つ。 */
+  :root {
+    --bg: #fdfcfa;
+    --ink: #2b2a28;
+    --muted: #6a6761;
+    --line: #e8e6e1;
+    --callout: #f3f1ec;
+    --blue-bg: #dde8f4;
+    --blue-ink: #1d3f66;
+    --warm-bg: #fbe3d0;
+    --warm-ink: #6b2e0b;
+    --link: #2f5d9b;
+    --outer-bg: #2b2a28;
+    --outer-ink: #f4f2ee;
+    --outer-line: #5b5853;
+    --font:
+      "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Yu Gothic",
+      "Meiryo", system-ui, sans-serif;
+    --gl: max(16px, env(safe-area-inset-left, 0px));
+    --gr: max(16px, env(safe-area-inset-right, 0px));
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1c1b1a;
+      --ink: #e6e3dd;
+      --muted: #9a968e;
+      --line: #34322f;
+      --callout: #262523;
+      --blue-bg: #22364d;
+      --blue-ink: #bbd3f0;
+      --warm-bg: #4a2e1c;
+      --warm-ink: #f5cba8;
+      --link: #8fb4ea;
+      --outer-bg: #ece9e3;
+      --outer-ink: #1e1d1b;
+      --outer-line: #b9b5ad;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1c1b1a;
+    --ink: #e6e3dd;
+    --muted: #9a968e;
+    --line: #34322f;
+    --callout: #262523;
+    --blue-bg: #22364d;
+    --blue-ink: #bbd3f0;
+    --warm-bg: #4a2e1c;
+    --warm-ink: #f5cba8;
+    --link: #8fb4ea;
+    --outer-bg: #ece9e3;
+    --outer-ink: #1e1d1b;
+    --outer-line: #b9b5ad;
+    color-scheme: dark;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: 16px;
+    line-height: 1.85;
+    -webkit-text-size-adjust: 100%;
+  }
+  main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding-left: var(--gl);
+    padding-right: var(--gr);
+    padding-block: 8px 56px;
+  }
+  button,
+  summary {
+    font: inherit;
+  }
+  a {
+    color: var(--link);
+    text-underline-offset: 3px;
+  }
+  :focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: 2px;
+    border-radius: 3px;
+  }
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .back {
+    background: none;
+    border: 0;
+    color: var(--muted);
+    padding: 10px 0;
+    cursor: pointer;
+  }
+  .back:hover {
+    color: var(--ink);
+  }
+  .tag {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1.6;
+    border-radius: 4px;
+    padding: 0 7px;
+    background: var(--callout);
+    color: var(--muted);
+    white-space: nowrap;
+    vertical-align: 1px;
+  }
+  .tag.blue {
+    background: var(--blue-bg);
+    color: var(--blue-ink);
+  }
+  .tag.warm {
+    background: var(--warm-bg);
+    color: var(--warm-ink);
+  }
+
+  .kicker {
+    margin: 28px 0 0;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  h1 {
+    margin: 2px 0 10px;
+    font-size: clamp(27px, 7.6vw, 38px);
+    line-height: 1.45;
+    font-weight: 700;
+    text-wrap: balance;
+  }
+  .privacy {
+    margin: 0;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .tabs-wrap {
+    margin-top: 32px;
+    border-bottom: 1px solid var(--line);
+    margin-left: calc(-1 * var(--gl));
+    margin-right: calc(-1 * var(--gr));
+  }
+  .tabs {
+    display: flex;
+    gap: 22px;
+    overflow-x: auto;
+    padding: 0 var(--gr) 0 var(--gl);
+    scrollbar-width: none;
+  }
+  .tabs::-webkit-scrollbar {
+    display: none;
+  }
+  .tab {
+    flex: none;
+    background: none;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    padding: 10px 0 9px;
+    color: var(--muted);
+    cursor: pointer;
+    font-weight: 500;
+    min-height: 44px;
+  }
+  .tab[aria-selected="true"] {
+    color: var(--ink);
+    border-bottom-color: var(--ink);
+    font-weight: 700;
+  }
+  .tab:hover {
+    color: var(--ink);
+  }
+
+  .panels {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    margin-left: calc(-1 * var(--gl));
+    margin-right: calc(-1 * var(--gr));
+  }
+  .panels::-webkit-scrollbar {
+    display: none;
+  }
+  .panel {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    padding: 28px var(--gr) 8px var(--gl);
+    min-width: 0;
+  }
+  .panel h2 {
+    margin: 0 0 8px;
+    font-size: 26px;
+    line-height: 1.5;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .panel p {
+    margin: 0 0 12px;
+    text-wrap: pretty;
+  }
+  mark {
+    background: var(--blue-bg);
+    color: var(--blue-ink);
+    font-weight: 700;
+    padding: 0 5px;
+    border-radius: 3px;
+  }
+  .callout {
+    background: var(--callout);
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin: 18px 0 28px;
+  }
+  .callout b {
+    display: block;
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  h3 {
+    margin: 0 0 4px;
+    font-size: 16px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .sub {
+    margin: 0 0 8px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  details {
+    border-top: 1px solid var(--line);
+  }
+  details:last-of-type {
+    border-bottom: 1px solid var(--line);
+  }
+  summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 12px 0;
+    display: grid;
+    grid-template-columns: 18px 1fr;
+    gap: 0 4px;
+    align-items: start;
+    min-height: 44px;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  summary::before {
+    content: "▸";
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 2.2;
+    transition: transform 0.15s;
+  }
+  details[open] > summary::before {
+    transform: rotate(90deg);
+  }
+  .who {
+    font-weight: 700;
+    line-height: 1.6;
+  }
+  .who small {
+    font-weight: 400;
+    color: var(--muted);
+    font-size: 13px;
+    margin-left: 6px;
+  }
+  .rtheme {
+    grid-column: 2;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .more {
+    padding: 0 0 14px 22px;
+    font-size: 15px;
+  }
+  .more p {
+    margin: 0 0 8px;
+  }
+  .quote {
+    color: var(--ink);
+    border-left: 0;
+    margin: 0 0 8px;
+  }
+  .quote::before {
+    content: "“";
+    color: var(--muted);
+    margin-right: 2px;
+    font-size: 1.3em;
+    line-height: 0;
+    vertical-align: -0.15em;
+  }
+  .near {
+    font-size: 13px;
+    color: var(--muted);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    summary::before {
+      transition: none;
+    }
+  }
+
+  .outer {
+    margin-top: 36px;
+    background: var(--outer-bg);
+    color: var(--outer-ink);
+    border-radius: 8px;
+    padding: 18px 16px;
+    border: 1px solid var(--outer-line);
+  }
+  .outer h2 {
+    margin: 0 0 6px;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  .outer p {
+    margin: 0 0 12px;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  .outer pre {
+    margin: 0 0 12px;
+    white-space: pre-wrap;
+    font: 13px/1.75 var(--font);
+    max-height: 9em;
+    overflow: auto;
+    border: 1px solid var(--outer-line);
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+  .copy {
+    background: var(--outer-ink);
+    color: var(--outer-bg);
+    border: 0;
+    border-radius: 6px;
+    padding: 10px 16px;
+    font-weight: 700;
+    cursor: pointer;
+    min-height: 44px;
+  }
+
+  footer {
+    margin-top: 28px;
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.9;
+  }
+  footer p {
+    margin: 0;
+    text-wrap: pretty;
+  }
+</style>
+
+<main>
+  <div class="top">
+    <button class="back" type="button">← 問いを書き直す</button>
+    <span class="tag">見本・ダミーデータ</span>
+  </div>
+
+  <p class="kicker">あなたの問い</p>
+  <h1>他者とは、自分にとってどういう存在なのだろうか。</h1>
+  <p class="privacy">
+    問いは、この端末の外へ送られません。意味の近さは、この端末の中で動く
+    <span class="tag">AI</span> が計算しています。
+  </p>
+
+  <div class="tabs-wrap">
+    <div
+      class="tabs"
+      role="tablist"
+      id="tabs"
+      aria-label="問いに近い分野"
+    ></div>
+  </div>
+  <div class="panels" id="panels"></div>
+
+  <section class="outer" aria-labelledby="out">
+    <h2 id="out">ここから先は、アプリの外です</h2>
+    <p>
+      下の質問文は、あなた自身の AI（ChatGPT
+      など）に送るためのものです。送るかどうかは、あなたが決めてください。このアプリは、自動では送りません。
+    </p>
+    <pre id="prompt" tabindex="0" aria-label="質問文のプレビュー"></pre>
+    <button class="copy" type="button" id="copy">質問文をコピー</button>
+  </section>
+
+  <footer>
+    <p>
+      出典: KAKEN（国立情報学研究所）
+      <a href="https://kaken.nii.ac.jp/" target="_blank" rel="noopener"
+        >https://kaken.nii.ac.jp/</a
+      >
+      ／ 加工して表示しています。
+    </p>
+    <p>
+      先生との「近さ」は AI
+      による推定です。入試やカリキュラムの情報ではありません。進路を決めるときは、大学の公式な情報も確かめてください。
+    </p>
+    <p>
+      非公式のハッカソン作品です。大学の公式サービスではありません。
+      <a href="#about">このアプリについて</a>
+    </p>
+  </footer>
+</main>
+
+<script>
+  var FIELDS = [
+    {
+      name: "哲学",
+      say: "当たり前を、根っこから問い直す学問です。",
+      term: "他者論",
+      misread: "答えの出ない空論",
+      people: [
+        {
+          n: "○○ ○○",
+          a: "文学部",
+          t: "現象学における他者経験",
+          q: "他人の痛みは、なぜ私に届くのか。",
+          m: "近い",
+        },
+        {
+          n: "○○ ○○",
+          a: "文学部",
+          t: "対話と承認の倫理",
+          q: "",
+          m: "やや近い",
+        },
+        {
+          n: "○○ ○○",
+          a: "文学部",
+          t: "近代哲学における自己と他者",
+          q: "",
+          m: "やや近い",
+        },
+      ],
+    },
+    {
+      name: "社会学",
+      say: "人と人との関わりから、社会のしくみを読み解く学問です。",
+      term: "社会的相互作用",
+      misread: "世間の意見を集めるだけ",
+      people: [
+        {
+          n: "○○ ○○",
+          a: "産業社会学部",
+          t: "日常の会話にみる関係づくり",
+          q: "",
+          m: "近い",
+        },
+        {
+          n: "○○ ○○",
+          a: "産業社会学部",
+          t: "孤立と支え合いの社会調査",
+          q: "",
+          m: "やや近い",
+        },
+      ],
+    },
+    {
+      name: "心理学",
+      say: "心のはたらきを、観察や実験で調べる学問です。",
+      term: "対人認知",
+      misread: "性格診断や読心術",
+      people: [
+        {
+          n: "○○ ○○",
+          a: "総合心理学部",
+          t: "他者の表情をどう読み取るか",
+          q: "",
+          m: "近い",
+        },
+        {
+          n: "○○ ○○",
+          a: "総合心理学部",
+          t: "友人関係の発達",
+          q: "",
+          m: "やや近い",
+        },
+      ],
+    },
+    {
+      name: "文化人類学",
+      say: "違う暮らしの中に入り、人間の当たり前を見つめ直す学問です。",
+      term: "他者性",
+      misread: "めずらしい風習を集める学問",
+      people: [
+        {
+          n: "○○ ○○",
+          a: "文学部",
+          t: "異文化との出会いと自己理解",
+          q: "",
+          m: "やや近い",
+        },
+        {
+          n: "○○ ○○",
+          a: "国際関係学部",
+          t: "移動する人びとの暮らし",
+          q: "",
+          m: "遠いが関連",
+        },
+      ],
+    },
+    {
+      name: "進化生物学",
+      adjacent: true,
+      say: "生き物の協力や争いが、なぜ進化したかを考える学問です。",
+      term: "利他行動の進化",
+      misread: "弱肉強食を正当化する学問",
+      people: [
+        {
+          n: "○○ ○○",
+          a: "生命科学部",
+          t: "群れで暮らす動物の協力行動",
+          q: "",
+          m: "遠いが関連",
+        },
+        {
+          n: "○○ ○○",
+          a: "生命科学部",
+          t: "社会性昆虫の分業のしくみ",
+          q: "",
+          m: "遠いが関連",
+        },
+      ],
+    },
+  ];
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+    });
+  }
+
+  document.getElementById("tabs").innerHTML = FIELDS.map(function (f, i) {
+    return (
+      '<button class="tab" role="tab" id="t' +
+      i +
+      '" aria-controls="p' +
+      i +
+      '" aria-selected="' +
+      (i === 0) +
+      '" tabindex="' +
+      (i === 0 ? 0 : -1) +
+      '">' +
+      esc(f.name) +
+      "</button>"
+    );
+  }).join("");
+
+  document.getElementById("panels").innerHTML = FIELDS.map(function (f, i) {
+    var people = f.people
+      .map(function (p, j) {
+        return (
+          "<details" +
+          (i === 0 && j === 0 ? " open" : "") +
+          '><summary><span class="who">' +
+          esc(p.n) +
+          ' 先生 <span class="tag warm">' +
+          esc(p.a) +
+          '</span></span><span class="rtheme">' +
+          esc(p.t) +
+          "</span></summary>" +
+          '<div class="more">' +
+          (p.q ? '<p class="quote">' + esc(p.q) + "</p>" : "") +
+          '<p class="near">問いとの近さ：' +
+          esc(p.m) +
+          ' <span class="tag">AI の推定</span></p>' +
+          '<p><a href="#" onclick="return false">KAKEN で研究者ページを見る ↗</a></p></div></details>'
+        );
+      })
+      .join("");
+    return (
+      '<section class="panel" role="tabpanel" id="p' +
+      i +
+      '" aria-labelledby="t' +
+      i +
+      '">' +
+      "<h2>" +
+      esc(f.name) +
+      (f.adjacent ? ' <span class="tag blue">隣の分野</span>' : "") +
+      "</h2>" +
+      "<p>" +
+      esc(f.say) +
+      "</p>" +
+      "<p>あなたの問いは、この分野では <mark>" +
+      esc(f.term) +
+      "</mark> と呼ばれます。</p>" +
+      '<div class="callout"><b>よくある誤解</b>「' +
+      esc(f.misread) +
+      "」と思われがちです。</div>" +
+      '<h3>この大学で学べる先生 <span class="tag">' +
+      f.people.length +
+      "人</span></h3>" +
+      '<p class="sub">問いに近いテーマを研究している順です（AI の推定）。</p>' +
+      people +
+      "</section>"
+    );
+  }).join("");
+
+  var tabs = [].slice.call(document.querySelectorAll(".tab"));
+  var panels = document.getElementById("panels");
+  function select(i, scroll) {
+    tabs.forEach(function (t, k) {
+      t.setAttribute("aria-selected", k === i);
+      t.tabIndex = k === i ? 0 : -1;
+    });
+    tabs[i].scrollIntoView({ inline: "center", block: "nearest" });
+    if (scroll)
+      panels.scrollTo({
+        left: i * panels.clientWidth,
+        behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "auto"
+          : "smooth",
+      });
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener("click", function () {
+      select(i, true);
+    });
+    t.addEventListener("keydown", function (e) {
+      var k = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+      if (k) {
+        var n = (i + k + tabs.length) % tabs.length;
+        select(n, true);
+        tabs[n].focus();
+      }
+    });
+  });
+  var tick;
+  panels.addEventListener("scroll", function () {
+    clearTimeout(tick);
+    tick = setTimeout(function () {
+      select(Math.round(panels.scrollLeft / panels.clientWidth), false);
+    }, 80);
+  });
+
+  var PROMPT =
+    "最近、こんなことが気になっています。\n他者とは、自分にとってどういう存在なのだろうか。\n哲学では「他者論」という言葉で語られるそうです。\n\nこの大学では、次の先生がこれに近いテーマを研究しています。\n- ○○ ○○ 先生（現象学における他者経験）\n- ○○ ○○ 先生（対話と承認の倫理）\n\nこの先生たちの研究の方向性も手がかりにして、詳しく教えてください。\nほかの分野に面白いつながりがあれば、それも知りたいです。\n\nそれから、この分野の研究者が、自分の研究の面白さやロマンを語っている記事やインタビューがあれば、出典のURLを添えて引用・紹介してください。\n見つからなければ、無理に作らないでください。\n本や人の名前を出すときも、確かなものだけにしてください。";
+  document.getElementById("prompt").textContent = PROMPT;
+  document.getElementById("copy").addEventListener("click", function () {
+    var b = this;
+    function done() {
+      b.textContent = "コピーしました";
+      setTimeout(function () {
+        b.textContent = "質問文をコピー";
+      }, 2000);
+    }
+    function pick() {
+      var r = document.createRange();
+      r.selectNodeContents(document.getElementById("prompt"));
+      var s = getSelection();
+      s.removeAllRanges();
+      s.addRange(r);
+      b.textContent = "選択しました。コピーしてください";
+    }
+    try {
+      navigator.clipboard.writeText(PROMPT).then(done, pick);
+    } catch (e) {
+      pick();
+    }
+  });
+</script>

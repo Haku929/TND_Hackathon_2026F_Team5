@@ -22,6 +22,7 @@ export async function POST(request: Request) {
     name,
     summary,
     misconception,
+    embedding,
     1 - (embedding <=> ${vector}::vector) AS score
   FROM fields
   ORDER BY embedding <=> ${vector}::vector
