@@ -1,4 +1,34 @@
-/* 共通の外枠（docs/VISUAL_DESIGN.md: 文書のように読ませる） */
+/*
+ * 画面の見た目（docs/VISUAL_DESIGN.md の「9. 実装」を参照）。
+ * 色は app/globals.css の --ui-*。ここでは文字・余白・角丸の目盛りと、部品のスタイルを持つ。
+ * 値は下のトークンだけを使い、その場の数字を書かない。
+ */
+:root {
+  /* 文字: 読む文章は 16px 以上。13px はタグと小ラベルだけ */
+  --fs-label: 13px;
+  --fs-body: 16px;
+  --fs-lead: 18px;
+  --fs-title: clamp(26px, 6.6vw, 34px);
+  --lh-body: 1.85;
+  --lh-tight: 1.5;
+
+  /* 余白: 4px 刻み */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-12: 48px;
+
+  /* 角丸 */
+  --r-sm: 6px;
+  --r-md: 10px;
+
+  --tap: 44px;
+}
+
+/* ---- 外枠 ---- */
 .ui-page {
   min-height: 100vh;
   background: var(--ui-bg);
@@ -6,16 +36,16 @@
   font-family:
     "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Yu Gothic",
     "Meiryo", system-ui, sans-serif;
-  font-size: 16px;
-  line-height: 1.85;
-  -webkit-text-size-adjust: 100%;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
   word-break: auto-phrase;
+  -webkit-text-size-adjust: 100%;
 }
 .ui-main {
   max-width: 680px;
   margin: 0 auto;
-  padding: 8px max(16px, env(safe-area-inset-right)) 56px
-    max(16px, env(safe-area-inset-left));
+  padding: var(--sp-2) max(var(--sp-4), env(safe-area-inset-right)) var(--sp-12)
+    max(var(--sp-4), env(safe-area-inset-left));
 }
 .ui-page a {
   color: var(--ui-link);
@@ -29,8 +59,7 @@
 .ui-page a.ui-back {
   display: inline-flex;
   align-items: center;
-  min-height: 44px;
-  font-size: 13px;
+  min-height: var(--tap);
   color: var(--ui-muted);
   text-decoration: none;
 }
@@ -38,109 +67,106 @@
   color: var(--ui-ink);
 }
 .ui-kicker {
-  margin: 20px 0 0;
-  font-size: 13px;
+  margin: var(--sp-4) 0 0;
+  font-size: var(--fs-label);
   color: var(--ui-muted);
 }
 .ui-title {
-  margin: 2px 0 20px;
-  font-size: clamp(24px, 6.6vw, 34px);
-  line-height: 1.5;
+  margin: var(--sp-1) 0 var(--sp-6);
+  font-size: var(--fs-title);
+  line-height: var(--lh-tight);
   font-weight: 700;
   text-wrap: balance;
-  word-break: auto-phrase;
 }
 .ui-tag {
-  display: inline-block;
-  font-size: 12px;
+  display: inline-flex;
+  gap: var(--sp-1);
+  align-items: center;
+  font-size: var(--fs-label);
   font-weight: 400;
   line-height: 1.6;
-  border-radius: 4px;
-  padding: 0 7px;
+  border-radius: var(--sp-1);
+  padding: 0 var(--sp-2);
   background: var(--ui-callout);
   color: var(--ui-muted);
   white-space: nowrap;
 }
 .ui-foot {
-  margin-top: 56px;
-  padding-top: 16px;
+  margin-top: var(--sp-12);
+  padding-top: var(--sp-4);
   border-top: 1px solid var(--ui-line);
-  font-size: 13px;
-  line-height: 1.7;
   color: var(--ui-muted);
 }
 
-/* 「アプリの外」: 背景と文字の明暗を逆にして、アプリ内と区別する */
+/* ---- 「アプリの外」: 背景と文字の明暗を逆にして、アプリ内と区別する ---- */
 .ui-outer {
   background: var(--ui-outer-bg);
   color: var(--ui-outer-ink);
   border: 1px solid var(--ui-outer-line);
-  border-radius: 10px;
-  padding: 20px 18px;
+  border-radius: var(--r-md);
+  padding: var(--sp-6) var(--sp-4);
 }
 .ui-outer-tag {
-  display: inline-block;
-  font-size: 12px;
+  display: inline-flex;
+  gap: var(--sp-1);
+  align-items: center;
+  font-size: var(--fs-label);
   line-height: 1.6;
-  padding: 0 8px;
+  padding: 0 var(--sp-2);
   border: 1px solid var(--ui-outer-line);
-  border-radius: 4px;
+  border-radius: var(--sp-1);
+}
+.ui-outer-tag svg {
+  width: 12px;
+  height: 12px;
 }
 .ui-outer h2 {
-  margin: 8px 0 6px;
-  font-size: 19px;
+  margin: var(--sp-2) 0 var(--sp-2);
+  font-size: var(--fs-lead);
   font-weight: 700;
-  line-height: 1.6;
+  line-height: var(--lh-tight);
 }
 .ui-outer p {
   margin: 0;
-  font-size: 15px;
-  line-height: 1.8;
 }
 .ui-steps {
-  margin: 14px 0 0;
+  margin: var(--sp-4) 0 0;
   padding: 0;
   list-style: none;
-  font-size: 14px;
-  line-height: 1.7;
   display: grid;
-  gap: 6px;
+  gap: var(--sp-2);
 }
 .ui-steps li {
   display: flex;
-  gap: 10px;
+  gap: var(--sp-3);
   align-items: baseline;
 }
 .ui-steps b {
   flex: none;
-  width: 22px;
-  height: 22px;
-  line-height: 20px;
+  width: var(--sp-6);
+  height: var(--sp-6);
+  line-height: 22px;
   text-align: center;
-  font-size: 12px;
+  font-size: var(--fs-label);
   border: 1px solid var(--ui-outer-line);
   border-radius: 50%;
 }
 .ui-preview {
-  margin: 16px 0 0;
-  max-height: 13em;
-  overflow: auto;
+  margin: var(--sp-6) 0 0;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
   font: inherit;
-  font-size: 14px;
-  line-height: 1.85;
-  padding: 12px 14px;
+  padding: var(--sp-4);
   border: 1px solid var(--ui-outer-line);
-  border-radius: 8px;
+  border-radius: var(--r-sm);
 }
 .ui-copy {
   display: block;
   width: 100%;
   min-height: 48px;
-  margin-top: 12px;
+  margin-top: var(--sp-4);
   border: 0;
-  border-radius: 8px;
+  border-radius: var(--r-sm);
   background: var(--ui-outer-ink);
   color: var(--ui-outer-bg);
   font: inherit;
@@ -159,18 +185,17 @@
   outline-offset: 3px;
 }
 .ui-outer p.ui-status {
-  min-height: 1.7em;
-  margin-top: 12px;
-  font-size: 14px;
+  min-height: 1.85em;
+  margin-top: var(--sp-3);
   font-weight: 700;
 }
 @media (min-width: 560px) {
   .ui-outer {
-    padding: 24px 26px;
+    padding: var(--sp-8);
   }
   .ui-copy {
     width: auto;
-    padding: 0 28px;
+    padding: 0 var(--sp-8);
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -179,18 +204,18 @@
   }
 }
 
-/* 文書型のセクション（このアプリについて） */
+/* ---- 文書型のセクション ---- */
 .ui-section {
-  padding: 20px 0;
+  padding: var(--sp-6) 0;
   border-top: 1px solid var(--ui-line);
 }
 .ui-section h2 {
-  margin: 0 0 4px;
-  font-size: 17px;
+  margin: 0 0 var(--sp-1);
+  font-size: var(--fs-lead);
   font-weight: 700;
-  line-height: 1.6;
+  line-height: var(--lh-tight);
   display: flex;
-  gap: 8px;
+  gap: var(--sp-2);
   align-items: center;
   flex-wrap: wrap;
 }
@@ -198,8 +223,8 @@
   margin: 0;
 }
 .ui-callout {
-  margin: 4px 0 0;
-  padding: 16px;
+  margin: var(--sp-1) 0 0;
+  padding: var(--sp-4);
   background: var(--ui-callout);
-  border-radius: 8px;
+  border-radius: var(--r-sm);
 }

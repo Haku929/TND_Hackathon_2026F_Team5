@@ -136,4 +136,5 @@
 - [x] デモで扱う 30 分野の一覧（[#6](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/6) に記載、2026-11-01 に決定）
 - [x] 使用する埋め込みモデル：multilingual-e5-small に決定（2026-11-01）。スマートフォンでの読み込み時間と計算速度は実装後に測る
 - [ ] 分野の表示数・先生の表示数（F-5・F-9 の数字は仮）
+- [ ] 「文字は 16px 以上」（5 章）の例外として、タグ・小ラベルの 13px（[VISUAL_DESIGN.md](VISUAL_DESIGN.md) の補助文字）を認めるか。認めない場合は、これらも 16px にする
 - [ ] 高校生・大学 1〜2 年生に見本を見せた感想を踏まえた、文言と画面の見直し（[VISUAL_DESIGN.md](VISUAL_DESIGN.md) の次の一歩）

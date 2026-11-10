@@ -3,6 +3,23 @@
 import { useState } from "react";
 import { buildPrompt, type PromptInput } from "@/lib/prompt";
 
+// 「外へ出る」を示す矢印。飾りなので読み上げない
+function ExternalIcon() {
+  return (
+    <svg
+      viewBox="0 0 12 12"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M4 8l4-4M4.5 4H8v3.5" />
+    </svg>
+  );
+}
+
 // 「深める」: 質問文のプレビューとコピー。アプリの外の AI に渡す画面（F-12〜F-16）。
 export default function DeepenPanel(props: PromptInput) {
   const text = buildPrompt(props);
@@ -19,7 +36,10 @@ export default function DeepenPanel(props: PromptInput) {
 
   return (
     <section aria-labelledby="deepen-title" className="ui-outer">
-      <span className="ui-outer-tag">アプリの外</span>
+      <span className="ui-outer-tag">
+        アプリの外
+        <ExternalIcon />
+      </span>
       <h2 id="deepen-title">ここから先は、アプリの外です</h2>
       <p>
         この質問文は、あなたが使っている AI（ChatGPT
@@ -37,7 +57,7 @@ export default function DeepenPanel(props: PromptInput) {
         </li>
       </ol>
 
-      <pre tabIndex={0} aria-label="コピーされる質問文" className="ui-preview">
+      <pre aria-label="コピーされる質問文" className="ui-preview">
         {text}
       </pre>
 
