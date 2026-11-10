@@ -27,6 +27,7 @@
   --r-md: 10px;
 
   --tap: 44px;
+  --btn-h: 36px; /* 見た目の高さ。当たり判定は ::after で --tap まで広げる */
 }
 
 /* ---- 外枠 ---- */
@@ -173,19 +174,27 @@
   opacity: 0.75;
 }
 .ui-copy {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: var(--sp-2);
-  min-height: var(--tap);
-  padding: 0 var(--sp-4);
+  min-height: var(--btn-h);
+  padding: 0 var(--sp-3);
   border: 0;
   border-radius: var(--r-sm);
   background: var(--ui-outer-ink);
   color: var(--ui-outer-bg);
   font: inherit;
   font-weight: 700;
+  line-height: 1.2;
   cursor: pointer;
   transition: opacity 0.15s;
+}
+/* 見た目より広いタップ範囲（上下左右に 4px、合計 44px） */
+.ui-copy::after {
+  content: "";
+  position: absolute;
+  inset: calc((var(--btn-h) - var(--tap)) / 2);
 }
 .ui-copy svg {
   width: 16px;
