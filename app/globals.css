@@ -24,3 +24,30 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* 視覚デザイン方針（docs/VISUAL_DESIGN.md）の色。新しい画面はこれを使う */
+:root {
+  --ui-bg: #fdfcfa;
+  --ui-ink: #2b2a28;
+  --ui-muted: #6a6761;
+  --ui-line: #e8e6e1;
+  --ui-callout: #f3f1ec;
+  --ui-link: #2f5d9b;
+  --ui-outer-bg: #2b2a28;
+  --ui-outer-ink: #f4f2ee;
+  --ui-outer-line: #5b5853;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ui-bg: #1c1b1a;
+    --ui-ink: #e6e3dd;
+    --ui-muted: #9a968e;
+    --ui-line: #34322f;
+    --ui-callout: #262523;
+    --ui-link: #8fb4ea;
+    --ui-outer-bg: #ece9e3;
+    --ui-outer-ink: #1e1d1b;
+    --ui-outer-line: #b9b5ad;
+  }
+}
