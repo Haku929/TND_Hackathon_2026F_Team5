@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { buildPrompt, type PromptInput } from "@/lib/prompt";
 
 // 飾りのアイコン。読み上げない
@@ -25,10 +25,21 @@ export default function DeepenPanel(props: PromptInput) {
   const text = buildPrompt(props);
   const [status, setStatus] = useState<"idle" | "copied" | "failed">("idle");
 
+  // 「コピーしました」は少しだけ見せて、元に戻す。連続で押しても、最後の押下から数える
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(
+    () => () => {
+      if (timer.current) clearTimeout(timer.current);
+    },
+    [],
+  );
+
   async function copy() {
+    if (timer.current) clearTimeout(timer.current);
     try {
       await navigator.clipboard.writeText(text);
       setStatus("copied");
+      timer.current = setTimeout(() => setStatus("idle"), 2000);
     } catch {
       setStatus("failed");
     }
