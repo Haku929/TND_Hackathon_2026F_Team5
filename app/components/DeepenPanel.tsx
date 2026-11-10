@@ -18,57 +18,37 @@ export default function DeepenPanel(props: PromptInput) {
   }
 
   return (
-    <section
-      aria-labelledby="deepen-title"
-      className="rounded-lg p-5 sm:p-6"
-      style={{
-        background: "var(--ui-outer-bg)",
-        color: "var(--ui-outer-ink)",
-        border: "1px solid var(--ui-outer-line)",
-      }}
-    >
-      <p
-        className="inline-block rounded px-2 text-xs"
-        style={{ border: "1px solid var(--ui-outer-line)" }}
-      >
-        アプリの外
-      </p>
-      <h2 id="deepen-title" className="mt-2 text-xl font-bold">
-        ここから先は、アプリの外
-      </h2>
-      <p className="mt-2 text-base leading-7">
+    <section aria-labelledby="deepen-title" className="ui-outer">
+      <span className="ui-outer-tag">アプリの外</span>
+      <h2 id="deepen-title">ここから先は、アプリの外です</h2>
+      <p>
         この質問文は、あなたが使っている AI（ChatGPT
-        など）に貼り付けて使います。このアプリから自動で送ることはありません。送るかどうかは、あなたが決めてください。
+        など）に渡すためのものです。このアプリから自動で送ることはありません。送るかどうかは、あなたが決めてください。
       </p>
 
-      <pre
-        tabIndex={0}
-        aria-label="コピーされる質問文"
-        className="mt-4 max-h-80 overflow-auto whitespace-pre-wrap break-words rounded p-3 text-sm leading-7"
-        style={{ border: "1px solid var(--ui-outer-line)", font: "inherit" }}
-      >
+      <ol className="ui-steps">
+        <li>
+          <b aria-hidden="true">1</b>
+          <span>下の質問文を読んで、必要なら自分の言葉に直す</span>
+        </li>
+        <li>
+          <b aria-hidden="true">2</b>
+          <span>コピーして、自分の AI に貼り付ける</span>
+        </li>
+      </ol>
+
+      <pre tabIndex={0} aria-label="コピーされる質問文" className="ui-preview">
         {text}
       </pre>
 
-      <p role="status" className="mt-4 min-h-6 text-sm font-bold">
-        {status === "copied" &&
-          "コピーしました。自分の AI に貼り付けてください。"}
+      <button type="button" onClick={copy} className="ui-copy">
+        {status === "copied" ? "コピーしました ✓" : "質問文をコピーする"}
+      </button>
+      <p role="status" className="ui-status">
+        {status === "copied" && "自分の AI に貼り付けてください。"}
         {status === "failed" &&
           "コピーできませんでした。上の文章を選んで、手でコピーしてください。"}
       </p>
-      <div className="mt-2 flex flex-wrap items-center gap-3">
-        <button
-          type="button"
-          onClick={copy}
-          className="min-h-11 rounded px-5 font-bold"
-          style={{
-            background: "var(--ui-outer-ink)",
-            color: "var(--ui-outer-bg)",
-          }}
-        >
-          質問文をコピーする
-        </button>
-      </div>
     </section>
   );
 }
