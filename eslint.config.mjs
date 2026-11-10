@@ -14,6 +14,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Local-only file, not part of the project:
+    ".vercel-undici-fix.cjs",
   ]),
 ]);
 
