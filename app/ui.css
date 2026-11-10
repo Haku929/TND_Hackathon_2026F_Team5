@@ -20,6 +20,7 @@
   --sp-6: 24px;
   --sp-8: 32px;
   --sp-12: 48px;
+  --sp-16: 64px;
 
   /* 角丸 */
   --r-sm: 6px;
@@ -44,7 +45,8 @@
 .ui-main {
   max-width: 680px;
   margin: 0 auto;
-  padding: var(--sp-2) max(var(--sp-4), env(safe-area-inset-right)) var(--sp-12)
+  padding: var(--sp-6) max(var(--sp-4), env(safe-area-inset-right))
+    calc(var(--sp-16) + env(safe-area-inset-bottom))
     max(var(--sp-4), env(safe-area-inset-left));
 }
 .ui-page a {
@@ -227,4 +229,29 @@
   padding: var(--sp-4);
   background: var(--ui-callout);
   border-radius: var(--r-sm);
+}
+
+/* 使い方（番号つきの手順。文書型のセクション用） */
+.ui-howto {
+  margin: var(--sp-3) 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: var(--sp-3);
+}
+.ui-howto li {
+  display: flex;
+  gap: var(--sp-3);
+  align-items: baseline;
+}
+.ui-howto b {
+  flex: none;
+  width: var(--sp-6);
+  height: var(--sp-6);
+  line-height: 22px;
+  text-align: center;
+  font-size: var(--fs-label);
+  color: var(--ui-muted);
+  border: 1px solid var(--ui-line);
+  border-radius: 50%;
 }
