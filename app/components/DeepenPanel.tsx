@@ -7,10 +7,10 @@ import { buildPrompt, type PromptInput } from "@/lib/prompt";
 function Icon({ children }: { children: React.ReactNode }) {
   return (
     <svg
-      viewBox="0 0 16 16"
+      viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.5"
+      strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden="true"
@@ -74,15 +74,15 @@ export default function DeepenPanel(props: PromptInput) {
             {status === "copied" ? (
               <>
                 <Icon>
-                  <path d="M3 8.5l3.5 3.5L13 4.5" />
+                  <path d="M5 12.5l4.5 4.5L19 7.5" />
                 </Icon>
                 コピーしました
               </>
             ) : (
               <>
                 <Icon>
-                  <rect x="5.5" y="5.5" width="8" height="8" rx="1.5" />
-                  <path d="M10.5 5.5V4A1.5 1.5 0 0 0 9 2.5H4A1.5 1.5 0 0 0 2.5 4v5A1.5 1.5 0 0 0 4 10.5h1.5" />
+                  <rect x="9" y="9" width="12" height="12" rx="2" />
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
                 </Icon>
                 コピー
               </>

@@ -164,8 +164,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--sp-3);
-  padding: 0 var(--sp-2) 0 var(--sp-4);
-  min-height: var(--tap);
+  padding: var(--sp-1) var(--sp-1) var(--sp-1) var(--sp-4);
   border-bottom: 1px solid
     color-mix(in srgb, var(--ui-outer-ink) 14%, var(--ui-outer-bg));
 }
@@ -177,29 +176,27 @@
   display: inline-flex;
   align-items: center;
   gap: var(--sp-2);
-  min-width: var(--tap);
   min-height: var(--tap);
-  padding: 0 var(--sp-3);
-  border: 0;
+  padding: 0 var(--sp-4);
+  border: 1px solid
+    color-mix(in srgb, var(--ui-outer-ink) 28%, var(--ui-outer-bg));
   border-radius: var(--r-sm);
-  background: transparent;
+  background: color-mix(in srgb, var(--ui-outer-bg) 60%, transparent);
   color: inherit;
   font: inherit;
-  font-size: var(--fs-body);
-  font-weight: 700;
   cursor: pointer;
   transition: background-color 0.15s;
 }
 .ui-copy svg {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   flex: none;
 }
 .ui-copy:hover {
-  background: color-mix(in srgb, var(--ui-outer-ink) 12%, transparent);
+  background: color-mix(in srgb, var(--ui-outer-ink) 10%, var(--ui-outer-bg));
 }
 .ui-copy:active {
-  background: color-mix(in srgb, var(--ui-outer-ink) 20%, transparent);
+  background: color-mix(in srgb, var(--ui-outer-ink) 18%, var(--ui-outer-bg));
 }
 .ui-preview {
   margin: 0;
