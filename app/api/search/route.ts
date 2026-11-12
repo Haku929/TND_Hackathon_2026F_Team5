@@ -1,10 +1,27 @@
 import { NextResponse } from "next/server";
 import { neon } from "@neondatabase/serverless";
+import { makeUnknownRuntimeDataHangingPromise } from "next/dist/server/dynamic-rendering-utils";
 
 export async function POST(request: Request) {
-  const body = await request.json();
+  let body: unknown;
 
-  const emb = body.embedding;
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json(
+      { error: "リクエストボディが正しくありません" },
+      { status: 400 },
+    );
+  }
+
+  if (typeof body !== "object" || body === null || Array.isArray(body)) {
+    return NextResponse.json(
+      { error: "不正なリクエストです" },
+      { status: 400 },
+    );
+  }
+
+  const emb = (body as { embedding?: unknown }).embedding;
   if (Array.isArray(emb)) {
     if (emb.length == 384) {
       if (

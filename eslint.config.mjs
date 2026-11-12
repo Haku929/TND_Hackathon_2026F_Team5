@@ -7,13 +7,13 @@ const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
   prettier,
-  // Override default ignores of eslint-config-next.
   globalIgnores([
-    // Default ignores of eslint-config-next:
     ".next/**",
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Local-only file, not part of the project:
+    ".vercel-undici-fix.cjs",
   ]),
 ]);
 
