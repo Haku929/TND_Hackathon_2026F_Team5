@@ -1,10 +1,28 @@
 import { NextResponse } from "next/server";
 import { neon } from "@neondatabase/serverless";
+import { makeUnknownRuntimeDataHangingPromise } from "next/dist/server/dynamic-rendering-utils";
 
 export async function POST(request: Request) {
-  const body = await request.json();
+  let  body :unknown;
+   
+  try{
+  body =await request.json();
+  }catch{
+    return NextResponse.json(
+      {error:"リクエストボディが正しくありません"},
+      {status:400},
+    );
+  }
 
-  const emb = body.embedding;
+  if(typeof body!=="object" || body=== null ||Array.isArray(body)){
+
+    return NextResponse.json(
+      {error:"不正なリクエストです"},
+      {status:400},
+    )
+  }
+
+  const emb = (body as {embedding?:unknown}).embedding;
   if (Array.isArray(emb)) {
     if (emb.length == 384) {
       if (
@@ -12,6 +30,9 @@ export async function POST(request: Request) {
           (value) => typeof value === "number" && Number.isFinite(value),
         )
       ) {
+
+
+
         const vector = `[${emb.join(",")}]`;
 
         const sql = neon(process.env.DATABASE_URL!);
@@ -80,6 +101,10 @@ export async function POST(request: Request) {
           low_similarity_fields,
         };
         return NextResponse.json(result);
+      
+      
+      
+      
       } else {
         return NextResponse.json(
           { error: "入力のベクトルに数値以外が含まれています" },
