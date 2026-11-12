@@ -44,4 +44,5 @@ next-env.d.ts
 # python（data/ の事前処理）
 __pycache__/
 .venv/
+.vercel-undici-fix.cjs
 /data/raw/
