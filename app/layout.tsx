@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "問いの星図 | 埋め込みモデル検証",
-  description: "multilingual-e5-small によるブラウザ内埋め込みの検証",
+  title: "問いの星図 | 問いから学問を探す",
+  description: "問いから近い学問分野や研究者を探します。",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
