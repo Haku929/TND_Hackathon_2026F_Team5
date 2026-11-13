@@ -1,0 +1,922 @@
+source_kind,table_type,nii_code,path,source_name,field_id,note
+research_field,,,,人文地理学,geography,Inherited proposal mapping
+research_field,,1333,,都市,,区分名から30分野への対応を確定できないため未分類
+research_field,,1345,,大学改革・評価,education,Inherited proposal mapping
+research_field,,1350,,博物館学,archaeology-cultural-heritage,Inherited proposal mapping
+research_field,jigentsuki_saimoku,1333,001333,都市,,区分名から30分野への対応を確定できないため未分類
+research_field,jigentsuki_saimoku,1359,001359,医学物理学・放射線技術学,medicine-health-science,Inherited proposal mapping
+research_field,jigentsuki_saimoku,1371,001371,ケア学,,区分名から30分野への対応を確定できないため未分類
+research_field,jigentsuki_saimoku,1372,001372,文化学,,文化を扱う区分であり化学とは異なる。30分野への対応を区分名だけで確定できないため未分類
+research_field,jigentsuki_saimoku,1377,001377,震災問題と人文学・社会科学,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,1,000001,文学,literature,Inherited proposal mapping
+research_field,saimoku,2,000001000002,哲学,philosophy-ethics,Inherited proposal mapping
+research_field,saimoku,2,000621000622000002,哲学,philosophy-ethics,Inherited proposal mapping
+research_field,saimoku,10,000001000010,心理学・社会学・教育学・文化人類学,,文化人類学も含む広い親区分で、専門を限定できない
+research_field,saimoku,11,000001000010000011,心理学,psychology,Inherited proposal mapping
+research_field,saimoku,13,000001000010000013,教育学,education,Inherited proposal mapping
+research_field,saimoku,15,000001000015,史学,history,Inherited proposal mapping
+research_field,saimoku,15,000621000622000015,史学,history,Inherited proposal mapping
+research_field,saimoku,20,000001000020,文学,literature,Inherited proposal mapping
+research_field,saimoku,20,000621000622000020,文学,literature,Inherited proposal mapping
+research_field,saimoku,23,000001000020000023,中国語・中国文学,literature,Inherited proposal mapping
+research_field,saimoku,30,000030,法学,law,Inherited proposal mapping
+research_field,saimoku,30,000621000647000030,法学,law,Inherited proposal mapping
+research_field,saimoku,33,000030000033,民事法学,law,Inherited proposal mapping
+research_field,saimoku,34,000030000034,社会法学,law,Inherited proposal mapping
+research_field,saimoku,37,000037,経済学,economics,Inherited proposal mapping
+research_field,saimoku,37,000621000647000037,経済学,economics,Inherited proposal mapping
+research_field,saimoku,40,000037000040,経済事情・政策学,economics,Inherited proposal mapping
+research_field,saimoku,45,000045,理学,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,46,000045000046,数学,mathematics,Inherited proposal mapping
+research_field,saimoku,46,000682000683000046,数学,mathematics,Inherited proposal mapping
+research_field,saimoku,47,000045000046000047,代数学・幾何学,mathematics,Inherited proposal mapping
+research_field,saimoku,48,000045000046000048,解析学,mathematics,Inherited proposal mapping
+research_field,saimoku,51,000045000051,物理学,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,51,000682000683000051,物理学,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,60,000045000060,化学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,79,000079,工学,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,79,000682000079,工学,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,85,000079000085,機械工学,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,85,000682000079000085,機械工学,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,102,000079000102,土木工学,architecture-civil-disaster-science,Inherited proposal mapping
+research_field,saimoku,102,000682000079000102,土木工学,architecture-civil-disaster-science,Inherited proposal mapping
+research_field,saimoku,108,000079000108,建築学,architecture-civil-disaster-science,Inherited proposal mapping
+research_field,saimoku,108,000682000079000108,建築学,architecture-civil-disaster-science,Inherited proposal mapping
+research_field,saimoku,114,000079000114,金属工学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,117,000079000114000117,金属加工,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,130,000130,農学,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,130,000770000130,農学,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,136,000130000136,農芸化学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,136,000770000130000136,農芸化学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,172,000770000816000172,社会医学,medicine-health-science,Inherited proposal mapping
+research_field,saimoku,201,000770000816000201,薬学,pharmacy-drug-discovery,Inherited proposal mapping
+research_field,saimoku,206,000206,複合領域,,複合という名称だけでは対象分野を特定できない
+research_field,saimoku,210,000206000210,生物化学,biology-life-science,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,210,000206000210,生物化学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,215,000206000215,地理学,geography,Inherited proposal mapping
+research_field,saimoku,216,000206000215000216,人文地理学,geography,Inherited proposal mapping
+research_field,saimoku,224,000079000102000224,交通工学・国土計画,architecture-civil-disaster-science,Inherited proposal mapping
+research_field,saimoku,240,000240,広領域,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,297,000001000002000297,思想史,philosophy-ethics,Inherited proposal mapping
+research_field,saimoku,298,000001000002000298,美学(含芸術諸学),arts-media-design,Inherited proposal mapping
+research_field,saimoku,299,000001000002000299,美術史,arts-media-design,Inherited proposal mapping
+research_field,saimoku,300,000001000010000300,実験系心理学,psychology,Inherited proposal mapping
+research_field,saimoku,301,000001000010000301,教育・社会系心理学,education,Inherited proposal mapping
+research_field,saimoku,301,000001000010000301,教育・社会系心理学,psychology,Inherited proposal mapping
+research_field,saimoku,302,000001000010000302,社会学(含社会福祉関係),social-welfare,Inherited proposal mapping
+research_field,saimoku,302,000001000010000302,社会学(含社会福祉関係),sociology,Inherited proposal mapping
+research_field,saimoku,303,000001000010000303,教育学,education,Inherited proposal mapping
+research_field,saimoku,304,000001000010000304,文化人類学(含民族学・民俗学),,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,305,000001000015000305,日本史,history,Inherited proposal mapping
+research_field,saimoku,306,000001000015000306,東洋史,history,Inherited proposal mapping
+research_field,saimoku,307,000001000015000307,西洋史,history,Inherited proposal mapping
+research_field,saimoku,308,000001000015000308,考古学(含先史学),archaeology-cultural-heritage,Inherited proposal mapping
+research_field,saimoku,310,000001000020000310,国文学,literature,Inherited proposal mapping
+research_field,saimoku,311,000001000020000311,中国語・中国文学,literature,Inherited proposal mapping
+research_field,saimoku,312,000001000020000312,英語・英米文学,literature,Inherited proposal mapping
+research_field,saimoku,316,000001000020000316,言語学・音声学,linguistics,Inherited proposal mapping
+research_field,saimoku,317,000001000020000317,文学一般(含文学論・比較文学)・西洋古典,literature,Inherited proposal mapping
+research_field,saimoku,318,000030000318,基礎法学,law,Inherited proposal mapping
+research_field,saimoku,319,000030000319,公法学,law,Inherited proposal mapping
+research_field,saimoku,320,000030000320,国際法学,law,Inherited proposal mapping
+research_field,saimoku,321,000030000321,民事法学,law,Inherited proposal mapping
+research_field,saimoku,323,000030000323,刑事法学,law,Inherited proposal mapping
+research_field,saimoku,324,000030000324,政治学,political-science,Inherited proposal mapping
+research_field,saimoku,325,000037000325,経済理論,economics,Inherited proposal mapping
+research_field,saimoku,326,000037000326,経済統計学,ai-data-science,Inherited proposal mapping
+research_field,saimoku,326,000037000326,経済統計学,economics,Inherited proposal mapping
+research_field,saimoku,327,000037000327,経済政策(含経済事情),economics,Inherited proposal mapping
+research_field,saimoku,329,000037000329,財政学・金融論,economics,Inherited proposal mapping
+research_field,saimoku,331,000037000331,経営学,business-administration,Inherited proposal mapping
+research_field,saimoku,333,000045000046000333,代数学,mathematics,Inherited proposal mapping
+research_field,saimoku,334,000045000046000334,幾何学,mathematics,Inherited proposal mapping
+research_field,saimoku,335,000045000046000335,解析学,mathematics,Inherited proposal mapping
+research_field,saimoku,336,000045000046000336,数学一般(含確率論・統計数学),mathematics,Inherited proposal mapping
+research_field,saimoku,342,000045000051000342,物理学一般,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,343,000045000343,地球科学,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,344,000045000343000344,固体地球物理学,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,351,000045000060000351,物理化学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,352,000045000060000352,有機化学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,353,000045000060000353,無機化学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,354,000045000060000354,機能・物性・材料,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,355,000045000060000355,物質変換,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,364,000079000364,応用物理学・工学基礎,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,364,000682000079000364,応用物理学・工学基礎,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,365,000079000364000365,応用物性・結晶工学,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,367,000079000364000367,応用光学・量子光工学,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,368,000079000364000368,応用物理学一般,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,370,000079000085000370,機械材料・材料力学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,371,000079000085000371,機械工作・生産工学,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,373,000079000085000373,流体工学,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,375,000079000085000375,機械力学・制御,electrical-electronics-robotics,Inherited proposal mapping
+research_field,saimoku,376,000079000085000376,知能機械学・機械システム,ai-data-science,Inherited proposal mapping
+research_field,saimoku,376,000079000085000376,知能機械学・機械システム,electrical-electronics-robotics,Inherited proposal mapping
+research_field,saimoku,377,000079000377,電気電子工学,electrical-electronics-robotics,Inherited proposal mapping
+research_field,saimoku,377,000682000079000377,電気電子工学,electrical-electronics-robotics,Inherited proposal mapping
+research_field,saimoku,379,000079000377000379,電子・電気材料工学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,379,000079000377000379,電子・電気材料工学,electrical-electronics-robotics,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,385,000079000102000385,構造工学・地震工学,architecture-civil-disaster-science,Inherited proposal mapping
+research_field,saimoku,386,000079000102000386,地盤工学,architecture-civil-disaster-science,Inherited proposal mapping
+research_field,saimoku,387,000079000102000387,水工水理学,architecture-civil-disaster-science,Inherited proposal mapping
+research_field,saimoku,388,000079000102000388,交通工学・国土計画,architecture-civil-disaster-science,Inherited proposal mapping
+research_field,saimoku,389,000079000102000389,土木環境システム,architecture-civil-disaster-science,Inherited proposal mapping
+research_field,saimoku,389,000079000102000389,土木環境システム,environmental-science,Inherited proposal mapping
+research_field,saimoku,392,000079000108000392,都市計画・建築計画,architecture-civil-disaster-science,Inherited proposal mapping
+research_field,saimoku,394,000079000394,材料工学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,394,000682000079000394,材料工学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,397,000079000394000397,複合材料・物性,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,398,000079000394000398,構造・機能材料,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,399,000079000394000399,材料加工・処理,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,414,000682000079000414,総合工学,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,426,000130000136000426,生物生産化学・応用有機化学,biology-life-science,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,426,000130000136000426,生物生産化学・応用有機化学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,440,000130000440,境界農学,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,440,000770000130000440,境界農学,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,441,000130000440000441,生物資源科学,biology-life-science,Inherited proposal mapping
+research_field,saimoku,499,000206000499,科学技術史(含科学社会学・科学技術基礎論),sociology,Inherited proposal mapping
+research_field,saimoku,500,000206000500,体育学,sports-science,Inherited proposal mapping
+research_field,saimoku,501,000206000215000501,人文地理学,geography,Inherited proposal mapping
+research_field,saimoku,503,000206000503,科学教育・教科教育学,education,Inherited proposal mapping
+research_field,saimoku,505,000206000503000505,教育工学,education,Inherited proposal mapping
+research_field,saimoku,506,000206000503000506,教科教育,education,Inherited proposal mapping
+research_field,saimoku,509,000206000509,情報科学,information-science,Inherited proposal mapping
+research_field,saimoku,510,000206000509000510,計算機科学,information-science,Inherited proposal mapping
+research_field,saimoku,511,000206000509000511,知能情報学,ai-data-science,Inherited proposal mapping
+research_field,saimoku,511,000206000509000511,知能情報学,information-science,Inherited proposal mapping
+research_field,saimoku,512,000206000509000512,情報システム学(含情報図書館学),information-science,Inherited proposal mapping
+research_field,saimoku,513,000206000513,社会システム工学,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,519,000206000519,環境科学,environmental-science,Inherited proposal mapping
+research_field,saimoku,522,000206000519000522,環境保全,environmental-science,Inherited proposal mapping
+research_field,saimoku,523,000206000210000523,生物有機科学,biology-life-science,Inherited proposal mapping
+research_field,saimoku,526,000206000526,基礎生物科学,biology-life-science,Inherited proposal mapping
+research_field,saimoku,527,000206000526000527,生物物理学,biology-life-science,Inherited proposal mapping
+research_field,saimoku,527,000206000526000527,生物物理学,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,537,000206000537,医用生体工学・生体材料学,medicine-health-science,Inherited proposal mapping
+research_field,saimoku,538,000045000046000538,基礎解析学,mathematics,Inherited proposal mapping
+research_field,saimoku,539,000045000046000539,大域解析学,mathematics,Inherited proposal mapping
+research_field,saimoku,553,000206000553,文化財科学,archaeology-cultural-heritage,Inherited proposal mapping
+research_field,saimoku,556,000556,総合・新領域系,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,557,000556000557,総合領域,,総合という名称だけでは対象分野を特定できない
+research_field,saimoku,558,000556000557000558,情報学,information-science,Inherited proposal mapping
+research_field,saimoku,558,000939000558,情報学,information-science,Inherited proposal mapping
+research_field,saimoku,559,000556000557000558000559,情報学基礎,information-science,Inherited proposal mapping
+research_field,saimoku,560,000556000557000558000560,ソフトウエア,information-science,Inherited proposal mapping
+research_field,saimoku,561,000556000557000558000561,計算機システム・ネットワーク,information-science,Inherited proposal mapping
+research_field,saimoku,562,000556000557000558000562,メディア情報学・データベース,information-science,Inherited proposal mapping
+research_field,saimoku,563,000556000557000558000563,知能情報学,ai-data-science,Inherited proposal mapping
+research_field,saimoku,563,000556000557000558000563,知能情報学,information-science,Inherited proposal mapping
+research_field,saimoku,564,000556000557000558000564,知覚情報処理・知能ロボティクス,ai-data-science,Inherited proposal mapping
+research_field,saimoku,564,000556000557000558000564,知覚情報処理・知能ロボティクス,electrical-electronics-robotics,Inherited proposal mapping
+research_field,saimoku,564,000556000557000558000564,知覚情報処理・知能ロボティクス,information-science,Inherited proposal mapping
+research_field,saimoku,565,000556000557000558000565,感性情報学・ソフトコンピューティング,ai-data-science,Inherited proposal mapping
+research_field,saimoku,565,000556000557000558000565,感性情報学・ソフトコンピューティング,information-science,Inherited proposal mapping
+research_field,saimoku,567,000556000557000558000567,認知科学,psychology,Inherited proposal mapping
+research_field,saimoku,569,000556000557000558000569,生体生命情報学,biology-life-science,Inherited proposal mapping
+research_field,saimoku,569,000556000557000558000569,生体生命情報学,information-science,Inherited proposal mapping
+research_field,saimoku,577,000556000557000577,人間医工学,medicine-health-science,Inherited proposal mapping
+research_field,saimoku,577,000939000978000577,人間医工学,medicine-health-science,Inherited proposal mapping
+research_field,saimoku,578,000556000557000577000578,医用生体工学・生体材料学,medicine-health-science,Inherited proposal mapping
+research_field,saimoku,579,000556000557000577000579,医用システム,medicine-health-science,Inherited proposal mapping
+research_field,saimoku,580,000556000557000577000580,リハビリテーション科学・福祉工学,sports-science,Inherited proposal mapping
+research_field,saimoku,581,000556000557000581,健康・スポーツ科学,sports-science,Inherited proposal mapping
+research_field,saimoku,581,000939000978000581,健康・スポーツ科学,sports-science,Inherited proposal mapping
+research_field,saimoku,582,000556000557000581000582,身体教育学,education,Inherited proposal mapping
+research_field,saimoku,582,000556000557000581000582,身体教育学,sports-science,Inherited proposal mapping
+research_field,saimoku,583,000556000557000581000583,スポーツ科学,sports-science,Inherited proposal mapping
+research_field,saimoku,584,000556000557000581000584,応用健康科学,medicine-health-science,Inherited proposal mapping
+research_field,saimoku,585,000556000557000585,生活科学,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,585,000939000978000585,生活科学,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,586,000556000557000585000586,生活科学一般,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,588,000556000557000588,科学教育・教育工学,education,Inherited proposal mapping
+research_field,saimoku,588,000939000978000588,科学教育・教育工学,education,Inherited proposal mapping
+research_field,saimoku,590,000556000557000588000590,教育工学,education,Inherited proposal mapping
+research_field,saimoku,591,000556000557000591,科学社会学・科学技術史,sociology,Inherited proposal mapping
+research_field,saimoku,591,000939000978000591,科学社会学・科学技術史,sociology,Inherited proposal mapping
+research_field,saimoku,592,000556000557000591000592,科学社会学・科学技術史,sociology,Inherited proposal mapping
+research_field,saimoku,595,000556000557000595,地理学,geography,Inherited proposal mapping
+research_field,saimoku,595,000939000978000595,地理学,geography,Inherited proposal mapping
+research_field,saimoku,596,000556000557000595000596,地理学,geography,Inherited proposal mapping
+research_field,saimoku,597,000556000597,複合新領域,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,598,000556000597000598,環境学,environmental-science,Inherited proposal mapping
+research_field,saimoku,598,000939000598,環境学,environmental-science,Inherited proposal mapping
+research_field,saimoku,600,000556000597000598000600,環境影響評価・環境政策,environmental-science,Inherited proposal mapping
+research_field,saimoku,601,000556000597000598000601,放射線・化学物質影響科学,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,602,000556000597000598000602,環境技術・環境材料,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,602,000556000597000598000602,環境技術・環境材料,environmental-science,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,603,000556000597000603,ナノ・マイクロ科学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,603,000682001062000603,ナノ・マイクロ科学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,604,000556000597000603000604,ナノ構造科学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,606,000556000597000603000606,マイクロ・ナノデバイス,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,607,000556000597000607,社会・安全システム科学,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,607,000939000978000607,社会・安全システム科学,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,608,000556000597000607000608,社会システム工学・安全システム,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,609,000556000597000607000609,自然災害科学,architecture-civil-disaster-science,Inherited proposal mapping
+research_field,saimoku,610,000770001153000610,ゲノム科学,biology-life-science,Inherited proposal mapping
+research_field,saimoku,615,000556000597000615,資源保全学,environmental-science,Inherited proposal mapping
+research_field,saimoku,616,000556000597000615000616,資源保全学,environmental-science,Inherited proposal mapping
+research_field,saimoku,617,000556000597000617,地域研究,regional-studies,Inherited proposal mapping
+research_field,saimoku,617,000621001006000617,地域研究,regional-studies,Inherited proposal mapping
+research_field,saimoku,618,000556000597000617000618,地域研究,regional-studies,Inherited proposal mapping
+research_field,saimoku,619,000556000597000619,ジェンダー,sociology,Inherited proposal mapping
+research_field,saimoku,619,000621001006000619,ジェンダー,sociology,Inherited proposal mapping
+research_field,saimoku,620,000556000597000619000620,ジェンダー,sociology,Inherited proposal mapping
+research_field,saimoku,621,000621,人文社会系,,系の名称だけでは30分野に絞れない
+research_field,saimoku,622,000621000622,人文学,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,623,000621000622000002000623,哲学・倫理学,philosophy-ethics,Inherited proposal mapping
+research_field,saimoku,626,000621000622000002000626,宗教学,philosophy-ethics,Inherited proposal mapping
+research_field,saimoku,627,000621000622000002000627,思想史,philosophy-ethics,Inherited proposal mapping
+research_field,saimoku,628,000621000622000002000628,美学・美術史,arts-media-design,Inherited proposal mapping
+research_field,saimoku,629,000621000622000020000629,日本文学,literature,Inherited proposal mapping
+research_field,saimoku,630,000621000622000020000630,ヨーロッパ語系文学,literature,Inherited proposal mapping
+research_field,saimoku,631,000621000622000020000631,各国文学・文学論,literature,Inherited proposal mapping
+research_field,saimoku,632,000621000622000632,言語学,linguistics,Inherited proposal mapping
+research_field,saimoku,633,000621000622000632000633,言語学,linguistics,Inherited proposal mapping
+research_field,saimoku,636,000621000622000632000636,日本語教育,education,Inherited proposal mapping
+research_field,saimoku,637,000621000622000632000637,外国語教育,education,Inherited proposal mapping
+research_field,saimoku,639,000621000622000015000639,日本史,history,Inherited proposal mapping
+research_field,saimoku,640,000621000622000015000640,東洋史,history,Inherited proposal mapping
+research_field,saimoku,641,000621000622000015000641,西洋史,history,Inherited proposal mapping
+research_field,saimoku,642,000621000622000015000642,考古学,archaeology-cultural-heritage,Inherited proposal mapping
+research_field,saimoku,643,000621000622000643,人文地理学,geography,Inherited proposal mapping
+research_field,saimoku,644,000621000622000643000644,人文地理学,geography,Inherited proposal mapping
+research_field,saimoku,645,000621000622000645,文化人類学,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,646,000621000622000645000646,文化人類学・民俗学,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,647,000621000647,社会科学,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,648,000621000647000030000648,基礎法学,law,Inherited proposal mapping
+research_field,saimoku,649,000621000647000030000649,公法学,law,Inherited proposal mapping
+research_field,saimoku,650,000621000647000030000650,国際法学,law,Inherited proposal mapping
+research_field,saimoku,652,000621000647000030000652,刑事法学,law,Inherited proposal mapping
+research_field,saimoku,653,000621000647000030000653,民事法学,law,Inherited proposal mapping
+research_field,saimoku,654,000621000647000030000654,新領域法学,law,Inherited proposal mapping
+research_field,saimoku,655,000621000647000655,政治学,political-science,Inherited proposal mapping
+research_field,saimoku,656,000621000647000655000656,政治学,political-science,Inherited proposal mapping
+research_field,saimoku,657,000621000647000655000657,国際関係論,international-relations,Inherited proposal mapping
+research_field,saimoku,658,000621000647000037000658,理論経済学,economics,Inherited proposal mapping
+research_field,saimoku,659,000621000647000037000659,経済学説・経済思想,economics,Inherited proposal mapping
+research_field,saimoku,661,000621000647000037000661,応用経済学,economics,Inherited proposal mapping
+research_field,saimoku,662,000621000647000037000662,経済政策,economics,Inherited proposal mapping
+research_field,saimoku,663,000621000647000037000663,財政学・金融論,economics,Inherited proposal mapping
+research_field,saimoku,664,000621000647000037000664,経済史,economics,Inherited proposal mapping
+research_field,saimoku,665,000621000647000665,経営学,business-administration,Inherited proposal mapping
+research_field,saimoku,666,000621000647000665000666,経営学,business-administration,Inherited proposal mapping
+research_field,saimoku,667,000621000647000665000667,商学,business-administration,Inherited proposal mapping
+research_field,saimoku,668,000621000647000665000668,会計学,business-administration,Inherited proposal mapping
+research_field,saimoku,669,000621000647000669,社会学,sociology,Inherited proposal mapping
+research_field,saimoku,670,000621000647000669000670,社会学,sociology,Inherited proposal mapping
+research_field,saimoku,671,000621000647000669000671,社会福祉学,social-welfare,Inherited proposal mapping
+research_field,saimoku,672,000621000647000672,心理学,psychology,Inherited proposal mapping
+research_field,saimoku,673,000621000647000672000673,社会心理学,psychology,Inherited proposal mapping
+research_field,saimoku,674,000621000647000672000674,教育心理学,education,Inherited proposal mapping
+research_field,saimoku,674,000621000647000672000674,教育心理学,psychology,Inherited proposal mapping
+research_field,saimoku,675,000621000647000672000675,臨床心理学,psychology,Inherited proposal mapping
+research_field,saimoku,676,000621000647000672000676,実験心理学,psychology,Inherited proposal mapping
+research_field,saimoku,677,000621000647000677,教育学,education,Inherited proposal mapping
+research_field,saimoku,678,000621000647000677000678,教育学,education,Inherited proposal mapping
+research_field,saimoku,679,000621000647000677000679,教育社会学,education,Inherited proposal mapping
+research_field,saimoku,679,000621000647000677000679,教育社会学,sociology,Inherited proposal mapping
+research_field,saimoku,680,000621000647000677000680,教科教育学,education,Inherited proposal mapping
+research_field,saimoku,681,000621000647000677000681,特別支援教育,education,Inherited proposal mapping
+research_field,saimoku,682,000682,理工系,,数学・物理・化学・一般工学を包括する対応先が30分野にない
+research_field,saimoku,683,000682000683,数物系科学,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,684,000682000683000046000684,代数学,mathematics,Inherited proposal mapping
+research_field,saimoku,685,000682000683000046000685,幾何学,mathematics,Inherited proposal mapping
+research_field,saimoku,686,000682000683000046000686,数学一般(含確率論・統計数学),mathematics,Inherited proposal mapping
+research_field,saimoku,687,000682000683000046000687,基礎解析学,mathematics,Inherited proposal mapping
+research_field,saimoku,688,000682000683000046000688,大域解析学,mathematics,Inherited proposal mapping
+research_field,saimoku,691,000682000683000051000691,素粒子・原子核・宇宙線・宇宙物理,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,692,000682000683000051000692,物性Ⅰ,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,693,000682000683000051000693,物性Ⅱ,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,694,000682000683000051000694,数理物理・物性基礎,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,695,000682000683000051000695,原子・分子・量子エレクトロニクス・プラズマ,electrical-electronics-robotics,Inherited proposal mapping
+research_field,saimoku,695,000682000683000051000695,原子・分子・量子エレクトロニクス・プラズマ,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,696,000682000683000051000696,生物物理・化学物理,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,697,000682000683000697,地球惑星科学,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,698,000682000683000697000698,固体地球惑星物理学,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,707,000682000707,化学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,708,000682000707000708,基礎化学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,709,000682000707000708000709,物理化学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,712,000682000707000712,複合化学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,715,000682000707000712000715,高分子化学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,716,000682000707000712000716,機能物質化学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,718,000682000707000712000718,生体関連化学,biology-life-science,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,718,000682000707000712000718,生体関連化学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,719,000682000707000719,材料化学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,720,000682000707000719000720,機能材料・デバイス,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,724,000682000079000364000724,応用物性・結晶工学,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,726,000682000079000364000726,応用光学・量子光工学,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,727,000682000079000364000727,応用物理学一般,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,728,000682000079000364000728,工学基礎,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,729,000682000079000085000729,機械材料・材料力学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,730,000682000079000085000730,生産工学・加工学,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,734,000682000079000085000734,機械力学・制御,electrical-electronics-robotics,Inherited proposal mapping
+research_field,saimoku,735,000682000079000085000735,知能機械学・機械システム,ai-data-science,Inherited proposal mapping
+research_field,saimoku,735,000682000079000085000735,知能機械学・機械システム,electrical-electronics-robotics,Inherited proposal mapping
+research_field,saimoku,736,000682000079000377000736,電力工学・電気機器工学,electrical-electronics-robotics,Inherited proposal mapping
+research_field,saimoku,737,000682000079000377000737,電子・電気材料工学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,737,000682000079000377000737,電子・電気材料工学,electrical-electronics-robotics,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,738,000682000079000377000738,電子デバイス・電子機器,electrical-electronics-robotics,Inherited proposal mapping
+research_field,saimoku,739,000682000079000377000739,通信・ネットワーク工学,electrical-electronics-robotics,Inherited proposal mapping
+research_field,saimoku,739,000682000079000377000739,通信・ネットワーク工学,information-science,Inherited proposal mapping
+research_field,saimoku,742,000682000079000377000742,制御工学,electrical-electronics-robotics,Inherited proposal mapping
+research_field,saimoku,743,000682000079000102000743,土木材料・施工・建設マネジメント,architecture-civil-disaster-science,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,743,000682000079000102000743,土木材料・施工・建設マネジメント,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,744,000682000079000102000744,構造工学・地震工学・維持管理工学,architecture-civil-disaster-science,Inherited proposal mapping
+research_field,saimoku,745,000682000079000102000745,地盤工学,architecture-civil-disaster-science,Inherited proposal mapping
+research_field,saimoku,746,000682000079000102000746,水工水理学,architecture-civil-disaster-science,Inherited proposal mapping
+research_field,saimoku,747,000682000079000102000747,交通工学・国土計画,architecture-civil-disaster-science,Inherited proposal mapping
+research_field,saimoku,748,000682000079000102000748,土木環境システム,architecture-civil-disaster-science,Inherited proposal mapping
+research_field,saimoku,748,000682000079000102000748,土木環境システム,environmental-science,Inherited proposal mapping
+research_field,saimoku,749,000682000079000108000749,建築構造・材料,architecture-civil-disaster-science,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,749,000682000079000108000749,建築構造・材料,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,750,000682000079000108000750,建築環境・設備,architecture-civil-disaster-science,Inherited proposal mapping
+research_field,saimoku,750,000682000079000108000750,建築環境・設備,environmental-science,Inherited proposal mapping
+research_field,saimoku,751,000682000079000108000751,都市計画・建築計画,architecture-civil-disaster-science,Inherited proposal mapping
+research_field,saimoku,756,000682000079000394000756,構造・機能材料,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,763,000682000079000414000763,航空宇宙工学,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,766,000682000079000414000766,リサイクル工学,environmental-science,Inherited proposal mapping
+research_field,saimoku,769,000682000079000414000769,エネルギー学,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,770,000770,生物系,,"Proposal30: merged, expanded, or split by taxonomy; see FIELD_MAPPING.md"
+research_field,saimoku,771,000770000771,生物学,biology-life-science,Inherited proposal mapping
+research_field,saimoku,772,000770000771000772,基礎生物学,biology-life-science,Inherited proposal mapping
+research_field,saimoku,775,000770000771000772000775,植物生理・分子,biology-life-science,Inherited proposal mapping
+research_field,saimoku,779,000770000771000779,生物科学,biology-life-science,Inherited proposal mapping
+research_field,saimoku,780,000770000771000779000780,構造生物化学,biology-life-science,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,780,000770000771000779000780,構造生物化学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,781,000770000771000779000781,機能生物化学,biology-life-science,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,781,000770000771000779000781,機能生物化学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,783,000770000771000779000783,分子生物学,biology-life-science,Inherited proposal mapping
+research_field,saimoku,796,000770000130000136000796,応用微生物学,biology-life-science,Inherited proposal mapping
+research_field,saimoku,797,000770000130000136000797,応用生物化学,biology-life-science,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,797,000770000130000136000797,応用生物化学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,804,000770000130000804,農業経済学,economics,Inherited proposal mapping
+research_field,saimoku,805,000770000130000804000805,農業経済学,economics,Inherited proposal mapping
+research_field,saimoku,815,000770000130000440000815,応用分子細胞生物学,biology-life-science,Inherited proposal mapping
+research_field,saimoku,816,000770000816,医歯薬学,,"Proposal30: merged, expanded, or split by taxonomy; see FIELD_MAPPING.md"
+research_field,saimoku,817,000770000816000201000817,化学系薬学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,817,000770000816000201000817,化学系薬学,pharmacy-drug-discovery,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,818,000770000816000201000818,物理系薬学,pharmacy-drug-discovery,Inherited proposal mapping
+research_field,saimoku,819,000770000816000201000819,生物系薬学,pharmacy-drug-discovery,Inherited proposal mapping
+research_field,saimoku,822,000770000816000201000822,医療系薬学,pharmacy-drug-discovery,Inherited proposal mapping
+research_field,saimoku,823,000770000816000823,基礎医学,medicine-health-science,Inherited proposal mapping
+research_field,saimoku,825,000770000816000823000825,生理学一般,medicine-health-science,Inherited proposal mapping
+research_field,saimoku,827,000770000816000823000827,薬理学一般,medicine-health-science,Inherited proposal mapping
+research_field,saimoku,837,000770000816000837,境界医学,medicine-health-science,Inherited proposal mapping
+research_field,saimoku,838,000770000816000837000838,医療社会学,medicine-health-science,Inherited proposal mapping
+research_field,saimoku,838,000770000816000837000838,医療社会学,sociology,Inherited proposal mapping
+research_field,saimoku,839,000770000816000837000839,応用薬理学,medicine-health-science,Inherited proposal mapping
+research_field,saimoku,841,000770000816000172000841,衛生学,medicine-health-science,Inherited proposal mapping
+research_field,saimoku,842,000770000816000172000842,公衆衛生学・健康科学,medicine-health-science,Inherited proposal mapping
+research_field,saimoku,844,000770000816000844,内科系臨床医学,medicine-health-science,Inherited proposal mapping
+research_field,saimoku,847,000770000816000844000847,循環器内科学,medicine-health-science,Inherited proposal mapping
+research_field,saimoku,850,000770000816000844000850,神経内科学,medicine-health-science,Inherited proposal mapping
+research_field,saimoku,887,000556000557000558000887,図書館情報学・人文社会情報学,information-science,Inherited proposal mapping
+research_field,saimoku,889,000621000622000889,芸術学,arts-media-design,Inherited proposal mapping
+research_field,saimoku,890,000621000622000889000890,芸術学・芸術史・芸術一般,arts-media-design,Inherited proposal mapping
+research_field,saimoku,891,000621000622000020000891,英米・英語圏文学,literature,Inherited proposal mapping
+research_field,saimoku,892,000621000622000020000892,ヨーロッパ文学(英文学を除く),literature,Inherited proposal mapping
+research_field,saimoku,893,000621000622000020000893,各国文学・文学論,literature,Inherited proposal mapping
+research_field,saimoku,894,000682000683000051000894,原子・分子・量子エレクトロニクス,electrical-electronics-robotics,Inherited proposal mapping
+research_field,saimoku,896,000682000079000102000896,水工学,architecture-civil-disaster-science,Inherited proposal mapping
+research_field,saimoku,897,000682000079000102000897,土木計画学・交通工学,architecture-civil-disaster-science,Inherited proposal mapping
+research_field,saimoku,898,000770000771000772000898,植物分子生物・生理学,biology-life-science,Inherited proposal mapping
+research_field,saimoku,901,000770000130000901,森林学,environmental-science,Inherited proposal mapping
+research_field,saimoku,902,000770000130000901000902,森林科学,environmental-science,Inherited proposal mapping
+research_field,saimoku,922,000770001153000922,腫瘍学,medicine-health-science,Inherited proposal mapping
+research_field,saimoku,939,000939,総合系,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,940,000939000558000940,情報学基礎,information-science,Inherited proposal mapping
+research_field,saimoku,941,000939000558000940000941,情報学基礎理論,information-science,Inherited proposal mapping
+research_field,saimoku,943,000939000558000940000943,統計科学,ai-data-science,Inherited proposal mapping
+research_field,saimoku,944,000939000558000944,計算基盤,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,945,000939000558000944000945,計算機システム,information-science,Inherited proposal mapping
+research_field,saimoku,946,000939000558000944000946,ソフトウェア,information-science,Inherited proposal mapping
+research_field,saimoku,947,000939000558000944000947,情報ネットワーク,information-science,Inherited proposal mapping
+research_field,saimoku,948,000939000558000944000948,マルチメディア・データベース,information-science,Inherited proposal mapping
+research_field,saimoku,949,000939000558000944000949,高性能計算,information-science,Inherited proposal mapping
+research_field,saimoku,950,000939000558000944000950,情報セキュリティ,information-science,Inherited proposal mapping
+research_field,saimoku,951,000939000558000951,人間情報学,information-science,Inherited proposal mapping
+research_field,saimoku,952,000939000558000951000952,認知科学,psychology,Inherited proposal mapping
+research_field,saimoku,953,000939000558000951000953,知覚情報処理,information-science,Inherited proposal mapping
+research_field,saimoku,954,000939000558000951000954,ヒューマンインタフェース・インタラクション,information-science,Inherited proposal mapping
+research_field,saimoku,955,000939000558000951000955,知能情報学,ai-data-science,Inherited proposal mapping
+research_field,saimoku,955,000939000558000951000955,知能情報学,information-science,Inherited proposal mapping
+research_field,saimoku,956,000939000558000951000956,ソフトコンピューティング,ai-data-science,Inherited proposal mapping
+research_field,saimoku,956,000939000558000951000956,ソフトコンピューティング,information-science,Inherited proposal mapping
+research_field,saimoku,957,000939000558000951000957,知能ロボティクス,ai-data-science,Inherited proposal mapping
+research_field,saimoku,957,000939000558000951000957,知能ロボティクス,electrical-electronics-robotics,Inherited proposal mapping
+research_field,saimoku,959,000939000558000959,情報学フロンティア,information-science,Inherited proposal mapping
+research_field,saimoku,960,000939000558000959000960,生命・健康・医療情報学,information-science,Inherited proposal mapping
+research_field,saimoku,961,000939000558000959000961,ウェブ情報学・サービス情報学,information-science,Inherited proposal mapping
+research_field,saimoku,962,000939000558000959000962,図書館情報学・人文社会情報学,information-science,Inherited proposal mapping
+research_field,saimoku,963,000939000558000959000963,学習支援システム,education,Inherited proposal mapping
+research_field,saimoku,964,000939000558000959000964,エンタテインメント・ゲーム情報学,information-science,Inherited proposal mapping
+research_field,saimoku,969,000939000598000969,環境保全学,environmental-science,Inherited proposal mapping
+research_field,saimoku,970,000939000598000969000970,環境技術・環境負荷低減,environmental-science,Inherited proposal mapping
+research_field,saimoku,974,000939000598000974,環境創成学,environmental-science,Inherited proposal mapping
+research_field,saimoku,976,000939000598000974000976,持続可能システム,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,977,000939000598000974000977,環境政策・環境社会システム,environmental-science,Inherited proposal mapping
+research_field,saimoku,978,000939000978,複合領域,,複合という名称だけでは対象分野を特定できない
+research_field,saimoku,979,000939000978000979,デザイン学,arts-media-design,Inherited proposal mapping
+research_field,saimoku,980,000939000978000979000980,デザイン学,arts-media-design,Inherited proposal mapping
+research_field,saimoku,981,000939000978000585000981,家政・生活学一般,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,983,000939000978000585000983,食生活学,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,985,000939000978000588000985,教育工学,education,Inherited proposal mapping
+research_field,saimoku,986,000939000978000591000986,科学社会学・科学技術史,sociology,Inherited proposal mapping
+research_field,saimoku,987,000939000978000987,文化財科学・博物館学,archaeology-cultural-heritage,Inherited proposal mapping
+research_field,saimoku,988,000939000978000987000988,文化財科学・博物館学,archaeology-cultural-heritage,Inherited proposal mapping
+research_field,saimoku,989,000939000978000595000989,地理学,geography,Inherited proposal mapping
+research_field,saimoku,990,000939000978000607000990,社会システム工学・安全システム,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,991,000939000978000607000991,自然災害科学・防災学,architecture-civil-disaster-science,Inherited proposal mapping
+research_field,saimoku,992,000939000978000577000992,生体医工学・生体材料学,medicine-health-science,Inherited proposal mapping
+research_field,saimoku,993,000939000978000577000993,医用システム,medicine-health-science,Inherited proposal mapping
+research_field,saimoku,995,000939000978000577000995,リハビリテーション科学・福祉工学,sports-science,Inherited proposal mapping
+research_field,saimoku,996,000939000978000581000996,身体教育学,education,Inherited proposal mapping
+research_field,saimoku,996,000939000978000581000996,身体教育学,sports-science,Inherited proposal mapping
+research_field,saimoku,997,000939000978000581000997,スポーツ科学,sports-science,Inherited proposal mapping
+research_field,saimoku,998,000939000978000581000998,応用健康科学,medicine-health-science,Inherited proposal mapping
+research_field,saimoku,999,000939000978000999,子ども学,education,Inherited proposal mapping
+research_field,saimoku,1000,000939000978000999001000,子ども学(子ども環境学),education,Inherited proposal mapping
+research_field,saimoku,1006,000621001006,総合人文社会,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,1007,000621001006000617001007,地域研究,regional-studies,Inherited proposal mapping
+research_field,saimoku,1008,000621001006000619001008,ジェンダー,sociology,Inherited proposal mapping
+research_field,saimoku,1009,000621000622000002001009,哲学・倫理学,philosophy-ethics,Inherited proposal mapping
+research_field,saimoku,1011,000621000622000002001011,宗教学,philosophy-ethics,Inherited proposal mapping
+research_field,saimoku,1012,000621000622000002001012,思想史,philosophy-ethics,Inherited proposal mapping
+research_field,saimoku,1013,000621000622000889001013,美学・芸術諸学,arts-media-design,Inherited proposal mapping
+research_field,saimoku,1014,000621000622000889001014,美術史,arts-media-design,Inherited proposal mapping
+research_field,saimoku,1015,000621000622000889001015,芸術一般,arts-media-design,Inherited proposal mapping
+research_field,saimoku,1016,000621000622000020001016,日本文学,literature,Inherited proposal mapping
+research_field,saimoku,1017,000621000622000020001017,英米・英語圏文学,literature,Inherited proposal mapping
+research_field,saimoku,1018,000621000622000020001018,ヨーロッパ文学,literature,Inherited proposal mapping
+research_field,saimoku,1020,000621000622000020001020,文学一般,literature,Inherited proposal mapping
+research_field,saimoku,1021,000621000622000632001021,言語学,linguistics,Inherited proposal mapping
+research_field,saimoku,1022,000621000622000632001022,日本語学,linguistics,Inherited proposal mapping
+research_field,saimoku,1024,000621000622000632001024,日本語教育,education,Inherited proposal mapping
+research_field,saimoku,1025,000621000622000632001025,外国語教育,education,Inherited proposal mapping
+research_field,saimoku,1026,000621000622000015001026,史学一般,history,Inherited proposal mapping
+research_field,saimoku,1027,000621000622000015001027,日本史,history,Inherited proposal mapping
+research_field,saimoku,1028,000621000622000015001028,アジア史・アフリカ史,history,Inherited proposal mapping
+research_field,saimoku,1029,000621000622000015001029,ヨーロッパ史・アメリカ史,history,Inherited proposal mapping
+research_field,saimoku,1030,000621000622000015001030,考古学,archaeology-cultural-heritage,Inherited proposal mapping
+research_field,saimoku,1031,000621000622000643001031,人文地理学,geography,Inherited proposal mapping
+research_field,saimoku,1032,000621000622000645001032,文化人類学・民俗学,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,1033,000621000647000030001033,基礎法学,law,Inherited proposal mapping
+research_field,saimoku,1034,000621000647000030001034,公法学,law,Inherited proposal mapping
+research_field,saimoku,1035,000621000647000030001035,国際法学,law,Inherited proposal mapping
+research_field,saimoku,1037,000621000647000030001037,刑事法学,law,Inherited proposal mapping
+research_field,saimoku,1038,000621000647000030001038,民事法学,law,Inherited proposal mapping
+research_field,saimoku,1039,000621000647000030001039,新領域法学,law,Inherited proposal mapping
+research_field,saimoku,1040,000621000647000655001040,政治学,political-science,Inherited proposal mapping
+research_field,saimoku,1041,000621000647000655001041,国際関係論,international-relations,Inherited proposal mapping
+research_field,saimoku,1042,000621000647000037001042,理論経済学,economics,Inherited proposal mapping
+research_field,saimoku,1043,000621000647000037001043,経済学説・経済思想,economics,Inherited proposal mapping
+research_field,saimoku,1044,000621000647000037001044,経済統計,ai-data-science,Inherited proposal mapping
+research_field,saimoku,1044,000621000647000037001044,経済統計,economics,Inherited proposal mapping
+research_field,saimoku,1045,000621000647000037001045,経済政策,economics,Inherited proposal mapping
+research_field,saimoku,1046,000621000647000037001046,財政・公共経済,economics,Inherited proposal mapping
+research_field,saimoku,1047,000621000647000037001047,金融・ファイナンス,economics,Inherited proposal mapping
+research_field,saimoku,1049,000621000647000665001049,経営学,business-administration,Inherited proposal mapping
+research_field,saimoku,1050,000621000647000665001050,商学,business-administration,Inherited proposal mapping
+research_field,saimoku,1051,000621000647000665001051,会計学,business-administration,Inherited proposal mapping
+research_field,saimoku,1052,000621000647000669001052,社会学,sociology,Inherited proposal mapping
+research_field,saimoku,1053,000621000647000669001053,社会福祉学,social-welfare,Inherited proposal mapping
+research_field,saimoku,1054,000621000647000672001054,社会心理学,psychology,Inherited proposal mapping
+research_field,saimoku,1055,000621000647000672001055,教育心理学,education,Inherited proposal mapping
+research_field,saimoku,1055,000621000647000672001055,教育心理学,psychology,Inherited proposal mapping
+research_field,saimoku,1056,000621000647000672001056,臨床心理学,psychology,Inherited proposal mapping
+research_field,saimoku,1057,000621000647000672001057,実験心理学,psychology,Inherited proposal mapping
+research_field,saimoku,1058,000621000647000677001058,教育学,education,Inherited proposal mapping
+research_field,saimoku,1059,000621000647000677001059,教育社会学,education,Inherited proposal mapping
+research_field,saimoku,1059,000621000647000677001059,教育社会学,sociology,Inherited proposal mapping
+research_field,saimoku,1060,000621000647000677001060,教科教育学,education,Inherited proposal mapping
+research_field,saimoku,1061,000621000647000677001061,特別支援教育,education,Inherited proposal mapping
+research_field,saimoku,1062,000682001062,総合理工,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,1064,000682001062000603001064,ナノ構造物理,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,1064,000682001062000603001064,ナノ構造物理,physics-astronomy-earth-science,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,1068,000682001062000603001068,ナノマイクロシステム,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,1069,000682001062001069,応用物理学,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,1071,000682001062001069001071,結晶工学,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,1073,000682001062001069001073,光工学・光量子科学,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,1077,000682001062001077,計算科学,information-science,Inherited proposal mapping
+research_field,saimoku,1078,000682001062001077001078,計算科学,information-science,Inherited proposal mapping
+research_field,saimoku,1079,000682000683000046001079,代数学,mathematics,Inherited proposal mapping
+research_field,saimoku,1080,000682000683000046001080,幾何学,mathematics,Inherited proposal mapping
+research_field,saimoku,1081,000682000683000046001081,解析学基礎,mathematics,Inherited proposal mapping
+research_field,saimoku,1082,000682000683000046001082,数学解析,mathematics,Inherited proposal mapping
+research_field,saimoku,1086,000682000683000051001086,物性Ⅰ,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,1087,000682000683000051001087,物性Ⅱ,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,1088,000682000683000051001088,数理物理・物性基礎,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,1090,000682000683000051001090,生物物理・化学物理・ソフトマターの物理,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,1094,000682000683000697001094,地質学,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,1095,000682000683000697001095,層位・古生物学,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,1099,000682000707000708001099,物理化学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,1100,000682000707000708001100,有機化学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,1102,000682000707000712001102,機能物性化学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,1102,000682000707000712001102,機能物性化学,physics-astronomy-earth-science,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,1106,000682000707000712001106,生体関連化学,biology-life-science,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,1106,000682000707000712001106,生体関連化学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,1109,000682000707000719001109,有機・ハイブリッド材料,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,1112,000682000707000719001112,デバイス関連化学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,1113,000682000079000085001113,機械材料・材料力学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,1119,000682000079000085001119,知能機械学・機械システム,ai-data-science,Inherited proposal mapping
+research_field,saimoku,1119,000682000079000085001119,知能機械学・機械システム,electrical-electronics-robotics,Inherited proposal mapping
+research_field,saimoku,1120,000682000079000377001120,電力工学・電力変換・電気機器,electrical-electronics-robotics,Inherited proposal mapping
+research_field,saimoku,1122,000682000079000377001122,電子デバイス・電子機器,electrical-electronics-robotics,Inherited proposal mapping
+research_field,saimoku,1123,000682000079000377001123,通信・ネットワーク工学,electrical-electronics-robotics,Inherited proposal mapping
+research_field,saimoku,1123,000682000079000377001123,通信・ネットワーク工学,information-science,Inherited proposal mapping
+research_field,saimoku,1124,000682000079000377001124,計測工学,electrical-electronics-robotics,Inherited proposal mapping
+research_field,saimoku,1125,000682000079000377001125,制御・システム工学,electrical-electronics-robotics,Inherited proposal mapping
+research_field,saimoku,1127,000682000079000102001127,構造工学・地震工学・維持管理工学,architecture-civil-disaster-science,Inherited proposal mapping
+research_field,saimoku,1130,000682000079000102001130,土木計画学・交通工学,architecture-civil-disaster-science,Inherited proposal mapping
+research_field,saimoku,1131,000682000079000102001131,土木環境システム,architecture-civil-disaster-science,Inherited proposal mapping
+research_field,saimoku,1131,000682000079000102001131,土木環境システム,environmental-science,Inherited proposal mapping
+research_field,saimoku,1132,000682000079000108001132,建築構造・材料,architecture-civil-disaster-science,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,1132,000682000079000108001132,建築構造・材料,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,1133,000682000079000108001133,建築環境・設備,architecture-civil-disaster-science,Inherited proposal mapping
+research_field,saimoku,1133,000682000079000108001133,建築環境・設備,environmental-science,Inherited proposal mapping
+research_field,saimoku,1134,000682000079000108001134,都市計画・建築計画,architecture-civil-disaster-science,Inherited proposal mapping
+research_field,saimoku,1140,000682000079000394001140,材料加工・組織制御工学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,1140,000682000079000394001140,材料加工・組織制御工学,electrical-electronics-robotics,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,1142,000682000079001142,プロセス・化学工学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,1146,000682000079001142001146,生物機能・バイオプロセス,biology-life-science,Inherited proposal mapping
+research_field,saimoku,1147,000682000079000414001147,航空宇宙工学,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,1152,000682000079000414001152,エネルギー学,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,1153,000770001153,総合生物,biology-life-science,Inherited proposal mapping
+research_field,saimoku,1161,000770001153000922001161,腫瘍治療学,medicine-health-science,Inherited proposal mapping
+research_field,saimoku,1163,000770001153000610001163,ゲノム医科学,medicine-health-science,Inherited proposal mapping
+research_field,saimoku,1164,000770001153000610001164,システムゲノム科学,biology-life-science,Inherited proposal mapping
+research_field,saimoku,1165,000770001153001165,生物資源保全学,biology-life-science,Inherited proposal mapping
+research_field,saimoku,1165,000770001153001165,生物資源保全学,environmental-science,Inherited proposal mapping
+research_field,saimoku,1166,000770001153001165001166,生物資源保全学,biology-life-science,Inherited proposal mapping
+research_field,saimoku,1166,000770001153001165001166,生物資源保全学,environmental-science,Inherited proposal mapping
+research_field,saimoku,1168,000770000771000779001168,構造生物化学,biology-life-science,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,1168,000770000771000779001168,構造生物化学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,1169,000770000771000779001169,機能生物化学,biology-life-science,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,1169,000770000771000779001169,機能生物化学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,1173,000770000771000772001173,植物分子・生理科学,biology-life-science,Inherited proposal mapping
+research_field,saimoku,1175,000770000771000772001175,動物生理・行動,biology-life-science,Inherited proposal mapping
+research_field,saimoku,1182,000770000130001182,生産環境農学,environmental-science,Inherited proposal mapping
+research_field,saimoku,1186,000770000130001182001186,植物保護科学,biology-life-science,Inherited proposal mapping
+research_field,saimoku,1187,000770000130000136001187,植物栄養学・土壌学,biology-life-science,Inherited proposal mapping
+research_field,saimoku,1188,000770000130000136001188,応用微生物学,biology-life-science,Inherited proposal mapping
+research_field,saimoku,1189,000770000130000136001189,応用生物化学,biology-life-science,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,1189,000770000130000136001189,応用生物化学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,1192,000770000130001192,森林圏科学,environmental-science,Inherited proposal mapping
+research_field,saimoku,1193,000770000130001192001193,森林科学,environmental-science,Inherited proposal mapping
+research_field,saimoku,1198,000770000130001198,社会経済農学,economics,Inherited proposal mapping
+research_field,saimoku,1199,000770000130001198001199,経営・経済農学,business-administration,Inherited proposal mapping
+research_field,saimoku,1199,000770000130001198001199,経営・経済農学,economics,Inherited proposal mapping
+research_field,saimoku,1200,000770000130001198001200,社会・開発農学,,区分名から30分野への対応を確定できないため未分類
+research_field,saimoku,1210,000770000816000201001210,化学系薬学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,1210,000770000816000201001210,化学系薬学,pharmacy-drug-discovery,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,saimoku,1211,000770000816000201001211,物理系薬学,pharmacy-drug-discovery,Inherited proposal mapping
+research_field,saimoku,1213,000770000816000201001213,薬理系薬学,pharmacy-drug-discovery,Inherited proposal mapping
+research_field,saimoku,1214,000770000816000201001214,天然資源系薬学,pharmacy-drug-discovery,Inherited proposal mapping
+research_field,saimoku,1216,000770000816000201001216,環境・衛生系薬学,environmental-science,Inherited proposal mapping
+research_field,saimoku,1216,000770000816000201001216,環境・衛生系薬学,pharmacy-drug-discovery,Inherited proposal mapping
+research_field,saimoku,1217,000770000816000201001217,医療系薬学,pharmacy-drug-discovery,Inherited proposal mapping
+research_field,saimoku,1219,000770000816000823001219,生理学一般,medicine-health-science,Inherited proposal mapping
+research_field,saimoku,1231,000770000816000837001231,医療社会学,medicine-health-science,Inherited proposal mapping
+research_field,saimoku,1231,000770000816000837001231,医療社会学,sociology,Inherited proposal mapping
+research_field,saimoku,1232,000770000816000837001232,応用薬理学,medicine-health-science,Inherited proposal mapping
+research_field,saimoku,1243,000770000816000844001243,腎臓内科学,medicine-health-science,Inherited proposal mapping
+research_field,saimoku,1253,000770000816000844001253,精神神経科学,biology-life-science,Inherited proposal mapping
+research_field,saimoku,1284,000621001006001284,観光学,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,1284,000621001006001284,観光学,tourism-studies,Inherited proposal mapping
+research_field,saimoku,1285,000621001006001284001285,観光学,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,saimoku,1285,000621001006001284001285,観光学,tourism-studies,Inherited proposal mapping
+research_field,tokubetsu_kenkyu,1875,001875,政治学,political-science,Inherited proposal mapping
+research_field,tokubetsu_kenkyu,1877,001875001877,国際関係論,international-relations,Inherited proposal mapping
+research_field,tokusetsu_bunya,1690,001690,ネオ・ジェロントロジー,,区分名から30分野への対応を確定できないため未分類
+research_field,tokusetsu_bunya,1692,001692,食料循環研究,,区分名から30分野への対応を確定できないため未分類
+research_field,tokusetsu_bunya,1693,001693,紛争研究,,区分名から30分野への対応を確定できないため未分類
+research_field,tokusetsu_bunya,1694,001694,遷移状態制御,electrical-electronics-robotics,Inherited proposal mapping
+research_field,tokusetsu_bunya,3110,003110,オラリティと社会,,区分名から30分野への対応を確定できないため未分類
+research_field,zantei_bunya,3045,003045,思想、芸術およびその関連分野,,思想と芸術の広い区分のため専門を限定できない
+research_field,zantei_bunya,3046,003046,文学、言語学およびその関連分野,,文学の地域を区別できず言語学だけにも限定できない
+research_field,zantei_bunya,3048,003048,地理学、文化人類学、民俗学およびその関連分野,,文化人類学・民俗学も含むため、地理学だけに割り当てない
+research_field,zantei_bunya,3053,003053,教育学およびその関連分野,education,Inherited proposal mapping
+research_field,zantei_bunya,3057,003057,物性物理およびその関連分野,physics-astronomy-earth-science,Inherited proposal mapping
+research_field,zantei_bunya,3064,003064,機械力学、ロボティクスおよびその関連分野,,機械力学も含むためロボティクスに限定できない
+research_field,zantei_bunya,3066,003066,土木工学およびその関連分野,architecture-civil-disaster-science,Inherited proposal mapping
+research_field,zantei_bunya,3079,003079,高分子、有機材料およびその関連分野,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,zantei_bunya,3082,003082,農芸化学およびその関連分野,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+research_field,zantei_bunya,3102,003102,社会医学、看護学およびその関連分野,medicine-health-science,Inherited proposal mapping
+research_field,zantei_bunya,3105,003105,人間情報学およびその関連分野,information-science,Inherited proposal mapping
+research_field,zantei_bunya,3106,003106,応用情報学およびその関連分野,information-science,Inherited proposal mapping
+research_field,zantei_bunya,3107,003107,環境解析評価およびその関連分野,environmental-science,Inherited proposal mapping
+research_field,zantei_bunya,3108,003108,環境保全対策およびその関連分野,environmental-science,Inherited proposal mapping
+research_field,zantei_bunya,3109,003109,人間医工学およびその関連分野,medicine-health-science,Inherited proposal mapping
+review_section,review_section,1,,大区分A,,大区分だけでは30分野に絞れない
+review_section,review_section,2,,中区分1:思想、芸術およびその関連分野,,思想と芸術の広い区分のため専門を限定できない
+review_section,review_section,3,,小区分01010:哲学および倫理学関連,philosophy-ethics,Inherited proposal mapping
+review_section,review_section,4,,小区分01020:中国哲学、印度哲学および仏教学関連,philosophy-ethics,Inherited proposal mapping
+review_section,review_section,5,,小区分01030:宗教学関連,philosophy-ethics,Inherited proposal mapping
+review_section,review_section,6,,小区分01040:思想史関連,philosophy-ethics,Inherited proposal mapping
+review_section,review_section,7,,小区分01050:美学および芸術論関連,arts-media-design,Inherited proposal mapping
+review_section,review_section,8,,小区分01060:美術史関連,arts-media-design,Inherited proposal mapping
+review_section,review_section,9,,小区分01070:芸術実践論関連,arts-media-design,Inherited proposal mapping
+review_section,review_section,10,,小区分01080:科学社会学および科学技術史関連,sociology,Inherited proposal mapping
+review_section,review_section,11,,小区分90010:デザイン学関連,arts-media-design,Inherited proposal mapping
+review_section,review_section,12,,中区分2:文学、言語学およびその関連分野,,文学の地域を区別できず、言語学だけに割り当てることもできない
+review_section,review_section,13,,小区分02010:日本文学関連,literature,Inherited proposal mapping
+review_section,review_section,14,,小区分02020:中国文学関連,literature,Inherited proposal mapping
+review_section,review_section,15,,小区分02030:英文学および英語圏文学関連,literature,Inherited proposal mapping
+review_section,review_section,16,,小区分02040:ヨーロッパ文学関連,literature,Inherited proposal mapping
+review_section,review_section,17,,小区分02050:文学一般関連,literature,Inherited proposal mapping
+review_section,review_section,18,,小区分02060:言語学関連,linguistics,Inherited proposal mapping
+review_section,review_section,19,,小区分02070:日本語学関連,linguistics,Inherited proposal mapping
+review_section,review_section,20,,小区分02080:英語学関連,linguistics,Inherited proposal mapping
+review_section,review_section,21,,小区分02090:日本語教育関連,education,Inherited proposal mapping
+review_section,review_section,22,,小区分02100:外国語教育関連,education,Inherited proposal mapping
+review_section,review_section,23,,小区分90020:図書館情報学および人文社会情報学関連,information-science,Inherited proposal mapping
+review_section,review_section,24,,中区分3:歴史学、考古学、博物館学およびその関連分野,,一般の歴史学を含み、対象地域や専門を区分コードだけでは限定できない
+review_section,review_section,25,,小区分03010:史学一般関連,history,Inherited proposal mapping
+review_section,review_section,26,,小区分03020:日本史関連,history,Inherited proposal mapping
+review_section,review_section,27,,小区分03030:アジア史およびアフリカ史関連,history,Inherited proposal mapping
+review_section,review_section,28,,小区分03040:ヨーロッパ史およびアメリカ史関連,history,Inherited proposal mapping
+review_section,review_section,29,,小区分03050:考古学関連,archaeology-cultural-heritage,Inherited proposal mapping
+review_section,review_section,30,,小区分03060:文化財科学関連,archaeology-cultural-heritage,Inherited proposal mapping
+review_section,review_section,32,,中区分4:地理学、文化人類学、民俗学およびその関連分野,,文化人類学・民俗学も含むため、地理学だけに割り当てない
+review_section,review_section,34,,小区分04020:人文地理学関連,geography,Inherited proposal mapping
+review_section,review_section,35,,小区分04030:文化人類学および民俗学関連,,区分名から30分野への対応を確定できないため未分類
+review_section,review_section,36,,小区分80010:地域研究関連,regional-studies,Inherited proposal mapping
+review_section,review_section,37,,小区分80020:観光学関連,tourism-studies,Inherited proposal mapping
+review_section,review_section,38,,小区分80030:ジェンダー関連,sociology,Inherited proposal mapping
+review_section,review_section,39,,中区分5:法学およびその関連分野,law,Inherited proposal mapping
+review_section,review_section,40,,小区分05010:基礎法学関連,law,Inherited proposal mapping
+review_section,review_section,41,,小区分05020:公法学関連,law,Inherited proposal mapping
+review_section,review_section,42,,小区分05030:国際法学関連,law,Inherited proposal mapping
+review_section,review_section,43,,小区分05040:社会法学関連,law,Inherited proposal mapping
+review_section,review_section,44,,小区分05050:刑事法学関連,law,Inherited proposal mapping
+review_section,review_section,45,,小区分05060:民事法学関連,law,Inherited proposal mapping
+review_section,review_section,46,,小区分05070:新領域法学関連,law,Inherited proposal mapping
+review_section,review_section,47,,中区分6:政治学およびその関連分野,political-science,Inherited proposal mapping
+review_section,review_section,48,,小区分06010:政治学関連,political-science,Inherited proposal mapping
+review_section,review_section,49,,小区分06020:国際関係論関連,international-relations,Inherited proposal mapping
+review_section,review_section,50,,中区分7:経済学、経営学およびその関連分野,,経済学と経営学のどちらかを限定できない
+review_section,review_section,51,,小区分07010:理論経済学関連,economics,Inherited proposal mapping
+review_section,review_section,52,,小区分07020:経済学説および経済思想関連,economics,Inherited proposal mapping
+review_section,review_section,54,,小区分07040:経済政策関連,economics,Inherited proposal mapping
+review_section,review_section,55,,小区分07050:公共経済および労働経済関連,economics,Inherited proposal mapping
+review_section,review_section,56,,小区分07060:金融およびファイナンス関連,economics,Inherited proposal mapping
+review_section,review_section,57,,小区分07070:経済史関連,economics,Inherited proposal mapping
+review_section,review_section,58,,小区分07080:経営学関連,business-administration,Inherited proposal mapping
+review_section,review_section,59,,小区分07090:商学関連,business-administration,Inherited proposal mapping
+review_section,review_section,60,,小区分07100:会計学関連,business-administration,Inherited proposal mapping
+review_section,review_section,61,,中区分8:社会学およびその関連分野,sociology,Inherited proposal mapping
+review_section,review_section,62,,小区分08010:社会学関連,sociology,Inherited proposal mapping
+review_section,review_section,63,,小区分08020:社会福祉学関連,social-welfare,Inherited proposal mapping
+review_section,review_section,64,,小区分08030:家政学および生活科学関連,,区分名から30分野への対応を確定できないため未分類
+review_section,review_section,65,,中区分9:教育学およびその関連分野,education,Inherited proposal mapping
+review_section,review_section,66,,小区分09010:教育学関連,education,Inherited proposal mapping
+review_section,review_section,67,,小区分09020:教育社会学関連,education,Inherited proposal mapping
+review_section,review_section,67,,小区分09020:教育社会学関連,sociology,Inherited proposal mapping
+review_section,review_section,68,,小区分09030:子ども学および保育学関連,education,Inherited proposal mapping
+review_section,review_section,69,,小区分09040:教科教育学および初等中等教育学関連,education,Inherited proposal mapping
+review_section,review_section,70,,小区分09050:高等教育学関連,education,Inherited proposal mapping
+review_section,review_section,71,,小区分09060:特別支援教育関連,education,Inherited proposal mapping
+review_section,review_section,72,,小区分09070:教育工学関連,education,Inherited proposal mapping
+review_section,review_section,73,,小区分09080:科学教育関連,education,Inherited proposal mapping
+review_section,review_section,74,,中区分10:心理学およびその関連分野,psychology,Inherited proposal mapping
+review_section,review_section,75,,小区分10010:社会心理学関連,psychology,Inherited proposal mapping
+review_section,review_section,76,,小区分10020:教育心理学関連,education,Inherited proposal mapping
+review_section,review_section,76,,小区分10020:教育心理学関連,psychology,Inherited proposal mapping
+review_section,review_section,77,,小区分10030:臨床心理学関連,psychology,Inherited proposal mapping
+review_section,review_section,78,,小区分10040:実験心理学関連,psychology,Inherited proposal mapping
+review_section,review_section,79,,小区分90030:認知科学関連,psychology,Inherited proposal mapping
+review_section,review_section,82,,小区分11010:代数学関連,mathematics,Inherited proposal mapping
+review_section,review_section,83,,小区分11020:幾何学関連,mathematics,Inherited proposal mapping
+review_section,review_section,85,,小区分12010:基礎解析学関連,mathematics,Inherited proposal mapping
+review_section,review_section,86,,小区分12020:数理解析学関連,mathematics,Inherited proposal mapping
+review_section,review_section,88,,小区分12040:応用数学および統計数学関連,mathematics,Inherited proposal mapping
+review_section,review_section,89,,中区分13:物性物理学およびその関連分野,physics-astronomy-earth-science,Inherited proposal mapping
+review_section,review_section,90,,小区分13010:数理物理および物性基礎関連,physics-astronomy-earth-science,Inherited proposal mapping
+review_section,review_section,91,,小区分13020:半導体、光物性および原子物理関連,physics-astronomy-earth-science,Inherited proposal mapping
+review_section,review_section,92,,小区分13030:磁性、超伝導および強相関系関連,physics-astronomy-earth-science,Inherited proposal mapping
+review_section,review_section,93,,小区分13040:生物物理、化学物理およびソフトマターの物理関連,physics-astronomy-earth-science,Inherited proposal mapping
+review_section,review_section,98,,小区分80040:量子ビーム科学関連,,区分名から30分野への対応を確定できないため未分類
+review_section,review_section,100,,小区分15010:素粒子、原子核、宇宙線および宇宙物理に関連する理論,physics-astronomy-earth-science,Inherited proposal mapping
+review_section,review_section,102,,中区分16:天文学およびその関連分野,physics-astronomy-earth-science,Inherited proposal mapping
+review_section,review_section,103,,小区分16010:天文学関連,physics-astronomy-earth-science,Inherited proposal mapping
+review_section,review_section,104,,中区分17:地球惑星科学およびその関連分野,physics-astronomy-earth-science,Inherited proposal mapping
+review_section,review_section,105,,小区分17010:宇宙惑星科学関連,physics-astronomy-earth-science,Inherited proposal mapping
+review_section,review_section,107,,小区分17030:地球人間圏科学関連,environmental-science,Inherited proposal mapping
+review_section,review_section,107,,小区分17030:地球人間圏科学関連,physics-astronomy-earth-science,Inherited proposal mapping
+review_section,review_section,108,,小区分17040:固体地球科学関連,physics-astronomy-earth-science,Inherited proposal mapping
+review_section,review_section,110,,大区分C,,区分名から30分野への対応を確定できないため未分類
+review_section,review_section,111,,中区分18:材料力学、生産工学、設計工学およびその関連分野,,区分名から30分野への対応を確定できないため未分類
+review_section,review_section,112,,小区分18010:材料力学および機械材料関連,,区分名から30分野への対応を確定できないため未分類
+review_section,review_section,113,,小区分18020:加工学および生産工学関連,,区分名から30分野への対応を確定できないため未分類
+review_section,review_section,117,,小区分19010:流体工学関連,,区分名から30分野への対応を確定できないため未分類
+review_section,review_section,118,,小区分19020:熱工学関連,,区分名から30分野への対応を確定できないため未分類
+review_section,review_section,119,,中区分20:機械力学、ロボティクスおよびその関連分野,,一般の機械力学も含むため、ロボティクスだけに割り当てない
+review_section,review_section,120,,小区分20010:機械力学およびメカトロニクス関連,electrical-electronics-robotics,Inherited proposal mapping
+review_section,review_section,121,,小区分20020:ロボティクスおよび知能機械システム関連,ai-data-science,Inherited proposal mapping
+review_section,review_section,121,,小区分20020:ロボティクスおよび知能機械システム関連,electrical-electronics-robotics,Inherited proposal mapping
+review_section,review_section,122,,中区分21:電気電子工学およびその関連分野,electrical-electronics-robotics,Inherited proposal mapping
+review_section,review_section,123,,小区分21010:電力工学関連,electrical-electronics-robotics,Inherited proposal mapping
+review_section,review_section,124,,小区分21020:通信工学関連,electrical-electronics-robotics,Inherited proposal mapping
+review_section,review_section,126,,小区分21040:制御およびシステム工学関連,electrical-electronics-robotics,Inherited proposal mapping
+review_section,review_section,128,,小区分21060:電子デバイスおよび電子機器関連,electrical-electronics-robotics,Inherited proposal mapping
+review_section,review_section,129,,中区分22:土木工学およびその関連分野,architecture-civil-disaster-science,Inherited proposal mapping
+review_section,review_section,131,,小区分22020:構造工学および地震工学関連,architecture-civil-disaster-science,Inherited proposal mapping
+review_section,review_section,132,,小区分22030:地盤工学関連,architecture-civil-disaster-science,Inherited proposal mapping
+review_section,review_section,133,,小区分22040:水工学関連,architecture-civil-disaster-science,Inherited proposal mapping
+review_section,review_section,134,,小区分22050:土木計画学および交通工学関連,architecture-civil-disaster-science,Inherited proposal mapping
+review_section,review_section,135,,小区分22060:土木環境システム関連,architecture-civil-disaster-science,Inherited proposal mapping
+review_section,review_section,135,,小区分22060:土木環境システム関連,environmental-science,Inherited proposal mapping
+review_section,review_section,136,,中区分23:建築学およびその関連分野,architecture-civil-disaster-science,Inherited proposal mapping
+review_section,review_section,137,,小区分23010:建築構造および材料関連,architecture-civil-disaster-science,Inherited proposal mapping
+review_section,review_section,138,,小区分23020:建築環境および建築設備関連,architecture-civil-disaster-science,Inherited proposal mapping
+review_section,review_section,138,,小区分23020:建築環境および建築設備関連,environmental-science,Inherited proposal mapping
+review_section,review_section,139,,小区分23030:建築計画および都市計画関連,architecture-civil-disaster-science,Inherited proposal mapping
+review_section,review_section,140,,小区分23040:建築史および意匠関連,architecture-civil-disaster-science,Inherited proposal mapping
+review_section,review_section,142,,小区分24010:航空宇宙工学関連,,区分名から30分野への対応を確定できないため未分類
+review_section,review_section,145,,小区分25010:社会システム工学関連,,区分名から30分野への対応を確定できないため未分類
+review_section,review_section,147,,小区分25030:防災工学関連,architecture-civil-disaster-science,Inherited proposal mapping
+review_section,review_section,148,,大区分D,,区分名から30分野への対応を確定できないため未分類
+review_section,review_section,149,,中区分26:材料工学およびその関連分野,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+review_section,review_section,153,,小区分26040:構造材料および機能材料関連,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+review_section,review_section,156,,中区分27:化学工学およびその関連分野,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+review_section,review_section,160,,小区分27040:バイオ機能応用およびバイオプロセス工学関連,biology-life-science,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+review_section,review_section,160,,小区分27040:バイオ機能応用およびバイオプロセス工学関連,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+review_section,review_section,164,,小区分28030:ナノ材料科学関連,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+review_section,review_section,166,,小区分28050:ナノマイクロシステム関連,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+review_section,review_section,167,,中区分29:応用物理物性およびその関連分野,physics-astronomy-earth-science,Inherited proposal mapping
+review_section,review_section,168,,小区分29010:応用物性関連,physics-astronomy-earth-science,Inherited proposal mapping
+review_section,review_section,169,,小区分29020:薄膜および表面界面物性関連,physics-astronomy-earth-science,Inherited proposal mapping
+review_section,review_section,171,,中区分30:応用物理工学およびその関連分野,physics-astronomy-earth-science,Inherited proposal mapping
+review_section,review_section,172,,小区分30010:結晶工学関連,physics-astronomy-earth-science,Inherited proposal mapping
+review_section,review_section,173,,小区分30020:光工学および光量子科学関連,physics-astronomy-earth-science,Inherited proposal mapping
+review_section,review_section,176,,小区分31020:地球資源工学およびエネルギー学関連,,区分名から30分野への対応を確定できないため未分類
+review_section,review_section,178,,小区分90110:生体医工学関連,medicine-health-science,Inherited proposal mapping
+review_section,review_section,179,,小区分90120:生体材料学関連,medicine-health-science,Inherited proposal mapping
+review_section,review_section,180,,小区分90130:医用システム関連,medicine-health-science,Inherited proposal mapping
+review_section,review_section,181,,小区分90140:医療技術評価学関連,medicine-health-science,Inherited proposal mapping
+review_section,review_section,182,,小区分90150:医療福祉工学関連,medicine-health-science,Inherited proposal mapping
+review_section,review_section,185,,小区分32010:基礎物理化学関連,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+review_section,review_section,186,,小区分32020:機能物性化学関連,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+review_section,review_section,188,,小区分33010:構造有機化学および物理有機化学関連,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+review_section,review_section,189,,小区分33020:有機合成化学関連,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+review_section,review_section,191,,小区分34010:無機・錯体化学関連,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+review_section,review_section,194,,中区分35:高分子、有機材料およびその関連分野,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+review_section,review_section,195,,小区分35010:高分子化学関連,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+review_section,review_section,196,,小区分35020:高分子材料関連,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+review_section,review_section,197,,小区分35030:有機機能材料関連,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+review_section,review_section,198,,中区分36:無機材料化学、エネルギー関連化学およびその関連分野,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+review_section,review_section,199,,小区分36010:無機物質および無機材料化学関連,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+review_section,review_section,200,,小区分36020:エネルギー関連化学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+review_section,review_section,202,,小区分37010:生体関連化学,biology-life-science,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+review_section,review_section,202,,小区分37010:生体関連化学,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+review_section,review_section,203,,小区分37020:生物分子化学関連,biology-life-science,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+review_section,review_section,203,,小区分37020:生物分子化学関連,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+review_section,review_section,204,,小区分37030:ケミカルバイオロジー関連,biology-life-science,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+review_section,review_section,204,,小区分37030:ケミカルバイオロジー関連,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+review_section,review_section,206,,中区分38:農芸化学およびその関連分野,,区分名から30分野への対応を確定できないため未分類
+review_section,review_section,207,,小区分38010:植物栄養学および土壌学関連,biology-life-science,Inherited proposal mapping
+review_section,review_section,208,,小区分38020:応用微生物学関連,biology-life-science,Inherited proposal mapping
+review_section,review_section,209,,小区分38030:応用生物化学関連,biology-life-science,Inherited proposal mapping
+review_section,review_section,211,,小区分38050:食品科学関連,,区分名から30分野への対応を確定できないため未分類
+review_section,review_section,213,,中区分39:生産環境農学およびその関連分野,environmental-science,Inherited proposal mapping
+review_section,review_section,217,,小区分39040:植物保護科学関連,biology-life-science,Inherited proposal mapping
+review_section,review_section,219,,小区分39060:生物資源保全学関連,biology-life-science,Inherited proposal mapping
+review_section,review_section,219,,小区分39060:生物資源保全学関連,environmental-science,Inherited proposal mapping
+review_section,review_section,220,,小区分39070:ランドスケープ科学関連,,区分名から30分野への対応を確定できないため未分類
+review_section,review_section,226,,中区分41:社会経済農学、農業工学およびその関連分野,,農業工学も含むため、経済学だけに割り当てない
+review_section,review_section,227,,小区分41010:食料農業経済関連,economics,Inherited proposal mapping
+review_section,review_section,228,,小区分41020:農業社会構造関連,,区分名から30分野への対応を確定できないため未分類
+review_section,review_section,238,,中区分43:分子レベルから細胞レベルの生物学およびその関連分野,biology-life-science,Inherited proposal mapping
+review_section,review_section,240,,小区分43020:構造生物化学関連,biology-life-science,Inherited proposal mapping
+review_section,review_section,241,,小区分43030:機能生物化学関連,biology-life-science,Inherited proposal mapping
+review_section,review_section,242,,小区分43040:生物物理学関連,biology-life-science,Inherited proposal mapping
+review_section,review_section,243,,小区分43050:ゲノム生物学関連,biology-life-science,Inherited proposal mapping
+review_section,review_section,245,,中区分44:細胞レベルから個体レベルの生物学およびその関連分野,biology-life-science,Inherited proposal mapping
+review_section,review_section,248,,小区分44030:植物分子および生理科学関連,biology-life-science,Inherited proposal mapping
+review_section,review_section,249,,小区分44040:形態および構造関連,biology-life-science,Inherited proposal mapping
+review_section,review_section,259,,小区分46010:神経科学一般関連,biology-life-science,Inherited proposal mapping
+review_section,review_section,261,,小区分46030:神経機能学関連,biology-life-science,Inherited proposal mapping
+review_section,review_section,263,,中区分47:薬学およびその関連分野,pharmacy-drug-discovery,Inherited proposal mapping
+review_section,review_section,264,,小区分47010:薬系化学および創薬科学関連,pharmacy-drug-discovery,Inherited proposal mapping
+review_section,review_section,265,,小区分47020:薬系分析および物理化学関連,pharmacy-drug-discovery,Inherited proposal mapping
+review_section,review_section,266,,小区分47030:薬系衛生および生物化学関連,pharmacy-drug-discovery,Inherited proposal mapping
+review_section,review_section,267,,小区分47040:薬理学関連,pharmacy-drug-discovery,Inherited proposal mapping
+review_section,review_section,268,,小区分47050:環境および天然医薬資源学関連,environmental-science,Inherited proposal mapping
+review_section,review_section,268,,小区分47050:環境および天然医薬資源学関連,pharmacy-drug-discovery,Inherited proposal mapping
+review_section,review_section,269,,小区分47060:医療薬学関連,pharmacy-drug-discovery,Inherited proposal mapping
+review_section,review_section,270,,中区分48:生体の構造と機能およびその関連分野,medicine-health-science,Inherited proposal mapping
+review_section,review_section,271,,小区分48010:解剖学関連,medicine-health-science,Inherited proposal mapping
+review_section,review_section,273,,小区分48030:薬理学関連,medicine-health-science,Inherited proposal mapping
+review_section,review_section,274,,小区分48040:医化学関連,medicine-health-science,Inherited proposal mapping
+review_section,review_section,275,,中区分49:病理病態学、感染・免疫学およびその関連分野,medicine-health-science,Inherited proposal mapping
+review_section,review_section,276,,小区分49010:病態医化学関連,medicine-health-science,Inherited proposal mapping
+review_section,review_section,278,,小区分49030:実験病理学関連,medicine-health-science,Inherited proposal mapping
+review_section,review_section,284,,中区分50:腫瘍学およびその関連分野,medicine-health-science,Inherited proposal mapping
+review_section,review_section,285,,小区分50010:腫瘍生物学関連,medicine-health-science,Inherited proposal mapping
+review_section,review_section,287,,中区分51:ブレインサイエンスおよびその関連分野,biology-life-science,Inherited proposal mapping
+review_section,review_section,289,,小区分51020:認知脳科学関連,biology-life-science,Inherited proposal mapping
+review_section,review_section,289,,小区分51020:認知脳科学関連,psychology,Inherited proposal mapping
+review_section,review_section,296,,小区分52050:胎児医学および小児成育学関連,medicine-health-science,Inherited proposal mapping
+review_section,review_section,298,,小区分53010:消化器内科学関連,medicine-health-science,Inherited proposal mapping
+review_section,review_section,299,,小区分53020:循環器内科学関連,medicine-health-science,Inherited proposal mapping
+review_section,review_section,304,,小区分54010:血液および腫瘍内科学関連,medicine-health-science,Inherited proposal mapping
+review_section,review_section,307,,小区分54040:代謝および内分泌学関連,medicine-health-science,Inherited proposal mapping
+review_section,review_section,315,,中区分56:生体機能および感覚に関する外科学およびその関連分野,medicine-health-science,Inherited proposal mapping
+review_section,review_section,321,,小区分56060:眼科学関連,medicine-health-science,Inherited proposal mapping
+review_section,review_section,333,,小区分58010:医療管理学および医療系社会学関連,medicine-health-science,Inherited proposal mapping
+review_section,review_section,333,,小区分58010:医療管理学および医療系社会学関連,sociology,Inherited proposal mapping
+review_section,review_section,334,,小区分58020:衛生学および公衆衛生学分野関連:実験系を含む,medicine-health-science,Inherited proposal mapping
+review_section,review_section,340,,小区分58080:高齢者看護学および地域看護学関連,medicine-health-science,Inherited proposal mapping
+review_section,review_section,341,,中区分59:スポーツ科学、体育、健康科学およびその関連分野,sports-science,Inherited proposal mapping
+review_section,review_section,342,,小区分59010:リハビリテーション科学関連,sports-science,Inherited proposal mapping
+review_section,review_section,343,,小区分59020:スポーツ科学関連,sports-science,Inherited proposal mapping
+review_section,review_section,344,,小区分59030:体育および身体教育学関連,education,Inherited proposal mapping
+review_section,review_section,344,,小区分59030:体育および身体教育学関連,sports-science,Inherited proposal mapping
+review_section,review_section,345,,小区分59040:栄養学および健康科学関連,medicine-health-science,Inherited proposal mapping
+review_section,review_section,345,,小区分59040:栄養学および健康科学関連,sports-science,Inherited proposal mapping
+review_section,review_section,347,,中区分60:情報科学、情報工学およびその関連分野,information-science,Inherited proposal mapping
+review_section,review_section,350,,小区分60030:統計科学関連,ai-data-science,Inherited proposal mapping
+review_section,review_section,351,,小区分60040:計算機システム関連,information-science,Inherited proposal mapping
+review_section,review_section,352,,小区分60050:ソフトウェア関連,information-science,Inherited proposal mapping
+review_section,review_section,353,,小区分60060:情報ネットワーク関連,information-science,Inherited proposal mapping
+review_section,review_section,354,,小区分60070:情報セキュリティ関連,information-science,Inherited proposal mapping
+review_section,review_section,356,,小区分60090:高性能計算関連,information-science,Inherited proposal mapping
+review_section,review_section,357,,小区分60100:計算科学関連,information-science,Inherited proposal mapping
+review_section,review_section,358,,中区分61:人間情報学およびその関連分野,information-science,Inherited proposal mapping
+review_section,review_section,359,,小区分61010:知覚情報処理関連,information-science,Inherited proposal mapping
+review_section,review_section,360,,小区分61020:ヒューマンインタフェースおよびインタラクション関連,information-science,Inherited proposal mapping
+review_section,review_section,361,,小区分61030:知能情報学関連,ai-data-science,Inherited proposal mapping
+review_section,review_section,361,,小区分61030:知能情報学関連,information-science,Inherited proposal mapping
+review_section,review_section,362,,小区分61040:ソフトコンピューティング関連,ai-data-science,Inherited proposal mapping
+review_section,review_section,362,,小区分61040:ソフトコンピューティング関連,information-science,Inherited proposal mapping
+review_section,review_section,363,,小区分61050:知能ロボティクス関連,ai-data-science,Inherited proposal mapping
+review_section,review_section,363,,小区分61050:知能ロボティクス関連,electrical-electronics-robotics,Inherited proposal mapping
+review_section,review_section,364,,小区分61060:感性情報学関連,information-science,Inherited proposal mapping
+review_section,review_section,365,,中区分62:応用情報学およびその関連分野,information-science,Inherited proposal mapping
+review_section,review_section,366,,小区分62010:生命、健康および医療情報学関連,information-science,Inherited proposal mapping
+review_section,review_section,367,,小区分62020:ウェブ情報学およびサービス情報学関連,information-science,Inherited proposal mapping
+review_section,review_section,368,,小区分62030:学習支援システム関連,education,Inherited proposal mapping
+review_section,review_section,369,,小区分62040:エンタテインメントおよびゲーム情報学関連,information-science,Inherited proposal mapping
+review_section,review_section,371,,中区分63:環境解析評価およびその関連分野,environmental-science,Inherited proposal mapping
+review_section,review_section,372,,小区分63010:環境動態解析関連,environmental-science,Inherited proposal mapping
+review_section,review_section,376,,中区分64:環境保全対策およびその関連分野,environmental-science,Inherited proposal mapping
+review_section,review_section,381,,小区分64050:循環型社会システム関連,environmental-science,Inherited proposal mapping
+review_section,review_section,382,,小区分64060:環境政策および環境配慮型社会関連,environmental-science,Inherited proposal mapping
+review_section,review_section,810,,合同審査対象区分:小区分01020:中国哲学、印度哲学および仏教学関連、小区分01030:宗教学関連、小区分01040:思想史関連,philosophy-ethics,Inherited proposal mapping
+review_section,review_section,811,,合同審査対象区分:小区分02010:日本文学関連、小区分02020:中国文学関連,literature,Inherited proposal mapping
+review_section,review_section,813,,合同審査対象区分:小区分02060:言語学関連、小区分02080:英語学関連,linguistics,Inherited proposal mapping
+review_section,review_section,814,,合同審査対象区分:小区分02070:日本語学関連、小区分02090:日本語教育関連,,日本語学と日本語教育の合同区分のため、言語学と教育学のどちらかを限定できない
+review_section,review_section,820,,合同審査対象区分:小区分80030:ジェンダー関連、小区分08010:社会学関連,sociology,Inherited proposal mapping
+review_section,review_section,823,,合同審査対象区分:小区分39060:生物資源保全学関連、小区分39070:ランドスケープ科学関連,,ランドスケープ科学を含む合同区分で、保全という語だけで対象を限定しない
+review_section,review_section,828,,合同審査対象区分:小区分60030:統計科学関連、小区分61030:知能情報学関連,ai-data-science,Inherited proposal mapping
+review_section,review_section,829,,合同審査対象区分:小区分60040:計算機システム関連、小区分60090:高性能計算関連,information-science,Inherited proposal mapping
+review_section,review_section,831,,合同審査対象区分:小区分61020:ヒューマンインタフェースおよびインタラクション関連、小区分62040:エンタテインメントおよびゲーム情報学関連,information-science,Inherited proposal mapping
+review_section,review_section_gakuhen,795,,学術変革領域研究区分(Ⅰ),,区分名から30分野への対応を確定できないため未分類
+review_section,review_section_gakuhen,796,,学術変革領域研究区分(Ⅱ),,区分名から30分野への対応を確定できないため未分類
+review_section,review_section_gakuhen,797,,学術変革領域研究区分(Ⅲ),,区分名から30分野への対応を確定できないため未分類
+review_section,review_section_gakuhen,798,,学術変革領域研究区分(Ⅳ),,区分名から30分野への対応を確定できないため未分類
+review_section,review_section_kensuta,383,,0101:思想、芸術およびその関連分野,,思想と芸術の広い区分のため専門を限定できない
+review_section,review_section_kensuta,384,,0102:文学、言語学およびその関連分野,,文学の地域を区別できず言語学だけにも限定できない
+review_section,review_section_kensuta,385,,0103:歴史学、考古学、博物館学およびその関連分野,,歴史学の地域と考古学・博物館学の専門を限定できない
+review_section,review_section_kensuta,386,,0104:地理学、文化人類学、民俗学およびその関連分野,,文化人類学・民俗学も含むため、地理学だけに割り当てない
+review_section,review_section_kensuta,387,,0105:法学およびその関連分野,law,Inherited proposal mapping
+review_section,review_section_kensuta,388,,0106:政治学およびその関連分野,political-science,Inherited proposal mapping
+review_section,review_section_kensuta,389,,0107:経済学、経営学およびその関連分野,,経済学と経営学のどちらかを限定できない
+review_section,review_section_kensuta,390,,0108:社会学およびその関連分野,sociology,Inherited proposal mapping
+review_section,review_section_kensuta,391,,0109:教育学およびその関連分野,education,Inherited proposal mapping
+review_section,review_section_kensuta,392,,0110:心理学およびその関連分野,psychology,Inherited proposal mapping
+review_section,review_section_kensuta,397,,0301:材料力学、生産工学、設計工学、流体工学、熱工学、機械力学、ロボティクス、航空宇宙工学、船舶海洋工学およびその関連分野,,Ambiguous source: no unique domain can be inferred; see FIELD_MAPPING.md
+review_section,review_section_kensuta,398,,0302:電気電子工学およびその関連分野,electrical-electronics-robotics,Inherited proposal mapping
+review_section,review_section_kensuta,399,,0303:土木工学、社会システム工学、安全工学、防災工学およびその関連分野,,区分名から30分野への対応を確定できないため未分類
+review_section,review_section_kensuta,400,,0304:建築学およびその関連分野,architecture-civil-disaster-science,Inherited proposal mapping
+review_section,review_section_kensuta,403,,0403:人間医工学およびその関連分野,medicine-health-science,Inherited proposal mapping
+review_section,review_section_kensuta,406,,0601:農芸化学およびその関連分野,chemistry-materials-nanoscience,"Proposal update: chemistry, chemical engineering, materials, and nanoscience; see FIELD_MAPPING.md"
+review_section,review_section_kensuta,411,,0701:分子レベルから細胞レベルの生物学およびその関連分野,biology-life-science,Inherited proposal mapping
+review_section,review_section_kensuta,412,,0702:細胞レベルから個体レベルの生物学およびその関連分野,biology-life-science,Inherited proposal mapping
+review_section,review_section_kensuta,414,,0704:神経科学、ブレインサイエンスおよびその関連分野,biology-life-science,Inherited proposal mapping
+review_section,review_section_kensuta,415,,0801:薬学およびその関連分野,pharmacy-drug-discovery,Inherited proposal mapping
+review_section,review_section_kensuta,425,,0908:社会医学、看護学およびその関連分野,medicine-health-science,Inherited proposal mapping
+review_section,review_section_kensuta,426,,0909:スポーツ科学、体育、健康科学およびその関連分野,sports-science,Inherited proposal mapping
+review_section,review_section_kensuta,427,,1001:情報科学、情報工学およびその関連分野,information-science,Inherited proposal mapping
+review_section,review_section_kensuta,428,,1002:人間情報学、応用情報学およびその関連分野,information-science,Inherited proposal mapping
+review_section,review_section_kensuta,429,,1101:環境解析評価、環境保全対策およびその関連分野,environmental-science,Inherited proposal mapping
+review_section,review_section_ryoiki,482,,理工系,,数学・物理・化学・一般工学を包括する対応先が30分野にない
+review_section,review_section_ryoiki,483,,生物系,,"Proposal30: merged, expanded, or split by taxonomy; see FIELD_MAPPING.md"
+review_section,review_section_shingaku,477,,人文・社会系,,区分名から30分野への対応を確定できないため未分類
+review_section,review_section_shingaku,478,,理工系,,数学・物理・化学・一般工学を包括する対応先が30分野にない
+review_section,review_section_shingaku,479,,生物系,,"Proposal30: merged, expanded, or split by taxonomy; see FIELD_MAPPING.md"
+review_section,review_section_shingaku,480,,複合領域,,複合という名称だけでは対象分野を特定できない
+review_section,review_section_tokken,492,,小区分02010:日本文学関連,literature,Inherited proposal mapping
+review_section,review_section_tokken,510,,小区分04020:人文地理学関連,geography,Inherited proposal mapping
+review_section,review_section_tokken,511,,小区分04030:文化人類学および民俗学関連,,区分名から30分野への対応を確定できないため未分類
+review_section,review_section_tokken,531,,小区分08010:社会学関連,sociology,Inherited proposal mapping
+review_section,review_section_tokken,542,,小区分10010:社会心理学関連,psychology,Inherited proposal mapping
+review_section,review_section_tokken,544,,小区分10030:臨床心理学関連,psychology,Inherited proposal mapping
+review_section,review_section_tokken,567,,小区分18010:材料力学および機械材料関連,,区分名から30分野への対応を確定できないため未分類
+review_section,review_section_tokken,651,,小区分41020:農業社会構造関連,,区分名から30分野への対応を確定できないため未分類
+review_section,review_section_tokken,751,,小区分60040:計算機システム関連,information-science,Inherited proposal mapping
+review_section,review_section_tokken,758,,小区分61010:知覚情報処理関連,information-science,Inherited proposal mapping
+review_section,review_section_tokken,767,,小区分62040:エンタテインメントおよびゲーム情報学関連,information-science,Inherited proposal mapping
+review_section,review_section_tokken,778,,小区分80010:地域研究関連,regional-studies,Inherited proposal mapping
+review_section,review_section_tokusui,472,,理工系,,数学・物理・化学・一般工学を包括する対応先が30分野にない
+review_section,review_section_tokusui,790,,数物系科学,,区分名から30分野への対応を確定できないため未分類
+review_section,tokusetsu_ryoiki,793,,高度科学技術社会の新局面,,区分名から30分野への対応を確定できないため未分類
