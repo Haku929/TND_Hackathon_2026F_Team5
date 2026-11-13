@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import { neon } from "@neondatabase/serverless";
-import { makeUnknownRuntimeDataHangingPromise } from "next/dist/server/dynamic-rendering-utils";
 
 export async function POST(request: Request) {
   let body: unknown;
@@ -46,39 +45,39 @@ export async function POST(request: Request) {
   LIMIT 3
 `;
 
-        const fields = await Promise.all(
-          field_result.map(async (field) => {
-            const term_result = await sql`
-      SELECT id, field_id, term, description
-      FROM terms
-      WHERE field_id = ${field.id}
-      ORDER BY embedding <=> ${vector}::vector
-      LIMIT 1
-    `;
+        const fields = [];
 
-            const researchers_result = await sql`
-      SELECT
-        r.id,
-        r.name,
-        r.affiliation,
-        r.theme,
-        r.kaken_url,
-        1 - (r.embedding <=> ${vector}::vector) AS score
-      FROM researchers r
-      JOIN researcher_fields rf
-        ON r.id = rf.researcher_id
-      WHERE rf.field_id = ${field.id}
-      ORDER BY r.embedding <=> ${vector}::vector
-      LIMIT 3
-    `;
+        for (const field of field_result) {
+          const term_result = await sql`
+    SELECT id, field_id, term, description
+    FROM terms
+    WHERE field_id = ${field.id}
+    ORDER BY embedding <=> ${vector}::vector
+    LIMIT 1
+  `;
 
-            return {
-              ...field,
-              term: term_result[0] ?? null,
-              researchers: researchers_result,
-            };
-          }),
-        );
+          const researchers_result = await sql`
+    SELECT
+      r.id,
+      r.name,
+      r.affiliation,
+      r.theme,
+      r.kaken_url,
+      1 - (r.embedding <=> ${vector}::vector) AS score
+    FROM researchers r
+    JOIN researcher_fields rf
+      ON r.id = rf.researcher_id
+    WHERE rf.field_id = ${field.id}
+    ORDER BY r.embedding <=> ${vector}::vector
+    LIMIT 3
+  `;
+
+          fields.push({
+            ...field,
+            term: term_result[0] ?? null,
+            researchers: researchers_result,
+          });
+        }
 
         const low_similarity_fields = await sql`
   SELECT
