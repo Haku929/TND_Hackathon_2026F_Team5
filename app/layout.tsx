@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
+import "./ui.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,7 +25,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="ja"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <footer className="ui-sitefoot">
+          <nav className="ui-sitefoot-in" aria-label="サイトの情報">
+            <Link href="/about">このアプリについて</Link>
+          </nav>
+        </footer>
+      </body>
     </html>
   );
 }

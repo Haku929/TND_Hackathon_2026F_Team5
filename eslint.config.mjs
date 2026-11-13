@@ -11,8 +11,9 @@ const eslintConfig = defineConfig([
     ".next/**",
     "out/**",
     "build/**",
+    ".vercel/**",
     "next-env.d.ts",
-    // Local-only file, not part of the project:
+    // 大澤がデプロイに使うvercerlのツール
     ".vercel-undici-fix.cjs",
   ]),
 ]);

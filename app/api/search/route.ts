@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import { neon } from "@neondatabase/serverless";
-import { makeUnknownRuntimeDataHangingPromise } from "next/dist/server/dynamic-rendering-utils";
 
 export async function POST(request: Request) {
   let body: unknown;
@@ -151,28 +150,28 @@ export async function POST(request: Request) {
   WHERE id = ANY(${field_ids})
 `;
 
-        const fields = await Promise.all(
-          field_ids.map(async (field_id, index) => {
-            const field = field_rows.find((row) => row.id === field_id);
-            const term_result = await sql`
-      SELECT id, field_id, term, description
-      FROM terms
-      WHERE field_id = ${field_id}
-      ORDER BY embedding <=> ${vector}::vector
-      LIMIT 1
-    `;
+        const fields = [];
 
-            return {
-              ...field,
-              term: term_result[0] ?? null,
-              researchers: picks[index].map((pick) => ({
-                ...researcher_by_id.get(pick.researcher_id),
-                project_id: pick.project_id,
-                score: pick.score,
-              })),
-            };
-          }),
-        );
+        for (const [index, field_id] of field_ids.entries()) {
+          const field = field_rows.find((row) => row.id === field_id);
+          const term_result = await sql`
+    SELECT id, field_id, term, description
+    FROM terms
+    WHERE field_id = ${field_id}
+    ORDER BY embedding <=> ${vector}::vector
+    LIMIT 1
+  `;
+
+          fields.push({
+            ...field,
+            term: term_result[0] ?? null,
+            researchers: picks[index].map((pick) => ({
+              ...researcher_by_id.get(pick.researcher_id),
+              project_id: pick.project_id,
+              score: pick.score,
+            })),
+          });
+        }
 
         const low_similarity_fields = await sql`
   SELECT
