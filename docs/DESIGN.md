@@ -74,7 +74,7 @@ sequenceDiagram
 | 項目 | 内容 |
 | --- | --- |
 | 次元数 | 384 |
-| 接頭辞 | 問いに `query: `、分野・用語・研究テーマに `passage: ` |
+| 接頭辞 | 問いに `query: `、分野・用語・研究課題のテキストに `passage: ` |
 | 確認すること | 量子化版（q8 など）のファイルサイズが初回読み込みの予算（120MB 以内）に収まるか。スマートフォンでの読み込み時間と速度 |
 
 - 検索する側とされる側で決まった接頭辞を付ける（上の表）。接頭辞と正規化のルールは `shared/embedding.json` のような設定ファイル 1 つにまとめ、Python と TypeScript の両方から読む。
@@ -91,8 +91,8 @@ Python のスクリプトで、次の順に処理する。結果は DB に投入
 2. **研究者の整理**：研究課題を研究者ごとにまとめ、研究テーマの文章（課題名 + キーワード + 概要）を作る。
 3. **分野付け**：KAKEN の審査区分・研究分野を、デモで扱う約 30 分野に対応表で割り当てる。LLM は使わず、対応表（`data/field_map.csv`）による手続きで行う。
 4. **分野カードの読み込み**：事前に用意した分野カード（`data/fields.yaml`）を読み込む。
-5. **埋め込み計算**：研究テーマ・分野の説明・用語をそれぞれベクトルにする。
-6. **投入**：DB に書き込む。
+5. **埋め込み計算**：分野・用語をベクトルにする。研究者は課題ごとのタイトル・キーワード・概要を原文で作り、512トークンを超える課題だけtokenizerの文字境界で分割する。分割は重複・切り捨てなしとし、同じ課題本文のベクトルは一度だけ計算して複数の研究者に共有する。画面表示用の研究者 `theme` 原文は変更しない。
+6. **投入**：`researcher_chunks` を使う検索APIの前に、既存DBへ追加テーブルのmigrationを適用してからデータをDB に書き込む。今回のmigrationはテーブルの追加だけを行い、既存DBの行や列は削除しない。
 
 分野カードの形式（例）：
 
@@ -141,7 +141,17 @@ create table researchers (
   affiliation text not null,               -- 学部・学科
   theme       text not null,               -- 画面に出す研究テーマ
   kaken_url   text not null,
-  embedding   vector(384) not null
+  embedding   vector(384) not null         -- NOT NULL互換用に先頭チャンクを保存。通常検索には使わない
+);
+
+-- 研究課題ごとのテキストチャンク
+create table researcher_chunks (
+  researcher_id text not null references researchers(id),
+  project_id    text not null,
+  chunk_index   integer not null check (chunk_index >= 0),
+  content       text not null,
+  embedding     vector(384) not null,
+  primary key (researcher_id, project_id, chunk_index)
 );
 
 -- 先生と分野の対応（1 人が複数分野に属することがある）
@@ -196,7 +206,9 @@ create table researcher_fields (
 1. 全分野を、問いのベクトルとの近さで並べる。
 2. 上位 3 分野を選ぶ（一致度の高い分野）。
 3. 残りの 2 枠は、4〜10 位から「上位 3 分野と互いに似ていない」分野を選ぶ（「わざと隣の分野も見せる」、仕様 F-6）。分野どうしの似ていなさは分野ベクトルどうしの距離で測る。
-4. 各分野で、問いに最も近い用語を 1 つ、最も近い先生を最大 3 人取る。
+4. 各分野で、問いに最も近い用語を 1 つ、研究課題チャンクの最大類似度が高い先生を最大 3 人取る。チャンクがない既存デモデータは、互換用 `researchers.embedding` の類似度を使う。
+
+既存DBでは `db/migrations/20261111_add_researcher_chunks.sql` をAPI利用前に実行する。これは `researcher_chunks` の追加だけを行い、既存データを変更・削除しない。
 
 ### 入力の検証
 

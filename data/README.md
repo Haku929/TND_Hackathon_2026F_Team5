@@ -35,7 +35,7 @@ npx prettier --write data/researchers.json
 
 2026-11-05の整理結果は、研究者1,201人、参画課題3,374件（重複除去後）、研究者と課題の組み合わせ4,332件です。検索結果5,860課題・2,925人をIDで照合してから現在所属を判定しました。現在所属の1,407人のうち、対象課題への有効な参画記録がなかった206人は収録していません。取得・除外条件と欠損件数は [KAKEN_API.md](../docs/KAKEN_API.md#9-検証結果と未測定事項) にあります。
 
-`researchers.json` の `coverage` に取得総数・重複除去後の件数・除外理由、`researchers` に名前・所属・研究テーマ・課題ごとの出典・役割・分類情報を保存しています。テーマは課題名・キーワード・概要を連結した原文で、要約や翻訳はしていません。分野付け・埋め込みは未実施で、#22・#23の入力として使います。384次元ベクトルを含む3分野の画面確認用データは、前述の `sample.json` を使ってください。
+`researchers.json` の `coverage` に取得総数・重複除去後の件数・除外理由、`researchers` に名前・所属・研究テーマ・課題ごとの出典・役割・分類情報を保存しています。テーマは課題名・キーワード・概要を連結した原文で、要約や翻訳はしていません。分野付け・埋め込みは後述のスクリプトで行い、元の研究者JSONは変更しません。384次元ベクトルを含む3分野の画面確認用データは、前述の `sample.json` を使ってください。
 
 APIが提供する概要は保持し、報告書PDFの全文は取得・利用しません。概要の種類だけを理由に一律削除する方針にはしていません。ただしAPIで取得できることは利用許諾の保証ではなく、著作物と明示された一部の旧報告書等には別条件があります。個別の著作権表示・利用条件の照合は未完了です。[KAKEN利用規程](https://support.nii.ac.jp/ja/kaken/about/terms)に従い、出典と加工した旨を記載してください。
 
@@ -58,3 +58,38 @@ python -m unittest discover -s data -p test_assign_fields.py -v
 出力は `researcher_fields.json`（研究者IDと分野IDの組）、`field_mapping_report.json`（件数・未分類者・使用した分類）、`field_mapping_report.md`（一覧）です。入力の `researchers.json` は変更しません。研究者のうち1,157人／1,201人（96.3%）に分野が付き、44人が未分類でした。対応方法と制約は [FIELD_MAPPING.md](FIELD_MAPPING.md) を参照してください。
 
 `sample.json` は旧3分野の画面確認用データとして独立しています。本番データを投入する #23 では、新しい `fields_catalog.json` のIDと `researcher_fields.json` を組にして使用してください。
+
+## 埋め込み計算（#23）
+
+`embed_data.py` は `researchers.json`、`fields.yaml`、`researcher_fields.json` と `shared/embedding.json` を読み、DBの各テーブル用データを作ります。モデルは設定ファイルの `Xenova/multilingual-e5-small` を使い、Hugging Faceの現在のrevision SHAに固定して `onnx/model_quantized.onnx` をCPUで実行します。トークン化には、同じrevisionの `tokenizer.json` をRust実装の`tokenizers`で読み込みます。
+
+```powershell
+python -m pip install -r data/requirements-embedding.txt
+python data/embed_data.py
+```
+
+HFキャッシュは `data/raw/model_cache/hub/`、出力は旧 `embeddings.json` を残したまま `data/raw/embeddings_chunked.json` に作られます。分野・用語が512トークンを超えたらエラーにし、研究者は課題ごとのタイトル・キーワード・概要をtokenizerの文字境界で分割します。分割は重複・切り捨てなしで、各断片は接頭辞とspecial token込みで512トークン以下です。課題本文とベクトルは課題IDごとに一度計算し、研究者との対応行へ展開します。
+分割では原文を保持し、末尾の句点だけのchunkを作りません。記号だけのchunkは生成時とloaderで拒否するため、既存の不良な `embeddings_chunked.json` は再生成が必要です。
+
+出力は `fields`、`terms`、`researchers`、`researcher_fields`、`researcher_chunks` の5配列です。研究者の `theme` 原文は保持し、NOT NULLの `researchers.embedding` には先頭チャンクのベクトルを入れます。新しい検索は `researcher_chunks` の最大類似度を使います。メタデータにはモデル・入力のハッシュ、ライブラリのバージョン、分割方式、固有課題数・計算チャンク数・保存チャンク数、切り捨て数（0）を記録します。出力は計算が成功した後に置き換わるため、失敗時は既存の正式出力を保ちます。
+
+新しい検索APIを使う前に、既存DBへ [`db/migrations/20261111_add_researcher_chunks.sql`](../db/migrations/20261111_add_researcher_chunks.sql) を実行してください。移行SQLは追加テーブルだけを作成します。テーブル未作成のままではAPIの研究者検索が失敗します。
+
+### DBへの投入（#23 Phase 2）
+
+```powershell
+python -m pip install -r data/requirements-db.txt
+python data/load_data.py
+```
+
+引数なしはDBを読取専用で調べるdry-runです。URLは環境変数 `DATABASE_URL`、リポジトリの `.env.local`、`.env` の順に読みます。モデル設定・4入力ファイルのハッシュ・5配列・参照・ベクトル次元と正規化をDB接続前に検証します。差分表示は表ごとの追加・更新対象・削除候補の件数だけで、既存値との一致は比較しません。
+
+実反映は `python data/load_data.py --apply` です。削除候補があると、`--prune` がない限り一切書き込みません。承認済みの削除も含めて同期する場合は `python data/load_data.py --apply --prune` を使います。実反映前にDBにある対象表の全行を日時付きJSONで `data/raw/` に保存し、追加テーブルのmigration・同期・件数確認を1トランザクションで行います。成功時にバックアップファイル名を表示します。行データは失敗時にrollbackしますが、PostgreSQLのserial採番値を直した後で失敗した場合は、採番値に欠番が残ることがあります。
+
+通信なしで動く投入scriptのテスト:
+
+```powershell
+python -m unittest discover -s data -p test_load_data.py -v
+```
+
+最大類似度で順位を付けるため、課題数・分割数の多い研究者は高いスコアを得る機会も増えます。分割による検索精度の改善は、従来方式との比較と人の判定で別途確認します。
