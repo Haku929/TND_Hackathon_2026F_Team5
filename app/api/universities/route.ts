@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { connection, NextResponse } from "next/server";
 import { neon } from "@neondatabase/serverless";
 import { DEFAULT_UNIVERSITY_ID, isKnownUniversity } from "@/lib/universities";
 
@@ -10,6 +10,9 @@ const CACHE_MS = 60_000;
 let cache: { at: number; enabled: string[] } | null = null;
 
 export async function GET() {
+  // リクエストのたびに実行する。これがないと、ビルドのときに 1 回だけ実行されて、その結果が配られ続け、
+  // DB に大学のデータを入れても、選べる大学が増えない（本番で確認した）
+  await connection();
   if (cache && Date.now() - cache.at < CACHE_MS) {
     return NextResponse.json(
       { enabled: cache.enabled },
