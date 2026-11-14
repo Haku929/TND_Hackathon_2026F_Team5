@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
-import Script from "next/script";
 import "./globals.css";
 import "./ui.css";
 
@@ -25,14 +24,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="ja"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
-        <Script
-          id="theme-bootstrap"
-          src="/theme-bootstrap.js"
-          strategy="beforeInteractive"
-        />
         {children}
         <footer className="ui-sitefoot">
           <nav className="ui-sitefoot-in" aria-label="サイトの情報">
