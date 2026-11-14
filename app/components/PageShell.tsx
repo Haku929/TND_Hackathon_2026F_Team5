@@ -7,31 +7,51 @@ export default function PageShell({
   title,
   backLabel = "もどる",
   showBack = true,
+  onBack,
   showNotice = true,
   showSource = false,
+  hero = false,
   children,
 }: {
   kicker: string;
   title: string;
   backLabel?: string;
   showBack?: boolean;
+  // 指定すると、戻るリンクの代わりに、その場で呼ばれるボタンになる（検索を取りやめるときなど）
+  onBack?: () => void;
   showNotice?: boolean;
   // 先生・分野のデータを出す画面では、出典（KAKEN）を載せる
   showSource?: boolean;
+  // 入口の画面だけ、題名を大きくする
+  hero?: boolean;
   children: ReactNode;
 }) {
   return (
     <div className="ui-page">
       <main className="ui-main">
-        {showBack ? (
-          <Link href="/" className="ui-back">
-            ← {backLabel}
+        <div className="ui-topbar">
+          {onBack ? (
+            <button className="ui-back" onClick={onBack} type="button">
+              ← {backLabel}
+            </button>
+          ) : showBack ? (
+            <Link href="/" className="ui-back">
+              ← {backLabel}
+            </Link>
+          ) : (
+            <span />
+          )}
+          <Link href="/" className="ui-brand" aria-label="問学（トップへ）">
+            <span className="ui-seal" aria-hidden="true">
+              問
+            </span>
+            <span className="ui-brand-name">問学</span>
           </Link>
-        ) : (
-          <div className="ui-back-space" />
-        )}
+        </div>
         <p className="ui-kicker">{kicker}</p>
-        <h1 className="ui-title">{title}</h1>
+        <h1 className={hero ? "ui-title ui-title-hero" : "ui-title"}>
+          {title}
+        </h1>
         {children}
         {showNotice && (
           <footer className="ui-foot">

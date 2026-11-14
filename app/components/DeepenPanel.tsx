@@ -81,7 +81,11 @@ export default function DeepenPanel(props: PromptInput) {
       <div className="ui-quote">
         <div className="ui-quote-bar">
           <span className="ui-quote-label">質問文</span>
-          <button type="button" onClick={copy} className="ui-copy">
+          <button
+            type="button"
+            onClick={copy}
+            className={status === "copied" ? "ui-copy is-done" : "ui-copy"}
+          >
             {status === "copied" ? (
               <>
                 <Icon>

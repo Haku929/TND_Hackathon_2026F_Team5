@@ -3,8 +3,8 @@
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7f2e8;
+  --foreground: #22201c;
   color-scheme: light;
 }
 
@@ -16,8 +16,8 @@
 }
 
 :root[data-theme="dark"] {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --background: #171512;
+  --foreground: #ebe4d4;
   color-scheme: dark;
 }
 
@@ -27,36 +27,33 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* 視覚デザイン方針（docs/VISUAL_DESIGN.md）の色。新しい画面はこれを使う */
+/* 色は「紙・墨・朱」の 3 系統。朱は小さな印（強調・AI のタグ・先生の学部）にだけ使う */
 :root {
-  --ui-bg: #fdfcfa;
-  --ui-ink: #2b2a28;
-  --ui-muted: #6a6761;
-  --ui-line: #e8e6e1;
-  --ui-callout: #f3f1ec;
-  --ui-link: #2f5d9b;
-  --ui-outer-bg: #2b2a28;
-  --ui-outer-ink: #f4f2ee;
-  --ui-outer-line: #5b5853;
-  /* 世界（分野）は青、人（先生）は橙。小さなタグだけに使う */
-  --ui-blue-bg: #dde8f4;
-  --ui-blue-ink: #1d3f66;
-  --ui-warm-bg: #fbe3d0;
-  --ui-warm-ink: #6b2e0b;
+  --ui-bg: #f7f2e8;
+  --ui-ink: #22201c;
+  --ui-muted: #6e675b;
+  --ui-line: #ddd2bd;
+  --ui-callout: #efe7d6;
+  --ui-link: #8f2d1f;
+  --ui-accent: #b5342a;
+  --ui-accent-soft: #f2dcd0;
+  --ui-accent-ink: #7c2418;
+  --ui-outer-bg: #22201c;
+  --ui-outer-ink: #f3ecdc;
+  --ui-outer-line: #5a554b;
 }
 
 :root[data-theme="dark"] {
-  --ui-bg: #1c1b1a;
-  --ui-ink: #e6e3dd;
-  --ui-muted: #9a968e;
-  --ui-line: #34322f;
-  --ui-callout: #262523;
-  --ui-link: #8fb4ea;
-  --ui-outer-bg: #ece9e3;
-  --ui-outer-ink: #1e1d1b;
-  --ui-outer-line: #b9b5ad;
-  --ui-blue-bg: #22364d;
-  --ui-blue-ink: #bbd3f0;
-  --ui-warm-bg: #4a2e1c;
-  --ui-warm-ink: #f5cba8;
+  --ui-bg: #171512;
+  --ui-ink: #ebe4d4;
+  --ui-muted: #a0988a;
+  --ui-line: #35312a;
+  --ui-callout: #211e1a;
+  --ui-link: #e58b78;
+  --ui-accent: #e0604f;
+  --ui-accent-soft: #3d231c;
+  --ui-accent-ink: #f2b9a8;
+  --ui-outer-bg: #ebe4d4;
+  --ui-outer-ink: #1d1b17;
+  --ui-outer-line: #b8b0a0;
 }
