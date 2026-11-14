@@ -7,7 +7,7 @@ const csp = `script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' ${ort}`;
 
 const nextConfig: NextConfig = {
   /* config options here */
-  allowedDevOrigins: ["127.0.0.1", "192.168.1.122"],
+  allowedDevOrigins: ["127.0.0.1"],
   cacheComponents: true,
   partialPrefetching: true,
   turbopack: {
