@@ -365,7 +365,8 @@ def main(argv=None):
     HF_CACHE_DIR.mkdir(parents=True, exist_ok=True)
     from huggingface_hub import hf_hub_download, model_info
 
-    revision = model_info(model_id, revision="main", token=False).sha
+    # shared/embedding.json の revision に固定する（ブラウザのモデルと、同じ版にそろえる）
+    revision = config.get("revision") or model_info(model_id, revision="main", token=False).sha
     if not isinstance(revision, str) or not re.fullmatch(r"[0-9a-f]{40}", revision):
         raise ValueError("Hugging Face did not return a valid model revision SHA")
     cache_dir = str(HF_CACHE_DIR)

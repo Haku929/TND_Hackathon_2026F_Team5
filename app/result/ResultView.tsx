@@ -22,7 +22,7 @@ import {
   type SearchResearcher,
   type SearchResults,
 } from "@/lib/result";
-import { universityName } from "@/lib/universities";
+import { UNIVERSITIES, universityName } from "@/lib/universities";
 
 function subscribe() {
   return () => {};
@@ -81,6 +81,13 @@ export default function ResultView() {
 }
 
 // 先生 1 人。見出し（名前・学部・テーマの第一文）は常に見え、開くと詳しく読める
+// 所属の表示から、大学名を取る（「立命館大学 理工学部 教授」→「理工学部 教授」）。
+// 大学は、見出し（「〇〇大学で学べる先生」）で分かるので、先生の横には要らない
+function withoutUniversity(affiliation: string) {
+  const name = UNIVERSITIES.find((u) => affiliation.startsWith(u.name))?.name;
+  return name ? affiliation.slice(name.length).trim() : affiliation;
+}
+
 function Person({ researcher }: { researcher: SearchResearcher }) {
   const projects = parseResearchTheme(researcher.theme);
   const theme = projects[0]?.firstSentence ?? "";
@@ -98,9 +105,9 @@ function Person({ researcher }: { researcher: SearchResearcher }) {
         <summary>
           <span className="ui-who">
             <span>{researcher.name} 先生</span>
-            {researcher.affiliation && (
+            {withoutUniversity(researcher.affiliation) && (
               <span className="ui-tag ui-tag-warm">
-                {researcher.affiliation}
+                {withoutUniversity(researcher.affiliation)}
               </span>
             )}
           </span>
