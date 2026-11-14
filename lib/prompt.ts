@@ -57,7 +57,10 @@ export function buildPrompt({
   const lines = [
     "最近、こんなことが気になっています。",
     cleanQuestion(question),
-    `${fieldText}では「${termText}」という言葉で語られるそうです。`,
+    // 呼び名が無い分野では、この一文を省く
+    termText
+      ? `${fieldText}では「${termText}」という言葉で語られるそうです。`
+      : `${fieldText}について気になっています。`,
     "",
   ];
 
@@ -65,7 +68,8 @@ export function buildPrompt({
   const items = teachers
     .map((t) => ({
       name: cleanLine(t.name, MAX_NAME),
-      theme: cleanLine(t.theme, MAX_THEME),
+      // カッコの中なので、文末の句点は取る
+      theme: cleanLine(t.theme, MAX_THEME).replace(/[。．]$/, ""),
     }))
     .filter((t) => t.name);
 

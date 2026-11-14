@@ -38,6 +38,11 @@ body {
   --ui-outer-bg: #2b2a28;
   --ui-outer-ink: #f4f2ee;
   --ui-outer-line: #5b5853;
+  /* 世界（分野）は青、人（先生）は橙。小さなタグだけに使う */
+  --ui-blue-bg: #dde8f4;
+  --ui-blue-ink: #1d3f66;
+  --ui-warm-bg: #fbe3d0;
+  --ui-warm-ink: #6b2e0b;
 }
 
 :root[data-theme="dark"] {
@@ -50,4 +55,8 @@ body {
   --ui-outer-bg: #ece9e3;
   --ui-outer-ink: #1e1d1b;
   --ui-outer-line: #b9b5ad;
+  --ui-blue-bg: #22364d;
+  --ui-blue-ink: #bbd3f0;
+  --ui-warm-bg: #4a2e1c;
+  --ui-warm-ink: #f5cba8;
 }
