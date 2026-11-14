@@ -37,6 +37,8 @@ export const RESULT_STORAGE_KEY = "search-result";
 
 export type StoredResult = {
   question: string;
+  // 検索した大学の id（古い保存データには無いので、読むときに既定の大学にする）
+  university: string;
   results: SearchResults;
 };
 
@@ -134,14 +136,18 @@ export function parseStoredResult(raw: string | null): StoredResult | null {
   try {
     const v: unknown = JSON.parse(raw);
     if (typeof v !== "object" || v === null) return null;
-    const { question, results } = v as Record<string, unknown>;
+    const { question, results, university } = v as Record<string, unknown>;
     if (typeof question !== "string") return null;
     if (typeof results !== "object" || results === null) return null;
     const r = results as Record<string, unknown>;
     if (!Array.isArray(r.fields) || !Array.isArray(r.low_similarity_fields)) {
       return null;
     }
-    return { question, results: results as SearchResults };
+    return {
+      question,
+      results: results as SearchResults,
+      university: typeof university === "string" ? university : "ritsumei",
+    };
   } catch {
     return null;
   }

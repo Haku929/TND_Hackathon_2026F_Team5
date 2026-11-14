@@ -275,11 +275,38 @@ def _write_json(path, value):
     temporary.replace(path)
 
 
-def main():
+EXTRA_MAPPING_PATH = None  # 他大学のために足した対応表（data/extend_field_map.py が作る）
+
+
+def configure_university(slug):
+    """立命館大学以外の大学: 入力・出力を data/universities/<slug>/ にし、拡張した対応表も使う。"""
+    global INPUT_PATH, OUTPUT_PATH, REPORT_JSON_PATH, REPORT_MD_PATH, EXTRA_MAPPING_PATH
+    if slug == "ritsumei":
+        return
+    extra = DATA_DIR / "field_map_extra.csv"
+    EXTRA_MAPPING_PATH = extra if extra.exists() else None
+    directory = DATA_DIR / "universities" / slug
+    INPUT_PATH = directory / "researchers.json"
+    OUTPUT_PATH = directory / "researcher_fields.json"
+    REPORT_JSON_PATH = directory / "field_mapping_report.json"
+    REPORT_MD_PATH = directory / "field_mapping_report.md"
+
+
+def main(argv=None):
+    import argparse
+
+    parser = argparse.ArgumentParser(description="研究者に分野を付ける")
+    parser.add_argument("--university", default="ritsumei", help="対象の大学の slug（立命館大学以外は data/universities/<slug>/）")
+    configure_university(parser.parse_args(argv).university)
     input_data = json.loads(INPUT_PATH.read_text(encoding="utf-8"))
     researchers = input_data["researchers"]
     catalog = load_catalog()
     mappings = load_mapping(MAPPING_PATH, catalog)
+    if EXTRA_MAPPING_PATH is not None:
+        for key, entry in load_mapping(EXTRA_MAPPING_PATH, catalog).items():
+            if key in mappings:
+                raise MappingError("field_map_extra.csv overlaps field_map.csv")
+            mappings[key] = entry
     output, report = build_outputs(researchers, mappings, catalog)
     _write_json(OUTPUT_PATH, output)
     _write_json(REPORT_JSON_PATH, report)

@@ -17,6 +17,24 @@ DATA_DIR = ROOT / "data"
 RAW_DIR = DATA_DIR / "raw"
 HF_CACHE_DIR = RAW_DIR / "model_cache" / "hub"
 OUTPUT_PATH = RAW_DIR / "embeddings_chunked.json"
+# 入力（researchers.json / researcher_fields.json）の置き場所。立命館大学は、従来どおり data/ の直下
+INPUT_DIR = DATA_DIR
+# 先生が所属する大学の id と、先生の ID の前に付ける印（他大学の先生の ID を、立命館大学と区別する）
+UNIVERSITY_ID = "ritsumei"
+ID_PREFIX = ""
+
+
+def configure_university(slug):
+    """立命館大学以外の大学を作るとき。入力は data/universities/<slug>/、出力は data/raw/<slug>/。"""
+    global INPUT_DIR, OUTPUT_PATH, UNIVERSITY_ID, ID_PREFIX
+    if slug == "ritsumei":
+        return
+    if not re.fullmatch(r"[a-z][a-z0-9]*", slug):
+        raise ValueError("university slug must be lowercase letters and digits")
+    INPUT_DIR = DATA_DIR / "universities" / slug
+    OUTPUT_PATH = RAW_DIR / slug / "embeddings_chunked.json"
+    UNIVERSITY_ID = slug
+    ID_PREFIX = f"{slug}:"
 BATCH_SIZE = 4
 ONNX_FILENAME = "onnx/model_quantized.onnx"
 
@@ -107,15 +125,22 @@ def validate_inputs(fields, researchers, researcher_fields):
 def _read_inputs():
     import yaml
 
-    researchers_data = json.loads((DATA_DIR / "researchers.json").read_text(encoding="utf-8"))
+    researchers_data = json.loads((INPUT_DIR / "researchers.json").read_text(encoding="utf-8"))
     researcher_fields_data = json.loads(
-        (DATA_DIR / "researcher_fields.json").read_text(encoding="utf-8")
+        (INPUT_DIR / "researcher_fields.json").read_text(encoding="utf-8")
     )
     fields = yaml.safe_load((DATA_DIR / "fields.yaml").read_text(encoding="utf-8"))
     if not isinstance(researchers_data, dict) or not isinstance(researcher_fields_data, dict):
         raise ValueError("researcher inputs must be JSON objects")
     researchers = researchers_data.get("researchers")
     researcher_fields = researcher_fields_data.get("researcher_fields")
+    if ID_PREFIX:
+        # 他大学の先生の ID には、大学の印を付ける（KAKEN の研究者番号が、立命館大学の先生と重ならないように）。
+        # 画面の KAKEN へのリンク（kaken_url）は、元の研究者番号から作られているので、そのまま使える
+        researchers = [{**row, "id": ID_PREFIX + row["id"]} for row in researchers]
+        researcher_fields = [
+            {**row, "researcher_id": ID_PREFIX + row["researcher_id"]} for row in researcher_fields
+        ]
     validate_inputs(fields, researchers, researcher_fields)
     return fields, researchers, researcher_fields
 
@@ -318,7 +343,17 @@ def _write_output_atomically(data):
             temp_path.unlink(missing_ok=True)
 
 
-def main():
+def main(argv=None):
+    import argparse
+
+    parser = argparse.ArgumentParser(description="先生・分野・用語の埋め込みを計算する")
+    parser.add_argument(
+        "--university",
+        default="ritsumei",
+        help="対象の大学の slug。立命館大学以外は、data/universities/<slug>/ を入力に使う",
+    )
+    args = parser.parse_args(argv)
+    configure_university(args.university)
     fields, researchers, researcher_fields = _read_inputs()
     config = json.loads((ROOT / "shared" / "embedding.json").read_text(encoding="utf-8"))
     model_id = config["model"]
@@ -447,9 +482,9 @@ def main():
     ]
 
     input_files = {
-        "researchers.json": DATA_DIR / "researchers.json",
+        "researchers.json": INPUT_DIR / "researchers.json",
         "fields.yaml": DATA_DIR / "fields.yaml",
-        "researcher_fields.json": DATA_DIR / "researcher_fields.json",
+        "researcher_fields.json": INPUT_DIR / "researcher_fields.json",
         "shared/embedding.json": ROOT / "shared" / "embedding.json",
     }
     output = {
@@ -498,6 +533,7 @@ def main():
         ],
         "researchers": [
             {key: row[key] for key in ("id", "name", "affiliation", "theme", "kaken_url")}
+            | ({"university_id": UNIVERSITY_ID} if ID_PREFIX else {})
             | {"embedding": researcher_embedding_by_id[row["id"]]}
             for row in researchers
         ],

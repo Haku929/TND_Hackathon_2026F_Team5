@@ -22,6 +22,7 @@ import {
   type SearchResearcher,
   type SearchResults,
 } from "@/lib/result";
+import { universityName } from "@/lib/universities";
 
 function subscribe() {
   return () => {};
@@ -70,7 +71,13 @@ export default function ResultView() {
     );
   }
 
-  return <ResultBody question={stored.question} results={stored.results} />;
+  return (
+    <ResultBody
+      question={stored.question}
+      results={stored.results}
+      university={stored.university}
+    />
+  );
 }
 
 // 先生 1 人。見出し（名前・学部・テーマの第一文）は常に見え、開くと詳しく読める
@@ -118,11 +125,14 @@ function Person({ researcher }: { researcher: SearchResearcher }) {
               </details>
             </dd>
           )}
-          <dd>
-            <a href={researcher.kaken_url} rel="noreferrer" target="_blank">
-              KAKEN で研究者ページを見る ↗
-            </a>
-          </dd>
+          {/* データ由来の URL なので、https:// で始まるときだけ、リンクにする（javascript: などを通さない） */}
+          {researcher.kaken_url.startsWith("https://") && (
+            <dd>
+              <a href={researcher.kaken_url} rel="noreferrer" target="_blank">
+                KAKEN で研究者ページを見る ↗
+              </a>
+            </dd>
+          )}
         </dl>
       </details>
     </li>
@@ -136,8 +146,10 @@ function FieldPanel({
   panelId,
   switched,
   leaving,
+  university,
 }: {
   field: SearchField;
+  university: string;
   question: string;
   tabId: string;
   panelId: string;
@@ -176,7 +188,7 @@ function FieldPanel({
         {field.misconception}
       </div>
 
-      <h3>この大学で学べる先生</h3>
+      <h3>{universityName(university)}で学べる先生</h3>
       {field.researchers.length === 0 ? (
         <p className="ui-sub">先生の情報はまだありません。</p>
       ) : (
@@ -243,6 +255,7 @@ function FieldPanel({
           <DeepenPanel
             hideTitle
             key={openCount}
+            university={universityName(university)}
             question={question}
             field={field.name}
             term={field.term?.term ?? ""}
@@ -263,9 +276,11 @@ const PANEL_LEAVE_MS = 140;
 function ResultBody({
   question,
   results,
+  university,
 }: {
   question: string;
   results: SearchResults;
+  university: string;
 }) {
   // 検索中の画面から続いて来たか（上は動かさず、下だけを動かして入れる）
   const [continued] = useState(readFromSearch);
@@ -417,6 +432,7 @@ function ResultBody({
 
             {selectedField && (
               <FieldPanel
+                university={university}
                 switched={switched}
                 // 分野を切り替えたら「深める」は閉じた状態に戻す
                 key={selectedField.id}
