@@ -47,11 +47,11 @@ gantt
 | --- | --- | --- | --- |
 | ✅ 完了 | 10/28（水） | MTG | 案・役割分担・対象大学（立命館大学）が決まっている（決定済み） |
 | ✅ 完了 | 11/1（日） | 中間発表 | 30 分野とモデルを決め、問いと研究課題が結びつくことを確かめている。スライドに背景・テーマ・開発計画・役割分担がある |
-| 未完了 | 11/7（土） | 一通り動く | 数分野で 4 段階が端から端まで動き、Vercel 上で触れる |
-| 未完了 | 11/8（日）20:00 | MTG | 各自「一通り動く」の担当分を終えている。結合の状況と、11/9 以降の分担を確認する |
-| 未完了 | 11/11（水） | 機能凍結 | 30 分野と立命館大学のデータが入り、P0・P1 の機能がそろっている。以降はバグ修正とテストのみ |
-| 未完了 | 11/14（土）13:00 | 提出 | README が完成し、リポジトリ URL を提出済み |
-| 未完了 | 11/15（日） | 最終発表 | 発表用 PC でデモが動く |
+| ✅ 完了 | 11/7（土） | 一通り動く | 数分野で 4 段階が端から端まで動き、Vercel 上で触れる |
+| ✅ 完了 | 11/8（日）20:00 | MTG | 各自「一通り動く」の担当分を終えている。結合の状況と、11/9 以降の分担を確認する |
+| ✅ 完了 | 11/11（水） | 機能凍結 | 30 分野と立命館大学のデータが入り、P0・P1 の機能がそろっている。以降はバグ修正とテストのみ |
+| ✅ 完了 | 11/14（土）13:00 | 提出 | README が完成し、リポジトリ URL を提出済み |
+| 当日 | 11/15（日） | 最終発表 | 発表用 PC でデモが動く |
 
 ## タスク一覧
 
@@ -78,40 +78,40 @@ gantt
 | ✅ 完了 | T-S3 | — | Issue・PR のテンプレートと開発環境の雛形をマージする（[PR #3](https://github.com/Haku929/TND_Hackathon_2026F_Team5/pull/3)） | P0 | 河合 | 10/28 | — |
 | ✅ 完了 | T-S5 | — | タスク一覧を GitHub Issues に登録する（#4〜#37） | P0 | 河合 | 10/28 | — |
 | ✅ 完了 | T-S4 | [#13](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/13) | `main` のブランチ保護 → 無料プランの非公開リポジトリでは設定できないため、保護なしで運用する（PR を経由し、CI が落ちた PR はマージしない） | P0 | 河合 | 11/1 | — |
-| 未完了 | T-S6 | [#14](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/14) | Vercel・Neon をどのアカウントに置くかを決める。Vercel の無料プラン（Hobby）は非公開リポジトリでの共同開発に対応しておらず、オーナー以外のコミットはデプロイされない。リポジトリを公開にするか、オーナーのコミットだけでデプロイするか、有料プランにするかを選ぶ。無料枠と、超えたときの費用も確かめる | P0 | 大澤 | 11/1 | — |
+| ✅ 完了 | T-S6 | [#14](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/14) | Vercel・Neon をどのアカウントに置くかを決める。Vercel の無料プラン（Hobby）は非公開リポジトリでの共同開発に対応しておらず、オーナー以外のコミットはデプロイされない。リポジトリを公開にするか、オーナーのコミットだけでデプロイするか、有料プランにするかを選ぶ。無料枠と、超えたときの費用も確かめる | P0 | 大澤 | 11/1 | — |
 
 ### 開発（11/2〜11/11）
 
 | 状態 | ID | Issue | タスク | 優先度 | 担当 | 期限 | 依存 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 未完了 | T-10 | [#15](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/15) | ダミーの先生データ（JSON）を作る | P0 | 上原 | 11/2 | — |
-| 未完了 | T-11 | [#16](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/16) | 埋め込みの共有設定（`shared/embedding.json`）と、ブラウザの埋め込み処理（Web Worker） | P0 | 高橋 | 11/4 | T-04 |
-| 未完了 | T-12 | [#17](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/17) | 検索 API（分野・用語・先生の取得、隣の分野の選び方） | P0 | 大澤 | 11/6 | T-06 |
-| 未完了 | T-13 | [#18](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/18) | 画面：問いの入力（読み込み中も入力できる） | P0 | 高橋 | 11/5 | T-11 |
-| 未完了 | T-14 | [#19](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/19) | 画面：結果（分野タブ・分野カード・先生の折りたたみ） | P0 | 高橋 | 11/7 | T-12 |
-| 未完了 | T-15 | [#20](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/20) | 画面：深める（質問文の組み立て・コピー） | P0 | 河合 | 11/7 | T-14 |
-| 未完了 | T-16 | [#21](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/21) | KAKEN から立命館大学の研究データを取得し、研究者ごとに整理する | P0 | 上原 | 11/6 | T-01, T-03 |
-| 未完了 | T-17 | [#22](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/22) | KAKEN の審査区分と 30 分野の対応表を作り、分野付けする | P0 | 上原 | 11/7 | T-16 |
-| 未完了 | T-18 | [#23](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/23) | 埋め込みを計算し、DB に投入する | P0 | 上原 | 11/9 | T-11, T-17 |
-| 未完了 | T-19 | [#24](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/24) | 分野カード 30 分野を用意する | P0 | 全員 | 11/9 | T-03 |
-| 未完了 | T-20 | [#25](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/25) | 「AI」表示と「アプリの外」表示 | P1 | 高橋 | 11/10 | T-14 |
-| 未完了 | T-21 | [#26](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/26) | 「このアプリについて」画面（AI の場所・問いを保存しないこと・出典） | P1 | 河合 | 11/10 | — |
-| 未完了 | T-22 | [#27](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/27) | サーバーでモデルを動かす保険と、切り替えの条件 | P1 | 大澤 | 11/11 | T-12 |
-| 未完了 | T-23 | [#28](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/28) | シラバス・蔵書との連携 | P2 | 未定 | 11/11 | T-02 |
+| ✅ 完了 | T-10 | [#15](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/15) | ダミーの先生データ（JSON）を作る | P0 | 上原 | 11/2 | — |
+| ✅ 完了 | T-11 | [#16](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/16) | 埋め込みの共有設定（`shared/embedding.json`）と、ブラウザの埋め込み処理（Web Worker） | P0 | 高橋 | 11/4 | T-04 |
+| ✅ 完了 | T-12 | [#17](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/17) | 検索 API（分野・用語・先生の取得、隣の分野の選び方） | P0 | 大澤 | 11/6 | T-06 |
+| ✅ 完了 | T-13 | [#18](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/18) | 画面：問いの入力（読み込み中も入力できる） | P0 | 高橋 | 11/5 | T-11 |
+| ✅ 完了 | T-14 | [#19](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/19) | 画面：結果（分野タブ・分野カード・先生の折りたたみ） | P0 | 高橋 | 11/7 | T-12 |
+| ✅ 完了 | T-15 | [#20](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/20) | 画面：深める（質問文の組み立て・コピー） | P0 | 河合 | 11/7 | T-14 |
+| ✅ 完了 | T-16 | [#21](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/21) | KAKEN から立命館大学の研究データを取得し、研究者ごとに整理する | P0 | 上原 | 11/6 | T-01, T-03 |
+| ✅ 完了 | T-17 | [#22](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/22) | KAKEN の審査区分と 30 分野の対応表を作り、分野付けする | P0 | 上原 | 11/7 | T-16 |
+| ✅ 完了 | T-18 | [#23](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/23) | 埋め込みを計算し、DB に投入する | P0 | 上原 | 11/9 | T-11, T-17 |
+| ✅ 完了 | T-19 | [#24](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/24) | 分野カード 30 分野を用意する | P0 | 全員 | 11/9 | T-03 |
+| ✅ 完了 | T-20 | [#25](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/25) | 「AI」表示と「アプリの外」表示 | P1 | 高橋 | 11/10 | T-14 |
+| ✅ 完了 | T-21 | [#26](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/26) | 「このアプリについて」画面（AI の場所・問いを保存しないこと・出典） | P1 | 河合 | 11/10 | — |
+| 今後の課題 | T-22 | [#27](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/27) | サーバーでモデルを動かす保険と、切り替えの条件 | P1 | 大澤 | 11/11 | T-12 |
+| 今後の課題 | T-23 | [#28](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/28) | シラバス・蔵書との連携 | P2 | 未定 | 11/11 | T-02 |
 
 ### セキュリティ・仕上げ（11/9〜11/15）
 
 | 状態 | ID | Issue | タスク | 優先度 | 担当 | 期限 | 依存 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 未完了 | T-30 | [#29](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/29) | 入力の検証（ベクトルの長さ・型・ノルム・本文サイズ） | P0 | 大澤 | 11/9 | T-12 |
-| 未完了 | T-31 | [#30](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/30) | CSP・回数制限・環境変数の確認 | P1 | 大澤 | 11/10 | T-06 |
-| 未完了 | T-32 | [#31](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/31) | セキュリティテストを行い、README に記録する | P1 | 大澤 | 11/12 | T-30, T-31 |
-| 未完了 | T-33 | [#32](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/32) | 問いが通信に含まれないことを確かめ、デモ用に見せ方を用意する | P1 | 大澤 | 11/12 | T-13 |
-| 未完了 | T-34 | [#33](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/33) | README の仕上げ（機能の状態・セットアップ・役割分担） | P0 | 河合 | 11/13 | — |
-| 未完了 | T-35 | [#34](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/34) | 最終発表のスライドとデモの台本 | P0 | 河合 | 11/13 | — |
-| 未完了 | T-36 | [#35](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/35) | リハーサル（発表用 PC・スマートフォンの両方でデモを通す） | P0 | 全員 | 11/13 | T-35 |
-| 未完了 | T-37 | [#36](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/36) | 提出（Google Form にリポジトリ URL） | P0 | 河合 | 11/14 13:00 | T-34 |
-| 未完了 | T-38 | [#37](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/37) | 発表用 PC の接続確認と、モデルの事前読み込み | P0 | 発表者 | 11/15 | T-36 |
+| ✅ 完了 | T-30 | [#29](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/29) | 入力の検証（ベクトルの長さ・型・ノルム・本文サイズ） | P0 | 大澤 | 11/9 | T-12 |
+| ✅ 完了 | T-31 | [#30](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/30) | CSP・回数制限・環境変数の確認 | P1 | 大澤 | 11/10 | T-06 |
+| ✅ 完了 | T-32 | [#31](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/31) | セキュリティテストを行い、README に記録する | P1 | 大澤 | 11/12 | T-30, T-31 |
+| ✅ 完了 | T-33 | [#32](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/32) | 問いが通信に含まれないことを確かめ、デモ用に見せ方を用意する | P1 | 大澤 | 11/12 | T-13 |
+| ✅ 完了 | T-34 | [#33](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/33) | README の仕上げ（機能の状態・セットアップ・役割分担） | P0 | 河合 | 11/13 | — |
+| ✅ 完了 | T-35 | [#34](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/34) | 最終発表のスライドとデモの台本 | P0 | 河合 | 11/13 | — |
+| ✅ 完了 | T-36 | [#35](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/35) | リハーサル（発表用 PC・スマートフォンの両方でデモを通す） | P0 | 全員 | 11/13 | T-35 |
+| ✅ 完了 | T-37 | [#36](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/36) | 提出（Google Form にリポジトリ URL） | P0 | 河合 | 11/14 13:00 | T-34 |
+| ✅ 完了 | T-38 | [#37](https://github.com/Haku929/TND_Hackathon_2026F_Team5/issues/37) | 発表用 PC の接続確認と、モデルの事前読み込み | P0 | 発表者 | 11/15 | T-36 |
 
 ## 分担
 

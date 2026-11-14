@@ -17,4 +17,9 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run format:check
+      - run: npm test
+      # 通信なしの Python テスト（標準ライブラリだけで動くもの）
+      - run: python3 -m unittest discover -s data -p "test_fetch_kaken.py"
+      - run: python3 -m unittest discover -s data -p "test_assign_fields.py"
+      - run: python3 -m unittest discover -s data -p "test_load_university.py"
       - run: npm run build
