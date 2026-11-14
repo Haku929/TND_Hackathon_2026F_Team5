@@ -1,6 +1,9 @@
 // 「深める」画面で、利用者が自分の AI に貼り付ける質問文を組み立てる。
 // テンプレートは docs/SPEC.md 4.4 に従う。ここで外部へ送信はしない（F-14）。
 
+// いま扱っている大学（データは KAKEN の立命館大学の研究者）。他大学に広げるときは、データ側から渡す
+const UNIVERSITY_NAME = "立命館大学";
+
 // 質問文に差し込むデータ由来の文字列の長さの上限（文字数）
 const MAX_NAME = 40;
 const MAX_THEME = 80;
@@ -75,7 +78,8 @@ export function buildPrompt({
 
   if (items.length > 0) {
     lines.push(
-      "この大学では、次の先生がこれに近いテーマを研究しています。",
+      // 外部の AI には「この大学」が何か伝わらないので、大学名を書く
+      `${UNIVERSITY_NAME}では、次の先生がこれに近いテーマを研究しています。`,
       ...items.map((t) =>
         t.theme ? `- ${t.name}（${t.theme}）` : `- ${t.name}`,
       ),

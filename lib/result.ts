@@ -101,6 +101,34 @@ export function saveResult(value: StoredResult) {
   }
 }
 
+// 検索中の画面から結果画面へ移るとき、上の部分（戻る・題名）は動かさず、下だけを動かして入れるための印。
+// 結果画面が読み、表示が済んだら消す。
+const FROM_SEARCH_KEY = "from-search";
+
+export function markFromSearch() {
+  try {
+    sessionStorage.setItem(FROM_SEARCH_KEY, "1");
+  } catch {
+    // 印がなくても、結果画面は ふつうに表示される
+  }
+}
+
+export function readFromSearch(): boolean {
+  try {
+    return sessionStorage.getItem(FROM_SEARCH_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
+export function clearFromSearch() {
+  try {
+    sessionStorage.removeItem(FROM_SEARCH_KEY);
+  } catch {
+    // 何もしない
+  }
+}
+
 export function parseStoredResult(raw: string | null): StoredResult | null {
   if (!raw) return null;
   try {
