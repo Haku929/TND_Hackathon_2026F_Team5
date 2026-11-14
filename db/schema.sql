@@ -25,8 +25,11 @@ create table researchers (
   affiliation text not null,               -- 学部・学科
   theme       text not null,               -- 画面に出す研究テーマ
   kaken_url   text not null,
+  university_id text not null default 'ritsumei', -- shared/universities.json の id
   embedding   vector(384) not null
 );
+
+create index researchers_university_id_idx on researchers (university_id);
 
 -- 研究課題ごとの原文チャンク。研究者検索はチャンクの最大類似度を使う。
 create table researcher_chunks (

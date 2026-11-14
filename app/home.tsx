@@ -4,6 +4,8 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { getEmbedder, type EmbedderStatus } from "@/lib/embedder";
 import { markFromSearch, saveResult, type SearchResults } from "@/lib/result";
+import { DEFAULT_UNIVERSITY_ID, UNIVERSITIES } from "@/lib/universities";
+import { useUniversity } from "@/lib/use-university";
 import PageShell from "./components/PageShell";
 import SearchProgress, { type SearchStage } from "./components/SearchProgress";
 
@@ -39,6 +41,15 @@ export default function HomeView() {
     file: "モデル",
   });
   const [question, setQuestion] = useState("");
+  const [savedUniversity, setUniversity] = useUniversity();
+  // 選べる大学（データが DB に入っている大学）。取れるまでは、既定の大学だけ
+  const [enabledIds, setEnabledIds] = useState<string[]>([
+    DEFAULT_UNIVERSITY_ID,
+  ]);
+  // 覚えている大学が、いまは選べないときは、既定の大学にする
+  const university = enabledIds.includes(savedUniversity)
+    ? savedUniversity
+    : DEFAULT_UNIVERSITY_ID;
   const router = useRouter();
   const [error, setError] = useState<string | null>(null);
   // 入力画面 → 検索中の画面 → 結果画面
@@ -48,6 +59,27 @@ export default function HomeView() {
   const [leaving, setLeaving] = useState(false);
   // 検索をやめて入力に戻ったとき、遅れて届いた結果を使わないための印
   const runId = useRef(0);
+
+  // 選べる大学を、裏で取る。取れなくても、既定の大学で使える
+  useEffect(() => {
+    let alive = true;
+    fetch("/api/universities")
+      .then((response) => (response.ok ? response.json() : null))
+      .then((payload: unknown) => {
+        if (
+          alive &&
+          isRecord(payload) &&
+          Array.isArray(payload.enabled) &&
+          payload.enabled.every((id) => typeof id === "string")
+        ) {
+          setEnabledIds(payload.enabled as string[]);
+        }
+      })
+      .catch(() => {});
+    return () => {
+      alive = false;
+    };
+  }, []);
 
   // AI（モデル）の読み込みは、ページを開いた時点から裏で進める
   useEffect(() => {
@@ -70,7 +102,7 @@ export default function HomeView() {
     };
   }, []);
 
-  async function search(asked: string, id: number) {
+  async function search(asked: string, id: number, universityId: string) {
     // AI の読み込みが終わっていなければ、ここで待つ（待っている間も、読み込みは続く）
     const vector = await getEmbedder().embed(asked, "query");
     if (runId.current !== id) return null;
@@ -79,7 +111,7 @@ export default function HomeView() {
     const response = await fetch("/api/search", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ embedding: vector }),
+      body: JSON.stringify({ embedding: vector, university: universityId }),
     });
     const payload: unknown = await response.json();
 
@@ -104,6 +136,7 @@ export default function HomeView() {
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const asked = question;
+    const askedUniversity = university;
     const id = ++runId.current;
 
     setError(null);
@@ -114,13 +147,17 @@ export default function HomeView() {
     try {
       // 速く終わっても、検索中の画面を一瞬でちらつかせない
       const [results] = await Promise.all([
-        search(asked, id),
+        search(asked, id, askedUniversity),
         wait(MIN_SEARCHING_MS),
       ]);
       if (runId.current !== id || !results) return;
 
       // 結果は URL に載せず、このタブにだけ置いて結果画面へ移る
-      saveResult({ question: asked, results });
+      saveResult({
+        question: asked,
+        results,
+        university: askedUniversity,
+      });
       markFromSearch();
 
       // 検索中の表示をそっと消してから移る（「動きを減らす」設定のときは待たない）
@@ -170,6 +207,32 @@ export default function HomeView() {
     >
       <p className="ui-lead">ふだんの言葉の疑問から、近い学問と先生へ。</p>
       <form onSubmit={handleSubmit}>
+        <span className="ui-label" id="university-label">
+          知りたい大学
+        </span>
+        <div
+          aria-labelledby="university-label"
+          className="ui-universities"
+          role="radiogroup"
+        >
+          {UNIVERSITIES.map((u) => (
+            <button
+              aria-checked={university === u.id}
+              className="ui-univ"
+              disabled={!enabledIds.includes(u.id)}
+              key={u.id}
+              onClick={() => setUniversity(u.id)}
+              role="radio"
+              type="button"
+            >
+              {u.name}
+              {!enabledIds.includes(u.id) && (
+                <span className="ui-univ-soon">準備中</span>
+              )}
+            </button>
+          ))}
+        </div>
+
         <span className="ui-label" id="examples-label">
           例文から選ぶ
         </span>

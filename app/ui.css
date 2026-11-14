@@ -1626,3 +1626,49 @@ html {
     padding-top: var(--sp-4);
   }
 }
+
+/* ---- 大学の選択（入口） ---- */
+.ui-universities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin: var(--sp-2) 0 var(--sp-6);
+}
+.ui-univ {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  min-height: var(--tap);
+  padding: 0 var(--sp-4);
+  border: 1px solid var(--ui-border);
+  border-radius: var(--r-sm);
+  background: transparent;
+  color: var(--ui-ink);
+  font: inherit;
+  cursor: pointer;
+  transition:
+    background-color var(--dur-fast) ease,
+    border-color var(--dur-fast) ease,
+    color var(--dur-fast) ease;
+}
+.ui-univ:hover:not(:disabled):not([aria-checked="true"]) {
+  border-color: var(--ui-ink);
+}
+/* 選んでいる大学は、塗りつぶし */
+.ui-univ[aria-checked="true"] {
+  background: var(--ui-ink);
+  border-color: var(--ui-ink);
+  color: var(--ui-bg);
+  font-weight: 700;
+}
+/* データがまだ入っていない大学 */
+.ui-univ:disabled {
+  border-style: dashed;
+  border-color: var(--ui-line);
+  color: var(--ui-muted);
+  cursor: not-allowed;
+}
+.ui-univ-soon {
+  font-size: var(--fs-tag);
+  color: var(--ui-muted);
+}
