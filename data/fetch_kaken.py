@@ -26,6 +26,8 @@ RESEARCHERS_URL = "https://nrid.nii.ac.jp/opensearch/"
 UNIVERSITY = "立命館大学"
 XML_LANG = "{http://www.w3.org/XML/1998/namespace}lang"
 PAGE_SIZE = 500
+# 研究期間の年度の範囲（開始, 終了）。None なら、全期間を 1 つの検索で取る（立命館大学の従来の方法）
+YEARS: tuple[int, int] | None = None
 MAX_RESEARCHER_START = 1000
 MIN_REQUEST_INTERVAL = 1.05
 RETRY_DELAY = 10
@@ -542,8 +544,9 @@ def researcher_page_queries(total: int, page_size: int = PAGE_SIZE) -> list[tupl
     return [(order, start) for order in orders for start in starts]
 
 
-def fetch_current_profiles(client: ApiClient | None, cache_dir: Path = RAW_DIR, offline: bool = False) -> tuple[dict, dict]:
-    base = {"qh": UNIVERSITY, "format": "json", "rw": PAGE_SIZE, "lang": "ja", "od": 2, "st": 1}
+def _collect_profiles(client: ApiClient | None, cache_dir: Path, offline: bool, extra: dict) -> tuple[dict, dict, int]:
+    """条件（extra）で絞った研究者を、複数の並び順で取り、総件数と照合する。"""
+    base = {"qh": UNIVERSITY, "format": "json", "rw": PAGE_SIZE, "lang": "ja", "od": 2, **extra, "st": 1}
     first = _get_page(client, cache_dir, "researchers", RESEARCHERS_URL, base, "json", parse_researcher_page, offline,
                       client._appid if client else None)
     total = first["total_results"]
@@ -558,7 +561,8 @@ def fetch_current_profiles(client: ApiClient | None, cache_dir: Path = RAW_DIR, 
         if order == 2 and start == 1:
             page = first
         else:
-            params = {"qh": UNIVERSITY, "format": "json", "rw": PAGE_SIZE, "lang": "ja", "od": order, "st": start}
+            params = {"qh": UNIVERSITY, "format": "json", "rw": PAGE_SIZE, "lang": "ja", "od": order, **extra,
+                      "st": start}
             page = _get_page(client, cache_dir, "researchers", RESEARCHERS_URL, params, "json",
                              parse_researcher_page, offline, client._appid if client else None)
         if page["total_results"] != total:
@@ -575,18 +579,50 @@ def fetch_current_profiles(client: ApiClient | None, cache_dir: Path = RAW_DIR, 
             break
     if len(profiles) != total:
         raise FetchError("IncompleteResearcherCoverage")
+    return profiles, pages, total
+
+
+def fetch_current_profiles(client: ApiClient | None, cache_dir: Path = RAW_DIR, offline: bool = False) -> tuple[dict, dict]:
+    if YEARS is None:
+        profiles, pages, total = _collect_profiles(client, cache_dir, offline, {})
+        partitions = None
+    else:
+        # 1 回の検索では取りきれない大学のために、研究期間の年度ごとに分けて取り、合算する。
+        # 各年度の検索が、その年度の総件数と一致していなければ、止まる（不完全なまま完成品にしない）。
+        profiles, pages, partitions = {}, {}, []
+        for year in range(YEARS[0], YEARS[1] + 1):
+            extra = {"s1": year, "s2": year, "o1": 3}
+            part_profiles, part_pages, part_total = _collect_profiles(client, cache_dir, offline, extra)
+            for key, profile in part_profiles.items():
+                old = profiles.get(key)
+                if old is not None and old != profile:
+                    raise FetchError("ResearcherRecordConflict")
+                profiles[key] = profile
+            partitions.append({"year": year, "total_results": part_total, "request_pages": len(part_pages)})
+            for (order, start), page in part_pages.items():
+                pages[(year, order, start)] = page
+        total = len(profiles)
     current_count = sum(
         any(affiliation["institution"] == UNIVERSITY for affiliation in profile["current_affiliations"])
         for profile in profiles.values()
     )
+    if partitions is None:
+        query = {"qh": UNIVERSITY, "format": "json", "rw": PAGE_SIZE, "lang": "ja",
+                 "od": list(dict.fromkeys(order for order, _ in pages))}
+        starts = [{"od": order, "st": start} for order, start in pages]
+    else:
+        query = {"qh": UNIVERSITY, "format": "json", "rw": PAGE_SIZE, "lang": "ja", "o1": 3,
+                 "years": [YEARS[0], YEARS[1]]}
+        starts = [{"year": year, "od": order, "st": start} for year, order, start in pages]
     metadata = {
-        "query": {"qh": UNIVERSITY, "format": "json", "rw": PAGE_SIZE, "lang": "ja",
-                  "od": list(dict.fromkeys(order for order, _ in pages))},
+        "query": query,
         "total_results": total,
         "unique_researchers": len(profiles),
-        "current_ritsumeikan": current_count,
+        "current_ritsumeikan": current_count,  # 名前は旧来のまま。対象大学の現在所属者の数
+        "current_target_university": current_count,
         "request_pages": len(pages),
-        "request_starts": [{"od": order, "st": start} for order, start in pages],
+        "request_starts": starts,
+        **({"partitions": partitions} if partitions is not None else {}),
     }
     current_map = {"metadata": metadata, "researchers": [profiles[key] for key in sorted(profiles)]}
     return current_map, metadata
@@ -737,11 +773,37 @@ def _write_json(path: Path, value) -> None:
     _atomic_write(path, json.dumps(value, ensure_ascii=False, indent=2).encode("utf-8") + b"\n")
 
 
+def configure_university(university: str, slug: str, years: tuple[int, int] | None = None) -> Path:
+    """対象の大学を切り替える。立命館大学（ritsumei）は、これまでの保存先のまま。
+
+    戻り値は、整理後の研究者 JSON の保存先。
+    """
+    global UNIVERSITY, PROJECT_QUERY, RAW_DIR, YEARS
+    UNIVERSITY = university
+    YEARS = years
+    PROJECT_QUERY = {**PROJECT_QUERY, "qe": university}
+    if years is not None:
+        # 研究期間が、この年度の範囲にかかる課題だけ
+        PROJECT_QUERY = {**PROJECT_QUERY, "s1": years[0], "s2": years[1], "o1": 3}
+    if slug == "ritsumei":
+        return ROOT / "data" / "researchers.json"
+    RAW_DIR = ROOT / "data" / "raw" / slug
+    return ROOT / "data" / "universities" / slug / "researchers.json"
+
+
 def _main(argv=None) -> int:
-    parser = argparse.ArgumentParser(description="KAKEN研究課題を取得し、現在の立命館大学所属者ごとに整理する")
+    parser = argparse.ArgumentParser(description="KAKEN研究課題を取得し、現在の対象大学（既定は立命館大学）所属者ごとに整理する")
     parser.add_argument("--offline", action="store_true", help="data/raw のキャッシュだけを使う")
     parser.add_argument("--nrid-only", action="store_true", help="研究者ページを集めて現所属数を確認する")
+    parser.add_argument("--university", default="立命館大学", help="KAKEN の所属機関名（完全一致）。例: 筑波大学")
+    parser.add_argument("--slug", default="ritsumei", help="保存先に使う英小文字の名前。例: tsukuba")
+    parser.add_argument("--years", default=None, help="研究期間の年度の範囲。例: 2016-2025（検索を年度ごとに分けて取る）")
     args = parser.parse_args(argv)
+    years = None
+    if args.years:
+        first, _, last = args.years.partition("-")
+        years = (int(first), int(last))
+    output_path = configure_university(args.university, args.slug, years)
     try:
         appid = load_appid() if not args.offline else None
         client = ApiClient(appid) if appid else None
@@ -764,7 +826,6 @@ def _main(argv=None) -> int:
             },
             "researchers": researchers,
         }
-        output_path = ROOT / "data" / "researchers.json"
         _write_json(output_path, output)
         print(json.dumps({
             "status": "ok",

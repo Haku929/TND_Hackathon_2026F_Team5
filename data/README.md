@@ -93,3 +93,7 @@ python -m unittest discover -s data -p test_load_data.py -v
 ```
 
 最大類似度で順位を付けるため、課題数・分割数の多い研究者は高いスコアを得る機会も増えます。分割による検索精度の改善は、従来方式との比較と人の判定で別途確認します。
+
+## 複数の大学（立命館大学以外）
+
+立命館大学のほかに、早稲田大学・東京理科大学・筑波大学を扱います。取得（`fetch_kaken.py --university ... --slug ... --years ...`）、分野付け（`assign_fields.py --university ...`、`extend_field_map.py`）、埋め込み（`embed_data.py --university ...`）、DB への追加（`load_university.py`）の手順と、DB を触れる人向けの手順書は [docs/MULTI_UNIVERSITY.md](../docs/MULTI_UNIVERSITY.md) にあります。大学ごとの取得データは `data/universities/<slug>/`（Git 対象外）に置かれます。

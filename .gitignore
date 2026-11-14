@@ -46,3 +46,5 @@ __pycache__/
 .venv/
 .vercel-undici-fix.cjs
 /data/raw/
+# 立命館大学以外の大学の取得データ（大きいので、コミットしない）
+/data/universities/
