@@ -39,9 +39,10 @@
   --font-sans:
     var(--font-geist-sans), "Hiragino Sans", "Hiragino Kaku Gothic ProN",
     "Yu Gothic UI", "Yu Gothic", "Noto Sans CJK JP", "Meiryo", sans-serif;
+  /* 見出し用の明朝は、端末のものを使う（Web フォントは読み込まない） */
   --font-mincho:
-    var(--font-serif), "Hiragino Mincho ProN", "Yu Mincho", "YuMincho",
-    "Noto Serif JP", serif;
+    "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Yu Mincho", "YuMincho",
+    "Noto Serif CJK JP", "Noto Serif JP", "BIZ UDPMincho", serif;
 }
 
 /* 書体の役割: 見出し・題名・印は明朝（朱と並んで「紙と墨」の核）、
@@ -128,7 +129,7 @@
   height: 24px;
   border-radius: var(--r-xs);
   background: var(--ui-accent);
-  color: #fff;
+  color: var(--ui-seal-ink);
   font-family: var(--font-mincho);
   font-weight: 700;
   font-size: 15px;
@@ -221,21 +222,6 @@
   border-radius: var(--r-md);
   padding: var(--sp-6) var(--sp-4);
 }
-.ui-outer-tag {
-  display: inline-flex;
-  gap: var(--sp-1);
-  align-items: center;
-  font-size: var(--fs-tag);
-  letter-spacing: 0.06em;
-  line-height: 1.6;
-  padding: 0 var(--sp-2);
-  border: 1px solid var(--ui-outer-line);
-  border-radius: var(--r-xs);
-}
-.ui-outer-tag svg {
-  width: 12px;
-  height: 12px;
-}
 .ui-outer h2 {
   margin: var(--sp-3) 0 var(--sp-2);
   font-family: var(--font-mincho);
@@ -245,28 +231,6 @@
 }
 .ui-outer p {
   margin: 0;
-}
-.ui-steps {
-  margin: var(--sp-4) 0 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: var(--sp-2);
-}
-.ui-steps li {
-  display: flex;
-  gap: var(--sp-3);
-  align-items: baseline;
-}
-.ui-steps b {
-  flex: none;
-  width: var(--sp-6);
-  height: var(--sp-6);
-  line-height: 22px;
-  text-align: center;
-  font-size: var(--fs-tag);
-  border: 1px solid var(--ui-outer-line);
-  border-radius: 50%;
 }
 /* 質問文: 箱の中の 1 枚の面。上のバーの右端にコピーボタン */
 .ui-quote {
@@ -476,7 +440,7 @@
 .ui-btn-quiet {
   background: transparent;
   color: var(--ui-ink);
-  border-color: var(--ui-line);
+  border-color: var(--ui-border);
   font-weight: 500;
   letter-spacing: 0.04em;
 }
@@ -492,36 +456,6 @@
   font-size: var(--fs-lead);
   color: var(--ui-muted);
   line-height: 1.8;
-}
-.ui-privacy {
-  margin: var(--sp-3) 0 0;
-  font-size: var(--fs-note);
-  color: var(--ui-muted);
-  line-height: 1.7;
-}
-/* 「たとえば」: 日常の問いが、学問ではこう呼ばれる、という 1 例 */
-.ui-sample {
-  margin: var(--sp-8) 0 var(--sp-8);
-  padding: var(--sp-4) var(--sp-4) var(--sp-4) var(--sp-6);
-  border-left: 3px solid var(--ui-accent);
-  background: var(--ui-callout);
-  border-radius: 0 var(--r-sm) var(--r-sm) 0;
-}
-.ui-sample-label {
-  display: block;
-  font-size: var(--fs-note);
-  letter-spacing: 0.08em;
-  color: var(--ui-muted);
-}
-.ui-sample-q {
-  margin: var(--sp-1) 0 var(--sp-2);
-  font-family: var(--font-mincho);
-  font-size: var(--fs-lead);
-  line-height: 1.7;
-}
-.ui-sample-a {
-  margin: 0;
-  color: var(--ui-muted);
 }
 
 /* モデルの準備（目立たせない 1 行） */
@@ -598,8 +532,8 @@
   min-height: 8em;
   margin-top: var(--sp-2);
   padding: 0 var(--sp-4);
-  resize: vertical;
-  border: 1px solid var(--ui-line);
+  resize: none;
+  border: 1px solid var(--ui-border);
   border-radius: var(--r-sm);
   background-color: color-mix(in srgb, var(--ui-callout) 45%, var(--ui-bg));
   background-image: repeating-linear-gradient(
@@ -885,6 +819,11 @@
   max-width: none;
   width: min(680px, calc(100% - var(--sp-4) * 2));
   max-height: calc(100dvh - var(--sp-8));
+  /* 位置は自前で決める。ブラウザ標準の位置指定（:modal）は、閉じ始めた瞬間に外れるので、
+   * 閉じるアニメーションの途中で、モーダルが別の場所に飛んで見える */
+  position: fixed;
+  inset: 0;
+  height: fit-content;
   margin: auto;
   padding: 0;
   border: 0;
@@ -917,10 +856,20 @@
   z-index: 1;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  height: 56px;
-  padding: 0 var(--sp-3);
+  justify-content: space-between;
+  gap: var(--sp-3);
+  height: 76px;
+  padding: var(--sp-2) var(--sp-3) 0 var(--sp-4);
   background: var(--ui-outer-bg);
+}
+/* 見出しは上の帯に置く（スクロールしても見える）。AI のボタンより目立たせる */
+.ui-modal-title {
+  margin: 0;
+  font-family: var(--font-mincho);
+  font-feature-settings: "palt";
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.4;
 }
 .ui-modal-close {
   position: relative;
@@ -1010,11 +959,6 @@ body:has(dialog[open]) {
     transform: scale(1);
   }
 }
-@keyframes ui-sweep {
-  from {
-    background-size: 0% 100%;
-  }
-}
 @keyframes ui-shimmer {
   to {
     background-position: -200% 0;
@@ -1045,25 +989,14 @@ body:has(dialog[open]) {
     animation-delay: 240ms;
   }
 
-  /* 呼び名のマーカー: 引いたように、左から右へ */
-  .ui-mark {
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    animation: ui-sweep 0.7s var(--ease-out) 0.35s backwards;
+  /* 分野を切り替えたとき: 何度も繰り返す操作なので、静かに入れ替える。最初の表示は、外側の塊（.ui-result）といっしょに動く */
+  .ui-panel[data-switched] {
+    animation: ui-fade 0.3s ease-out backwards;
   }
-
-  /* 分野を切り替えたとき: 中身がふわっと入れ替わる。先生は順に */
-  .ui-panel {
-    animation: ui-fade var(--dur) var(--ease-out) backwards;
-  }
-  .ui-people li {
-    animation: ui-rise var(--dur-slow) var(--ease-out) backwards;
-  }
-  .ui-people li:nth-child(2) {
-    animation-delay: 60ms;
-  }
-  .ui-people li:nth-child(3) {
-    animation-delay: 120ms;
+  /* 切り替えの途中: 古い中身が、まず静かに引く（そのあと新しい中身がフェードで現れる） */
+  .ui-panel[data-leaving] {
+    opacity: 0;
+    transition: opacity 0.14s ease-in;
   }
 
   /* タブ: 下線がすべる。文字色もなめらかに */
@@ -1146,19 +1079,25 @@ body:has(dialog[open]) {
     opacity: 1;
   }
 
-  /* モーダル: 画面の中央でふわっと広がる。背景はぼかして暗くなる */
+  /* モーダル: 出るときは、画面の中央でふわっと広がる。引っ込めるときは、急がず、なだらかに去る
+   * （transition は「行き先の状態」のものが使われる。ふだんの状態＝閉じる側、[open]＝開く側） */
   .ui-modal {
     opacity: 0;
     transform: translateY(16px) scale(0.97);
+    transition:
+      opacity 0.2s ease,
+      transform 0.26s cubic-bezier(0.4, 0, 0.2, 1),
+      overlay 0.26s allow-discrete,
+      display 0.26s allow-discrete;
+  }
+  .ui-modal[open] {
+    opacity: 1;
+    transform: none;
     transition:
       opacity var(--dur) var(--ease-out),
       transform var(--dur-slow) var(--ease-sheet),
       overlay var(--dur-slow) allow-discrete,
       display var(--dur-slow) allow-discrete;
-  }
-  .ui-modal[open] {
-    opacity: 1;
-    transform: none;
   }
   @starting-style {
     .ui-modal[open] {
@@ -1170,14 +1109,19 @@ body:has(dialog[open]) {
     background: rgb(20 18 15 / 0);
     backdrop-filter: blur(0);
     transition:
-      background-color var(--dur) ease,
-      backdrop-filter var(--dur) ease,
-      overlay var(--dur-slow) allow-discrete,
-      display var(--dur-slow) allow-discrete;
+      background-color 0.24s ease,
+      backdrop-filter 0.24s ease,
+      overlay 0.26s allow-discrete,
+      display 0.26s allow-discrete;
   }
   .ui-modal[open]::backdrop {
     background: rgb(20 18 15 / calc(0.45 * var(--sheet-dim, 1)));
     backdrop-filter: blur(8px);
+    transition:
+      background-color var(--dur) ease,
+      backdrop-filter var(--dur) ease,
+      overlay var(--dur-slow) allow-discrete,
+      display var(--dur-slow) allow-discrete;
   }
   @starting-style {
     .ui-modal[open]::backdrop {
@@ -1193,7 +1137,8 @@ body:has(dialog[open]) {
   .ui-modal {
     width: 100%;
     max-height: calc(100dvh - var(--sp-6));
-    margin: auto 0 0;
+    inset: auto 0 0;
+    margin: 0;
     border-radius: 20px 20px 0 0;
   }
   .ui-modal[open] {
@@ -1213,10 +1158,25 @@ body:has(dialog[open]) {
   }
   @media (prefers-reduced-motion: no-preference) {
     .ui-modal {
+      /* シートは、フェードさせず、下へ滑って消える（出るときも、下から滑って来るだけ）。
+       * 画面の下まで動くので、PC の中央のモーダルより、ゆっくり引っ込める */
+      opacity: 1;
       transform: translateY(100%);
+      transition:
+        transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        overlay 0.5s allow-discrete,
+        display 0.5s allow-discrete;
+    }
+    .ui-modal::backdrop {
+      transition:
+        background-color 0.45s ease,
+        backdrop-filter 0.45s ease,
+        overlay 0.5s allow-discrete,
+        display 0.5s allow-discrete;
     }
     @starting-style {
       .ui-modal[open] {
+        opacity: 1;
         transform: translateY(100%);
       }
     }
@@ -1250,6 +1210,15 @@ body:has(dialog[open]) {
   width: 132px;
   height: 132px;
   opacity: 0.2;
+}
+
+/* 波紋の下の「検索中」。小ラベルは結果の画面と同じ「あなたの問い」のまま、ここで状態を伝える */
+.ui-searching-label {
+  margin: calc(-1 * var(--sp-4)) 0 var(--sp-8);
+  text-align: center;
+  font-size: var(--fs-note);
+  letter-spacing: 0.2em;
+  color: var(--ui-muted);
 }
 
 .ui-steps-list {
@@ -1299,11 +1268,6 @@ body:has(dialog[open]) {
 }
 .ui-step-title {
   font-weight: 700;
-}
-.ui-step-detail {
-  font-size: var(--fs-note);
-  color: var(--ui-muted);
-  line-height: 1.7;
 }
 .ui-step-bar {
   display: flex;
@@ -1370,5 +1334,295 @@ body:has(dialog[open]) {
   }
   .ui-step[data-state="done"] .ui-step-mark {
     animation: ui-pop 0.35s var(--ease-out);
+  }
+}
+
+/* 導入文と入力欄のあいだ */
+.ui-lead + form {
+  margin-top: var(--sp-8);
+}
+
+/* 入力欄のそばの、短い安心の 1 行 */
+.ui-note {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin: var(--sp-3) 0 0;
+  font-size: var(--fs-note);
+  color: var(--ui-muted);
+}
+.ui-note svg {
+  flex: none;
+  width: 16px;
+  height: 16px;
+}
+/* AI サービスへのリンク。1 行に 1 つ、名前を左に大きく並べて、目で追って選べるようにする */
+.ui-ai-links {
+  display: grid;
+  gap: var(--sp-2);
+  margin: var(--sp-3) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.ui-page .ui-ai-links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  min-height: 56px;
+  padding: 0 var(--sp-4);
+  border: 1px solid var(--ui-outer-line);
+  border-radius: var(--r-sm);
+  color: var(--ui-outer-ink);
+  font-size: var(--fs-body);
+  font-weight: 500;
+  text-decoration: none;
+  transition:
+    background-color var(--dur-fast) ease,
+    border-color var(--dur-fast) ease,
+    transform var(--dur-fast) var(--ease-out);
+}
+/* 前回選んだ AI は、塗りつぶして先頭に */
+.ui-page .ui-ai-links a.is-preferred {
+  background: var(--ui-outer-ink);
+  border-color: var(--ui-outer-ink);
+  color: var(--ui-outer-bg);
+}
+.ui-ai-side {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+.ui-ai-last {
+  font-size: var(--fs-tag);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  opacity: 0.8;
+}
+.ui-page .ui-ai-links a:active {
+  transform: scale(0.98);
+}
+.ui-ai-links svg {
+  width: 12px;
+  height: 12px;
+}
+.ui-page .ui-ai-links a:not(.is-preferred):hover {
+  background: color-mix(in srgb, var(--ui-outer-ink) 12%, transparent);
+  border-color: var(--ui-outer-ink);
+}
+
+/* 見出しが同じ面の中にあるときは、見出しとのあいだを空ける */
+.ui-outer h2 + .ui-ai-links {
+  margin-top: var(--sp-6);
+}
+@media (min-width: 560px) {
+  .ui-modal-bar {
+    padding-left: var(--sp-8);
+  }
+}
+
+/* ---- 検索中の画面 → 結果の画面: 上（戻る・題名）は動かさず、下はひとかたまりで入る ---- */
+@keyframes ui-settle-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  /* 検索中の表示は、そっと消える */
+  .ui-leaving {
+    opacity: 0;
+    transform: translateY(-6px);
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s var(--ease-out);
+  }
+  /* 上の 3 つ（戻る・小ラベル・題名）は、前の画面と同じ位置にあるので、動かさない */
+  .ui-main.is-continued > :nth-child(-n + 3) {
+    animation: none;
+  }
+  /* その下は、順番にずらさず、同時に、ひとかたまりで入る（動きがばらばらに見えないように） */
+  .ui-main.is-continued > :nth-child(n + 4) {
+    animation: ui-settle-in 0.55s var(--ease-out) backwards;
+  }
+}
+
+/* ---- 細部 ---- */
+html {
+  /* タップしたときの灰色の四角を出さない（押した感触は、自前の動きで出す） */
+  -webkit-tap-highlight-color: transparent;
+}
+::selection {
+  background: var(--ui-accent-soft);
+  color: var(--ui-ink);
+}
+/* 出典などの注意書きの中のリンクも、押しやすく */
+.ui-foot a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+}
+
+/* =====================================================================
+ * 広い画面（PC・タブレット横）。スマホが最優先なので、ここは「足す」だけにする。
+ * 1024px 未満は、これまでどおりの 1 列。
+ * ===================================================================== */
+@media (min-width: 1024px) {
+  /* ---- 共通: 少し広く、少し大きく ---- */
+  .ui-main.is-split,
+  .ui-main.is-wide {
+    max-width: 1080px;
+  }
+  .ui-topbar {
+    padding-bottom: var(--sp-3);
+  }
+
+  /* ---- 入口: 左に題名、右に入力 ---- */
+  .ui-main.is-split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 520px);
+    /* 右の入力が、左の題名・導入文より背が高くても、題名と導入文のあいだが開かないよう、
+     * 余った高さは最後の行（1fr）が受ける */
+    grid-template-rows: auto auto auto auto 1fr;
+    column-gap: 80px;
+    align-content: start;
+    padding-top: var(--sp-6);
+  }
+  .is-split > .ui-topbar {
+    grid-column: 1 / -1;
+  }
+  .is-split > .ui-kicker,
+  .is-split > .ui-title,
+  .is-split > .ui-lead {
+    grid-column: 1;
+  }
+  .is-split > .ui-kicker {
+    margin-top: 14vh;
+  }
+  .is-split .ui-title-hero {
+    font-size: clamp(52px, 5.4vw, 80px);
+    line-height: 1.3;
+  }
+  .is-split > .ui-lead {
+    font-size: 22px;
+  }
+  .is-split > form {
+    grid-column: 2;
+    grid-row: 2 / span 4;
+    align-self: start;
+    margin-top: 14vh;
+  }
+  .is-split > .ui-lead + form {
+    margin-top: 14vh;
+  }
+  .is-split > .ui-status {
+    grid-column: 1 / -1;
+  }
+
+  /* ---- 結果: 左にタブを縦に並べ、右に中身 ---- */
+  .ui-result {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    column-gap: 72px;
+    align-items: start;
+  }
+  .ui-result > .ui-tabs-wrap {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    position: sticky;
+    top: var(--sp-6);
+    margin: var(--sp-8) 0 0;
+    border-bottom: 0;
+  }
+  .ui-result > .ui-panel,
+  .ui-result > .ui-section,
+  .ui-result > .ui-errmsg {
+    grid-column: 2;
+    max-width: 44rem;
+  }
+  .ui-tabs {
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    overflow: visible;
+    border-left: 1px solid var(--ui-line);
+  }
+  .ui-tab {
+    width: 100%;
+    padding: var(--sp-3) var(--sp-4);
+    border-bottom: 0;
+    text-align: left;
+    line-height: 1.5;
+  }
+  /* 縦の下線: 左の罫線の上を、上下にすべる */
+  .ui-tab-indicator {
+    top: 0;
+    bottom: auto;
+    width: 2px;
+    height: var(--h, 0);
+    transform: translateY(var(--y, 0));
+  }
+  .ui-tab-indicator[data-ready="true"] {
+    transition: transform var(--dur) var(--ease-sheet);
+  }
+  /* 「別の視点」は、2 列に */
+  .ui-adjacent {
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--sp-6);
+  }
+
+  /* ---- 共通フッターの左端を、広いレイアウトの左端にそろえる ---- */
+  body:has(.ui-main.is-split, .ui-main.is-wide) .ui-sitefoot-in {
+    max-width: 1080px;
+  }
+
+  /* ---- 検索中・エラーなど（1 列のもの）は、中央にゆったり ---- */
+  .ui-main:not(.is-split):not(.is-wide) {
+    padding-top: var(--sp-6);
+  }
+
+  /* ---- スクロールバーを、目立たせない ---- */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--ui-line) transparent;
+  }
+}
+
+/* 大きな画面では、文字を 1 段階だけ大きく */
+@media (min-width: 1280px) {
+  :root {
+    --fs-body: 18px;
+    --fs-note: 17px;
+    --fs-tag: 15px;
+    --fs-lead: 22px;
+    --fs-h3: 24px;
+    --fs-name: 19px;
+    --fs-title: clamp(30px, 3vw, 42px);
+  }
+}
+
+/* 広い画面: 検索中の画面も、結果の画面と同じ 2 列の骨組みにする
+ * （題名の位置が、検索中 → 結果で動かない。波紋は左のタブの場所、手順は右の中身の場所） */
+@media (min-width: 1024px) {
+  .ui-searching {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    column-gap: 72px;
+    align-items: start;
+    margin-top: var(--sp-8);
+  }
+  .ui-searching > .ui-ink {
+    grid-column: 1;
+    margin: 0;
+  }
+  .ui-searching > .ui-searching-label {
+    grid-column: 1;
+    margin: var(--sp-3) 0 0;
+  }
+  .ui-searching > .ui-steps-list {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    max-width: 44rem;
+    padding-top: var(--sp-4);
   }
 }

@@ -15,7 +15,9 @@ import { useSheetDrag } from "@/lib/use-sheet-drag";
 import {
   RESULT_STORAGE_KEY,
   parseResearchTheme,
+  clearFromSearch,
   parseStoredResult,
+  readFromSearch,
   type SearchField,
   type SearchResearcher,
   type SearchResults,
@@ -23,6 +25,20 @@ import {
 
 function subscribe() {
   return () => {};
+}
+
+// 広い画面（PC）では、タブを左に縦に並べる（CSS の @media と同じ幅）
+const WIDE_QUERY = "(min-width: 1024px)";
+function subscribeWide(onChange: () => void) {
+  const mq = window.matchMedia(WIDE_QUERY);
+  mq.addEventListener("change", onChange);
+  return () => mq.removeEventListener("change", onChange);
+}
+function getWide() {
+  return window.matchMedia(WIDE_QUERY).matches;
+}
+function getWideServer() {
+  return false;
 }
 function getSnapshot(): string | null {
   try {
@@ -118,14 +134,20 @@ function FieldPanel({
   question,
   tabId,
   panelId,
+  switched,
+  leaving,
 }: {
   field: SearchField;
   question: string;
   tabId: string;
   panelId: string;
+  switched: boolean;
+  // 別の分野へ切り替える途中（この中身が静かに引いている間）
+  leaving: boolean;
 }) {
   // 「深める」は、画面の上に重ねるダイアログ（モーダル）で開く
-  const [deepenOpen, setDeepenOpen] = useState(false);
+  // 開いた回数。閉じる動きの途中で中身が消えないよう、閉じても中身は残し、開くたびに作り直す（key）
+  const [openCount, setOpenCount] = useState(0);
   const dialogRef = useRef<HTMLDialogElement>(null);
   // スマートフォンでは、下へ引っ張って閉じられる
   useSheetDrag(dialogRef);
@@ -134,6 +156,8 @@ function FieldPanel({
     <section
       aria-labelledby={tabId}
       className="ui-panel"
+      data-leaving={leaving ? "true" : undefined}
+      data-switched={switched ? "true" : undefined}
       id={panelId}
       role="tabpanel"
       tabIndex={0}
@@ -152,17 +176,11 @@ function FieldPanel({
         {field.misconception}
       </div>
 
-      <h3>
-        この大学で学べる先生{" "}
-        <span className="ui-tag">{field.researchers.length}人</span>
-      </h3>
+      <h3>この大学で学べる先生</h3>
       {field.researchers.length === 0 ? (
         <p className="ui-sub">先生の情報はまだありません。</p>
       ) : (
         <>
-          <p className="ui-sub">
-            問いに近いテーマを研究している順です（AI の推定）。
-          </p>
           <ul className="ui-people">
             {field.researchers.map((researcher) => (
               <Person key={researcher.id} researcher={researcher} />
@@ -172,22 +190,22 @@ function FieldPanel({
       )}
 
       <aside aria-labelledby={`${panelId}-deepen`} className="ui-deepen">
-        <h3 id={`${panelId}-deepen`}>この分野を、もっと深く</h3>
+        <h3 id={`${panelId}-deepen`}>AI に聞いて、さらに深めよう</h3>
         <p>
-          気になったら、自分の AI（ChatGPT
-          など）に聞くための質問文をつくれます。
+          この分野の質問文を用意しました。ChatGPT・Claude・Gemini
+          などに貼り付ければ、続きを詳しく聞けます。
         </p>
         <button
           className="ui-btn"
           onClick={() => {
-            setDeepenOpen(true);
+            setOpenCount((n) => n + 1);
             dialogRef.current?.showModal();
             // 最初のフォーカスは「閉じる」ではなく、ダイアログ自身に置く（輪郭が出て目立つため）
             dialogRef.current?.focus({ preventScroll: true });
           }}
           type="button"
         >
-          この分野を深める
+          質問文を見る
         </button>
       </aside>
 
@@ -199,10 +217,10 @@ function FieldPanel({
           // 外側（暗い部分）を押したら閉じる
           if (event.target === event.currentTarget) event.currentTarget.close();
         }}
-        onClose={() => setDeepenOpen(false)}
         ref={dialogRef}
       >
         <div className="ui-modal-bar">
+          <h2 className="ui-modal-title">AI に質問してみよう</h2>
           <button
             aria-label="閉じる"
             className="ui-modal-close"
@@ -221,8 +239,10 @@ function FieldPanel({
             </svg>
           </button>
         </div>
-        {deepenOpen && (
+        {openCount > 0 && (
           <DeepenPanel
+            hideTitle
+            key={openCount}
             question={question}
             field={field.name}
             term={field.term?.term ?? ""}
@@ -237,6 +257,9 @@ function FieldPanel({
   );
 }
 
+// 古い中身が静かに引くのを待つ時間（ミリ秒。CSS の [data-leaving] と合わせる）
+const PANEL_LEAVE_MS = 140;
+
 function ResultBody({
   question,
   results,
@@ -244,8 +267,40 @@ function ResultBody({
   question: string;
   results: SearchResults;
 }) {
+  // 検索中の画面から続いて来たか（上は動かさず、下だけを動かして入れる）
+  const [continued] = useState(readFromSearch);
+  useEffect(() => {
+    clearFromSearch();
+  }, []);
+  // 分野を切り替えたあとの中身は、大きく動かさず、短いフェードだけにする（CSS の data-switched）
+  const [switched, setSwitched] = useState(false);
+  const vertical = useSyncExternalStore(subscribeWide, getWide, getWideServer);
+  // タブはすぐ動き、中身は、古いものが静かに引いてから替わる
   const [selectedFieldIndex, setSelectedFieldIndex] = useState(0);
-  const selectedField = results.fields[selectedFieldIndex];
+  const [shownIndex, setShownIndex] = useState(0);
+  const [panelLeaving, setPanelLeaving] = useState(false);
+  const leaveTimer = useRef<ReturnType<typeof setTimeout> | undefined>(
+    undefined,
+  );
+  useEffect(() => () => clearTimeout(leaveTimer.current), []);
+  const selectedField = results.fields[shownIndex];
+
+  function selectField(index: number) {
+    if (index === selectedFieldIndex) return;
+    setSelectedFieldIndex(index);
+    setSwitched(true);
+    clearTimeout(leaveTimer.current);
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setShownIndex(index);
+      setPanelLeaving(false);
+      return;
+    }
+    setPanelLeaving(true);
+    leaveTimer.current = setTimeout(() => {
+      setShownIndex(index);
+      setPanelLeaving(false);
+    }, PANEL_LEAVE_MS);
+  }
   const tabsRef = useRef<HTMLDivElement>(null);
   const indicatorRef = useRef<HTMLSpanElement>(null);
 
@@ -260,16 +315,36 @@ function ResultBody({
     const place = () => {
       indicator.style.setProperty("--x", `${tab.offsetLeft}px`);
       indicator.style.setProperty("--w", `${tab.offsetWidth}px`);
+      indicator.style.setProperty("--y", `${tab.offsetTop}px`);
+      indicator.style.setProperty("--h", `${tab.offsetHeight}px`);
     };
     place();
-    // 最初の配置は動かさず、2 回目以降だけ動かす
-    indicator.dataset.ready = "true";
-    // 選んだタブが画面の外なら、見える位置まで動かす
-    tab.scrollIntoView({ block: "nearest", inline: "nearest" });
+    // 最初の配置は動かさない（すべる動きを入れるのは、最初の絵が出たあと）。
+    // すぐに入れると、下線が幅 0 から伸びて見える
+    let frame = 0;
+    if (indicator.dataset.ready !== "true") {
+      frame = requestAnimationFrame(() => {
+        frame = requestAnimationFrame(() => {
+          indicator.dataset.ready = "true";
+        });
+      });
+    }
+    // 選んだタブが横に隠れているときだけ、見える位置まで動かす（ページは縦に動かさない）
+    const left = tab.offsetLeft;
+    const right = left + tab.offsetWidth;
+    if (left < tabs.scrollLeft || right > tabs.scrollLeft + tabs.clientWidth) {
+      tabs.scrollTo({
+        left: left - (tabs.clientWidth - tab.offsetWidth) / 2,
+        behavior: "smooth",
+      });
+    }
 
     window.addEventListener("resize", place);
     void document.fonts?.ready.then(place);
-    return () => window.removeEventListener("resize", place);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("resize", place);
+    };
   }, [selectedFieldIndex]);
 
   function handleTabKeyDown(
@@ -278,97 +353,100 @@ function ResultBody({
   ) {
     const count = results.fields.length;
     let next: number | null = null;
-    if (event.key === "ArrowRight") next = (i + 1) % count;
-    else if (event.key === "ArrowLeft") next = (i - 1 + count) % count;
+    if (event.key === "ArrowRight" || event.key === "ArrowDown")
+      next = (i + 1) % count;
+    else if (event.key === "ArrowLeft" || event.key === "ArrowUp")
+      next = (i - 1 + count) % count;
     else if (event.key === "Home") next = 0;
     else if (event.key === "End") next = count - 1;
     if (next === null) return;
 
     event.preventDefault();
-    setSelectedFieldIndex(next);
+    selectField(next);
     document.getElementById(`field-tab-${next}`)?.focus();
   }
 
   return (
     <PageShell
+      continued={continued}
+      layout="wide"
       kicker="あなたの問い"
       title={question}
       backLabel="問いを書き直す"
       showSource
     >
-      <p className="ui-privacy">
-        問いは、この端末の外へ送られません。意味の近さは、この端末の中で動く{" "}
-        <span className="ui-tag ui-tag-ai">AI</span>{" "}
-        が計算しています。進路を決めるときは、大学の公式な情報も確かめてください。
-      </p>
-
-      {results.fields.length === 0 ? (
-        <p className="ui-errmsg">
-          近い分野が見つかりませんでした。別の問いでも試してみてください。
-        </p>
-      ) : (
-        <>
-          <div className="ui-tabs-wrap">
-            <div
-              aria-label="問いに近い分野"
-              aria-orientation="horizontal"
-              className="ui-tabs"
-              ref={tabsRef}
-              role="tablist"
-            >
-              <span
-                aria-hidden="true"
-                className="ui-tab-indicator"
-                ref={indicatorRef}
-              />
-              {results.fields.map((field, index) => (
-                <button
-                  aria-controls={`field-panel-${index}`}
-                  aria-selected={selectedFieldIndex === index}
-                  className="ui-tab"
-                  id={`field-tab-${index}`}
-                  key={field.id}
-                  onClick={() => setSelectedFieldIndex(index)}
-                  onKeyDown={(event) => handleTabKeyDown(event, index)}
-                  role="tab"
-                  tabIndex={selectedFieldIndex === index ? 0 : -1}
-                  type="button"
-                >
-                  {field.name}
-                </button>
-              ))}
+      {/* タブも、中身も、「別の視点」も、ひとつの塊にする（入ってくるとき、ばらばらに動いて見えないように） */}
+      <div className="ui-result">
+        {results.fields.length === 0 ? (
+          <p className="ui-errmsg">
+            近い分野が見つかりませんでした。別の問いでも試してみてください。
+          </p>
+        ) : (
+          <>
+            <div className="ui-tabs-wrap">
+              <div
+                aria-label="問いに近い分野"
+                aria-orientation={vertical ? "vertical" : "horizontal"}
+                className="ui-tabs"
+                ref={tabsRef}
+                role="tablist"
+              >
+                <span
+                  aria-hidden="true"
+                  className="ui-tab-indicator"
+                  ref={indicatorRef}
+                />
+                {results.fields.map((field, index) => (
+                  <button
+                    aria-controls={`field-panel-${index}`}
+                    aria-selected={selectedFieldIndex === index}
+                    className="ui-tab"
+                    id={`field-tab-${index}`}
+                    key={field.id}
+                    onClick={() => selectField(index)}
+                    onKeyDown={(event) => handleTabKeyDown(event, index)}
+                    role="tab"
+                    tabIndex={selectedFieldIndex === index ? 0 : -1}
+                    type="button"
+                  >
+                    {field.name}
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
 
-          {selectedField && (
-            <FieldPanel
-              // 分野を切り替えたら「深める」は閉じた状態に戻す
-              key={selectedField.id}
-              field={selectedField}
-              panelId={`field-panel-${selectedFieldIndex}`}
-              question={question}
-              tabId={`field-tab-${selectedFieldIndex}`}
-            />
-          )}
-        </>
-      )}
+            {selectedField && (
+              <FieldPanel
+                switched={switched}
+                // 分野を切り替えたら「深める」は閉じた状態に戻す
+                key={selectedField.id}
+                field={selectedField}
+                leaving={panelLeaving}
+                panelId={`field-panel-${shownIndex}`}
+                question={question}
+                tabId={`field-tab-${shownIndex}`}
+              />
+            )}
+          </>
+        )}
 
-      {results.low_similarity_fields.length > 0 && (
-        <section aria-labelledby="adjacent-title" className="ui-section">
-          <h2 id="adjacent-title">
-            別の視点から見る{" "}
-            <span className="ui-tag ui-tag-quiet">隣の分野</span>
-          </h2>
-          <ul className="ui-adjacent">
-            {results.low_similarity_fields.map((field) => (
-              <li key={field.id}>
-                <h4>{field.name}</h4>
-                <p>{field.summary}</p>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
+        {results.low_similarity_fields.length > 0 && (
+          <section aria-labelledby="adjacent-title" className="ui-section">
+            <h2 id="adjacent-title">
+              別の視点から見る{" "}
+              <span className="ui-tag ui-tag-quiet">隣の分野</span>
+            </h2>
+            <ul className="ui-adjacent">
+              {results.low_similarity_fields.map((field) => (
+                <li key={field.id}>
+                  <h4>{field.name}</h4>
+                  <p>{field.summary}</p>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+      </div>
     </PageShell>
   );
 }

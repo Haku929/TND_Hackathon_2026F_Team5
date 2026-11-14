@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { getEmbedder, type EmbedderStatus } from "@/lib/embedder";
-import { saveResult, type SearchResults } from "@/lib/result";
+import { markFromSearch, saveResult, type SearchResults } from "@/lib/result";
 import PageShell from "./components/PageShell";
 import SearchProgress, { type SearchStage } from "./components/SearchProgress";
 
@@ -17,6 +17,8 @@ const exampleQuestions = [
 
 // 検索中の画面が一瞬で消えてちらつかないよう、最低限これだけは見せる（ミリ秒）
 const MIN_SEARCHING_MS = 900;
+// 検索中の表示がそっと消えるまで待つ時間（ミリ秒。CSS の .ui-leaving と合わせる）
+const LEAVE_MS = 200;
 
 function getErrorMessage(error: unknown) {
   return error instanceof Error ? error.message : String(error);
@@ -30,7 +32,7 @@ function wait(ms: number) {
   return new Promise<void>((resolve) => setTimeout(resolve, ms));
 }
 
-export default function EmbeddingDemo() {
+export default function HomeView() {
   const [status, setStatus] = useState<EmbedderStatus>({
     state: "loading",
     progress: 0,
@@ -42,6 +44,8 @@ export default function EmbeddingDemo() {
   // 入力画面 → 検索中の画面 → 結果画面
   const [phase, setPhase] = useState<"input" | "searching">("input");
   const [stage, setStage] = useState<SearchStage>("embed");
+  // 結果へ移る直前（検索中の表示を消している間）
+  const [leaving, setLeaving] = useState(false);
   // 検索をやめて入力に戻ったとき、遅れて届いた結果を使わないための印
   const runId = useRef(0);
 
@@ -55,6 +59,15 @@ export default function EmbeddingDemo() {
     });
 
     return unsubscribe;
+  }, []);
+
+  // 結果画面へ移ったあと、この画面は裏に残る（戻ったときに状態も残る）。
+  // 画面から離れるときに「検索中」を終わらせて、戻ったら入力画面になるようにする
+  useEffect(() => {
+    return () => {
+      runId.current += 1;
+      setPhase("input");
+    };
   }, []);
 
   async function search(asked: string, id: number) {
@@ -95,6 +108,7 @@ export default function EmbeddingDemo() {
 
     setError(null);
     setStage("embed");
+    setLeaving(false);
     setPhase("searching");
 
     try {
@@ -107,6 +121,14 @@ export default function EmbeddingDemo() {
 
       // 結果は URL に載せず、このタブにだけ置いて結果画面へ移る
       saveResult({ question: asked, results });
+      markFromSearch();
+
+      // 検索中の表示をそっと消してから移る（「動きを減らす」設定のときは待たない）
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        setLeaving(true);
+        await wait(LEAVE_MS);
+        if (runId.current !== id) return;
+      }
       router.push("/result");
     } catch (searchError) {
       if (runId.current !== id) return;
@@ -125,11 +147,13 @@ export default function EmbeddingDemo() {
       <PageShell
         backLabel="問いを書き直す"
         key="searching"
-        kicker="いま、探しています"
+        layout="wide"
+        kicker="あなたの問い"
         onBack={cancelSearch}
+        showNotice={false}
         title={question}
       >
-        <SearchProgress stage={stage} status={status} />
+        <SearchProgress leaving={leaving} stage={stage} status={status} />
       </PageShell>
     );
   }
@@ -138,29 +162,13 @@ export default function EmbeddingDemo() {
     <PageShell
       hero
       key="input"
+      layout="split"
       kicker="問いから学問を探す"
       showBack={false}
+      showNotice={false}
       title="問いから、学問へ。"
     >
-      <p className="ui-lead">
-        ふとした疑問を、ふだんの言葉で書くだけ。近い学問の分野と、この大学で学べる先生が見つかります。
-      </p>
-      <p className="ui-privacy">
-        問いは、この端末の外へ送られません。意味の近さは、この端末の中で動く{" "}
-        <span className="ui-tag ui-tag-ai">AI</span> が計算します。
-      </p>
-
-      <aside className="ui-sample" aria-label="たとえば">
-        <span className="ui-sample-label">たとえば</span>
-        <p className="ui-sample-q">
-          「他者とは、自分にとってどういう存在なのだろうか。」
-        </p>
-        <p className="ui-sample-a">
-          この問いは、哲学では <mark className="ui-mark">他者論</mark>{" "}
-          と呼ばれています。
-        </p>
-      </aside>
-
+      <p className="ui-lead">ふだんの言葉の疑問から、近い学問と先生へ。</p>
       <form onSubmit={handleSubmit}>
         <span className="ui-label" id="examples-label">
           例文から選ぶ
@@ -189,7 +197,20 @@ export default function EmbeddingDemo() {
           className="ui-textarea"
           id="question"
           maxLength={200}
+          autoCapitalize="off"
           onChange={(event) => setQuestion(event.target.value)}
+          onKeyDown={(event) => {
+            // Ctrl / Cmd + Enter で送る（Enter だけは、改行）
+            if (
+              (event.ctrlKey || event.metaKey) &&
+              event.key === "Enter" &&
+              question.trim()
+            ) {
+              event.preventDefault();
+              event.currentTarget.form?.requestSubmit();
+            }
+          }}
+          spellCheck={false}
           placeholder="例：国と国は、どうして争うのだろう？"
           value={question}
         />
@@ -199,6 +220,21 @@ export default function EmbeddingDemo() {
             問いから分野を探す
           </button>
         </div>
+        <p className="ui-note">
+          <svg
+            aria-hidden="true"
+            fill="none"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+          >
+            <rect height="10" rx="2" width="14" x="5" y="11" />
+            <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+          </svg>
+          入力した文章は、この端末の外へ送られません。
+        </p>
 
         {error && (
           <p className="ui-errmsg" role="alert">
@@ -208,17 +244,16 @@ export default function EmbeddingDemo() {
       </form>
 
       {/* AI の準備は裏で進む。ここには、さりげなく状況だけを出す */}
-      <p aria-live="polite" className="ui-status">
+      <p
+        aria-live="polite"
+        className="ui-status"
+        hidden={status.state === "ready"}
+      >
         {status.state === "loading" && (
           <>
             <span className="ui-tag ui-tag-ai">AI</span>{" "}
             を裏で準備しています（初回だけ・{status.progress}
             %）。準備の途中でも、探せます。
-          </>
-        )}
-        {status.state === "ready" && (
-          <>
-            <span className="ui-tag ui-tag-ai">AI</span> の準備ができています。
           </>
         )}
         {status.state === "error" && (

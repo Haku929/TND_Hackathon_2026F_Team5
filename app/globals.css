@@ -12,7 +12,6 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 :root[data-theme="dark"] {
@@ -32,12 +31,14 @@ body {
   --ui-bg: #f7f2e8;
   --ui-ink: #22201c;
   --ui-muted: #6e675b;
-  --ui-line: #ddd2bd;
+  --ui-line: #ddd2bd; /* 区切り線（飾り） */
+  --ui-border: #857d6c; /* 入力欄・ボタンの枠（地との差 3:1 以上） */
   --ui-callout: #efe7d6;
   --ui-link: #8f2d1f;
   --ui-accent: #b5342a;
   --ui-accent-soft: #f2dcd0;
   --ui-accent-ink: #7c2418;
+  --ui-seal-ink: #ffffff; /* 朱の印の上の文字 */
   --ui-outer-bg: #22201c;
   --ui-outer-ink: #f3ecdc;
   --ui-outer-line: #5a554b;
@@ -48,12 +49,14 @@ body {
   --ui-ink: #ebe4d4;
   --ui-muted: #a0988a;
   --ui-line: #35312a;
+  --ui-border: #837d6f;
   --ui-callout: #211e1a;
   --ui-link: #e58b78;
   --ui-accent: #e0604f;
   --ui-accent-soft: #3d231c;
   --ui-accent-ink: #f2b9a8;
+  --ui-seal-ink: #1d1b17;
   --ui-outer-bg: #ebe4d4;
   --ui-outer-ink: #1d1b17;
-  --ui-outer-line: #b8b0a0;
+  --ui-outer-line: #7a7466;
 }

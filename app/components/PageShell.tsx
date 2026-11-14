@@ -11,6 +11,8 @@ export default function PageShell({
   showNotice = true,
   showSource = false,
   hero = false,
+  continued = false,
+  layout = "narrow",
   children,
 }: {
   kicker: string;
@@ -24,11 +26,24 @@ export default function PageShell({
   showSource?: boolean;
   // 入口の画面だけ、題名を大きくする
   hero?: boolean;
+  // 前の画面から続いているとき。上の部分（戻る・題名）は動かさず、下だけを動かして入れる
+  continued?: boolean;
+  // 広い画面（PC）での並べ方。スマホでは、どれも 1 列。
+  // narrow: 1 列のまま / split: 入口（左に題名、右に入力）/ wide: 結果（左にタブ、右に中身）
+  layout?: "narrow" | "split" | "wide";
   children: ReactNode;
 }) {
   return (
     <div className="ui-page">
-      <main className="ui-main">
+      <main
+        className={[
+          "ui-main",
+          continued && "is-continued",
+          layout !== "narrow" && `is-${layout}`,
+        ]
+          .filter(Boolean)
+          .join(" ")}
+      >
         <div className="ui-topbar">
           {onBack ? (
             <button className="ui-back" onClick={onBack} type="button">

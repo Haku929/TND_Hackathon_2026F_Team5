@@ -1,5 +1,5 @@
-import EmbeddingDemo from "./embedding-demo";
+import HomeView from "./home";
 
 export default function Home() {
-  return <EmbeddingDemo />;
+  return <HomeView />;
 }

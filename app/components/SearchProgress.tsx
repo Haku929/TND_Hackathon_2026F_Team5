@@ -7,12 +7,10 @@ type StepState = "done" | "active" | "todo";
 function Step({
   state,
   title,
-  detail,
   children,
 }: {
   state: StepState;
   title: string;
-  detail: string;
   children?: React.ReactNode;
 }) {
   return (
@@ -33,7 +31,6 @@ function Step({
       </span>
       <span className="ui-step-body">
         <span className="ui-step-title">{title}</span>
-        <span className="ui-step-detail">{detail}</span>
         {children}
       </span>
     </li>
@@ -45,9 +42,12 @@ function Step({
 export default function SearchProgress({
   status,
   stage,
+  leaving = false,
 }: {
   status: EmbedderStatus;
   stage: SearchStage;
+  // 結果へ移る直前。そっと消えて、結果が下から入ってくる
+  leaving?: boolean;
 }) {
   const modelReady = status.state === "ready";
 
@@ -60,21 +60,17 @@ export default function SearchProgress({
   const searchState: StepState = stage === "search" ? "active" : "todo";
 
   return (
-    <div>
+    <div className={leaving ? "ui-searching ui-leaving" : "ui-searching"}>
       {/* 墨を落としたように、朱の点から波紋が広がる。飾りなので読み上げない */}
       <div aria-hidden="true" className="ui-ink">
         <span />
         <span />
         <span />
       </div>
+      <p className="ui-searching-label">検索中</p>
 
       <ol aria-live="polite" className="ui-steps-list" role="status">
         <Step
-          detail={
-            modelReady
-              ? "準備できました。"
-              : "初回だけ、少し時間がかかります。次からは、この端末に保存されます。"
-          }
           state={modelState}
           title={modelReady ? "AI の準備ができました" : "AI を準備しています"}
         >
@@ -89,16 +85,8 @@ export default function SearchProgress({
             </span>
           )}
         </Step>
-        <Step
-          detail="この端末の中で、問いの意味を数字に変えています。文章は外へ出ません。"
-          state={embedState}
-          title="問いを数字にする"
-        />
-        <Step
-          detail="数字だけを送って、意味の近い分野と先生を探します。"
-          state={searchState}
-          title="近い分野と先生を探す"
-        />
+        <Step state={embedState} title="問いを数字にする（この端末の中で）" />
+        <Step state={searchState} title="近い分野と先生を探す" />
       </ol>
     </div>
   );
