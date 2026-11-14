@@ -306,19 +306,13 @@ export default function HomeView() {
         )}
       </form>
 
-      {/* AI の準備は裏で進む。ここには、さりげなく状況だけを出す */}
+      {/* AI の準備は裏で進む。進み具合は出さない（検索を押したあとの画面で見せる）。
+          読み込みに失敗したときだけ、ここで知らせる */}
       <p
         aria-live="polite"
         className="ui-status"
-        hidden={status.state === "ready"}
+        hidden={status.state !== "error"}
       >
-        {status.state === "loading" && (
-          <>
-            <span className="ui-tag ui-tag-ai">AI</span>{" "}
-            を裏で準備しています（初回だけ・{status.progress}
-            %）。準備の途中でも、探せます。
-          </>
-        )}
         {status.state === "error" && (
           <>
             <span className="ui-status-err">
