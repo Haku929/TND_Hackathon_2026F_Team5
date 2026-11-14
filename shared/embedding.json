@@ -3,5 +3,6 @@
   "query_prefix": "query: ",
   "passage_prefix": "passage: ",
   "dimensions": 384,
-  "dtype": "q8"
+  "dtype": "q8",
+  "revision": "761b726dd34fb83930e26aab4e9ac3899aa1fa78"
 }

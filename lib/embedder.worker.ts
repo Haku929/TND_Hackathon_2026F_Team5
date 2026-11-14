@@ -42,6 +42,9 @@ function getModelDtype(): DataType {
 
 async function loadExtractor(device: "webgpu" | "wasm") {
   return pipeline("feature-extraction", embeddingConfig.model, {
+    // 版を固定する（main のままだと、上流で更新されたとき、DB の埋め込みとモデルが食い違う）。
+    // DB の埋め込みを作る data/embed_data.py も、同じ shared/embedding.json の版を使う
+    revision: embeddingConfig.revision,
     device,
     dtype: getModelDtype(),
     progress_callback: reportProgress,
