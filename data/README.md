@@ -8,6 +8,8 @@
 
 分野カードと用語説明は今回の試作用に作成した文章です。研究者の分野は部局と課題内容に基づく分類です。研究者ごとの出典・選定理由・検証結果は [sample_sources.md](sample_sources.md) を参照してください。
 
+> 以下の取得・分野付け・埋め込み・投入は、**立命館大学のデータ（既定）**の手順です。立命館大学以外の大学は、末尾の「複数の大学」と [docs/MULTI_UNIVERSITY.md](../docs/MULTI_UNIVERSITY.md) を見てください。モデルの版は `shared/embedding.json` の `revision` に固定されています。
+
 ## 埋め込み
 
 モデルは `intfloat/multilingual-e5-small`、revisionは `614241f622f53c4eeff9890bdc4f31cfecc418b3` です。次の文章に `passage: ` を付け、CPUでL2正規化した384次元ベクトルを、小数点以下8桁に丸めて保存しています。

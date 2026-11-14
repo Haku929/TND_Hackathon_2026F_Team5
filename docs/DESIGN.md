@@ -220,24 +220,32 @@ create table researcher_fields (
 
 ```
 app/
-  page.tsx                 # 問いの入力
-  result/page.tsx          # 見渡す・出会う
+  page.tsx                 # 入口（home.tsx を表示）
+  home.tsx                 # 問いの入力 → 検索中の画面（AI の読み込みは裏で進む）
+  result/                  # 結果（見渡す・出会う）と、「深める」の入口
+    page.tsx
+    ResultView.tsx
   about/page.tsx           # このアプリについて
   api/search/route.ts      # 検索 API
-components/
-  QuestionInput.tsx
-  FieldColumn.tsx          # 分野カード + 先生の一覧
-  ResearcherCard.tsx
-  PromptPanel.tsx          # 深める（質問文のプレビューとコピー）
-  AiBadge.tsx              # 「AI」の表示
+  api/universities/route.ts# 選べる大学（データのある大学）の API
+  components/              # PageShell・DeepenPanel（質問文と AI のボタン）・SearchProgress
+  error.tsx / not-found.tsx
 lib/
   embedder.ts              # モデルの読み込みと埋め込み計算（Web Worker で実行）
-  prompt.ts                # テンプレートへの差し込み
+  embedder.worker.ts       # ワーカー本体（モデルの版は shared/embedding.json で固定）
+  prompt.ts / prompt.test.mjs  # 質問文への差し込みと整形（インジェクション対策のテスト）
+  result.ts / universities.ts / use-university.ts  # 検索結果の受け渡し・対象の大学
+shared/
+  embedding.json           # モデル・次元数・接頭辞・版（ブラウザと DB の埋め込みで共通）
+  universities.json        # 対象の大学の ID・名前・並び順
 ```
 
-- 画面はスマートフォン幅を基準に作り、PC では広げて表示する（モバイルファースト）。結果画面は分野をタブで切り替える（スマートフォンでは横スワイプでも切り替えられ、PC ではタブをクリックする）。
-- 埋め込み計算は Web Worker で行い、モデルの読み込み中も画面を固まらせない。読み込みはページを開いた時点で始める（仕様 F-4a）。
-- 問いの文章は React の状態としてブラウザ内に置くだけで、URL のクエリにも入れない（履歴や共有で漏れないように）。
+- 画面はスマートフォン幅を基準に作り、1024px 以上（PC）で並べ方を足す（入口は 2 列、結果は左にタブ・右に中身）。
+- 画面の流れ: 入口 → 検索ボタンで検索中の画面（同じ場所で切り替わり、AI の準備・問いの数値化・検索の進み具合を見せる）→ 結果。題名は動かさず、下をひとかたまりで入れる。
+- 埋め込み計算は Web Worker で行い、モデルの読み込み中も画面を固まらせない。読み込みはページを開いた時点で始め（仕様 F-4a）、検索を押したあとも裏で続く。
+- 問いの文章は React の状態としてブラウザ内に置くだけで、URL のクエリにも入れない（履歴や共有で漏れないように）。結果を見ている間だけ、このタブの `sessionStorage` に置く（タブを閉じると消える）。
+- 複数の大学（仕様 F-20〜F-22）: 先生の表に `university_id`（他大学の先生の ID には `<slug>:` を付ける）。検索 API は、選んだ大学の先生だけで検索する。選べる大学は `GET /api/universities`（DB にデータがある大学）で決まる。データ準備と投入は [MULTI_UNIVERSITY.md](MULTI_UNIVERSITY.md)。
+- モデルの版（revision）は `shared/embedding.json` に固定し、ブラウザと、DB の埋め込みを作る `data/embed_data.py` が同じ版を使う。
 
 ## 9. セキュリティ設計
 
