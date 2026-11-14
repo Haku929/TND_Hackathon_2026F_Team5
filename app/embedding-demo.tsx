@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent, type KeyboardEvent } from "react";
 import { getEmbedder, type EmbedderStatus } from "@/lib/embedder";
 import embeddingConfig from "@/shared/embedding.json";
 
@@ -10,6 +10,12 @@ type SearchResearcher = {
   affiliation: string;
   theme: string;
   kaken_url: string;
+};
+
+type ResearchProject = {
+  firstSentence: string;
+  keywords: string;
+  abstract: string;
 };
 
 type SearchField = {
@@ -43,6 +49,59 @@ function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null;
 }
 
+function getFirstSentence(text: string) {
+  const end = text.search(/[。！？!?]/);
+  return end === -1 ? text.trim() : text.slice(0, end + 1).trim();
+}
+
+function parseResearchTheme(theme: string): ResearchProject[] {
+  return theme
+    .split(/\r?\n/)
+    .map((entry) => {
+      const keywordMarker = /キーワード[:：]/.exec(entry);
+      const abstractMarker = /概要[:：]/.exec(entry);
+      const markerIndexes = [
+        keywordMarker?.index,
+        abstractMarker?.index,
+      ].filter((index): index is number => index !== undefined);
+      const titleEnd =
+        markerIndexes.length > 0 ? Math.min(...markerIndexes) : entry.length;
+      const title = entry.slice(0, titleEnd).trim();
+      const keywordStart = keywordMarker
+        ? keywordMarker.index + keywordMarker[0].length
+        : null;
+      const keywordEnd =
+        keywordStart !== null &&
+        abstractMarker &&
+        abstractMarker.index > keywordStart
+          ? abstractMarker.index
+          : entry.length;
+      const keywords =
+        keywordStart === null
+          ? ""
+          : entry
+              .slice(keywordStart, keywordEnd)
+              .replace(/^[。．\s]+|[。．\s]+$/g, "")
+              .trim();
+      const abstract = abstractMarker
+        ? entry
+            .slice(abstractMarker.index + abstractMarker[0].length)
+            .replace(/^[。．\s]+/, "")
+            .trim()
+        : "";
+
+      return {
+        firstSentence: getFirstSentence(title || abstract),
+        keywords,
+        abstract,
+      };
+    })
+    .filter(
+      (project) =>
+        project.firstSentence || project.keywords || project.abstract,
+    );
+}
+
 export default function EmbeddingDemo() {
   const [status, setStatus] = useState<EmbedderStatus>({
     state: "loading",
@@ -51,8 +110,10 @@ export default function EmbeddingDemo() {
   });
   const [question, setQuestion] = useState("");
   const [results, setResults] = useState<SearchResults | null>(null);
+  const [selectedFieldIndex, setSelectedFieldIndex] = useState(0);
   const [error, setError] = useState<string | null>(null);
   const [isSearching, setIsSearching] = useState(false);
+  const selectedField = results?.fields[selectedFieldIndex];
 
   useEffect(() => {
     const embedder = getEmbedder();
@@ -65,10 +126,34 @@ export default function EmbeddingDemo() {
     return unsubscribe;
   }, []);
 
+  function handleFieldTabKeyDown(
+    event: KeyboardEvent<HTMLButtonElement>,
+    index: number,
+    fieldCount: number,
+  ) {
+    let nextIndex: number | null = null;
+    if (event.key === "ArrowRight") {
+      nextIndex = (index + 1) % fieldCount;
+    } else if (event.key === "ArrowLeft") {
+      nextIndex = (index - 1 + fieldCount) % fieldCount;
+    } else if (event.key === "Home") {
+      nextIndex = 0;
+    } else if (event.key === "End") {
+      nextIndex = fieldCount - 1;
+    }
+
+    if (nextIndex === null) return;
+
+    event.preventDefault();
+    setSelectedFieldIndex(nextIndex);
+    document.getElementById(`field-tab-${nextIndex}`)?.focus();
+  }
+
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setError(null);
     setResults(null);
+    setSelectedFieldIndex(0);
     setIsSearching(true);
 
     try {
@@ -256,37 +341,70 @@ export default function EmbeddingDemo() {
               分野が見つかりませんでした。別の問いでも試してみてください。
             </p>
           ) : (
-            <div className="grid gap-4">
-              {results.fields.map((field) => (
+            <>
+              <div
+                aria-label="検索結果の分野"
+                aria-orientation="horizontal"
+                className="flex snap-x snap-mandatory gap-2 overflow-x-auto overscroll-x-contain pb-2"
+                role="tablist"
+              >
+                {results.fields.map((field, index) => (
+                  <button
+                    aria-controls={`field-panel-${index}`}
+                    aria-selected={selectedFieldIndex === index}
+                    className={`min-h-11 shrink-0 snap-start rounded-full border px-4 font-medium transition-colors ${
+                      selectedFieldIndex === index
+                        ? "border-indigo-700 bg-indigo-700 text-white dark:border-indigo-500 dark:bg-indigo-500"
+                        : "border-zinc-300 bg-white text-zinc-700 hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800"
+                    }`}
+                    id={`field-tab-${index}`}
+                    key={field.id}
+                    onClick={() => setSelectedFieldIndex(index)}
+                    onKeyDown={(event) =>
+                      handleFieldTabKeyDown(event, index, results.fields.length)
+                    }
+                    role="tab"
+                    tabIndex={selectedFieldIndex === index ? 0 : -1}
+                    type="button"
+                  >
+                    {field.name}
+                  </button>
+                ))}
+              </div>
+
+              {selectedField && (
                 <article
+                  aria-labelledby={`field-tab-${selectedFieldIndex}`}
                   className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm dark:border-zinc-700 dark:bg-zinc-900"
-                  key={field.id}
+                  id={`field-panel-${selectedFieldIndex}`}
+                  role="tabpanel"
+                  tabIndex={0}
                 >
-                  <h3 className="text-xl font-bold">{field.name}</h3>
+                  <h3 className="text-xl font-bold">{selectedField.name}</h3>
                   <dl className="mt-4 flex flex-col gap-4">
                     <div>
                       <dt className="text-sm font-semibold text-zinc-600 dark:text-zinc-300">
                         ひとことで言うと
                       </dt>
-                      <dd className="mt-1">{field.summary}</dd>
+                      <dd className="mt-1">{selectedField.summary}</dd>
                     </div>
                     <div>
                       <dt className="text-sm font-semibold text-zinc-600 dark:text-zinc-300">
                         よくある誤解
                       </dt>
-                      <dd className="mt-1">{field.misconception}</dd>
+                      <dd className="mt-1">{selectedField.misconception}</dd>
                     </div>
-                    {field.term && (
+                    {selectedField.term && (
                       <div>
                         <dt className="text-sm font-semibold text-zinc-600 dark:text-zinc-300">
                           この分野での呼び名
                         </dt>
                         <dd className="mt-1">
                           <span className="font-semibold">
-                            {field.term.term}
+                            {selectedField.term.term}
                           </span>
-                          {field.term.description && (
-                            <span>：{field.term.description}</span>
+                          {selectedField.term.description && (
+                            <span>：{selectedField.term.description}</span>
                           )}
                         </dd>
                       </div>
@@ -295,42 +413,102 @@ export default function EmbeddingDemo() {
 
                   <div className="mt-5 border-t border-zinc-200 pt-4 dark:border-zinc-700">
                     <h4 className="font-semibold">関連する先生</h4>
-                    {field.researchers.length === 0 ? (
+                    {selectedField.researchers.length === 0 ? (
                       <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">
                         先生の情報はまだありません。
                       </p>
                     ) : (
                       <ul className="mt-3 flex flex-col gap-3">
-                        {field.researchers.map((researcher) => (
-                          <li
-                            className="rounded-xl bg-zinc-50 p-4 dark:bg-zinc-800"
-                            key={researcher.id}
-                          >
-                            <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-                              <h5 className="font-semibold">
-                                {researcher.name}
-                              </h5>
-                              <span className="text-sm text-zinc-600 dark:text-zinc-300">
-                                {researcher.affiliation}
-                              </span>
-                            </div>
-                            <p className="mt-2 text-sm">{researcher.theme}</p>
-                            <a
-                              className="mt-2 inline-flex min-h-11 items-center text-sm font-medium text-indigo-700 underline underline-offset-2 dark:text-indigo-300"
-                              href={researcher.kaken_url}
-                              rel="noreferrer"
-                              target="_blank"
-                            >
-                              KAKENの研究者ページ
-                            </a>
-                          </li>
-                        ))}
+                        {selectedField.researchers.map((researcher) => {
+                          const projects = parseResearchTheme(researcher.theme);
+                          const theme = projects[0]?.firstSentence ?? "";
+                          const keywords = [
+                            ...new Set(
+                              projects
+                                .map((project) => project.keywords)
+                                .filter(Boolean),
+                            ),
+                          ].join("、");
+                          const overview = projects
+                            .map((project) => project.abstract)
+                            .filter(Boolean)
+                            .join("\n\n");
+                          return (
+                            <li key={researcher.id}>
+                              <details className="rounded-xl bg-zinc-50 dark:bg-zinc-800">
+                                <summary className="cursor-pointer rounded-xl p-4 marker:text-indigo-700 dark:marker:text-indigo-300">
+                                  <span className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                                    <span className="font-semibold">
+                                      {researcher.name}
+                                    </span>
+                                    <span className="text-sm text-zinc-600 dark:text-zinc-300">
+                                      {researcher.affiliation}
+                                    </span>
+                                  </span>
+                                  {theme && (
+                                    <span className="mt-2 block text-sm leading-6">
+                                      {theme}
+                                    </span>
+                                  )}
+                                </summary>
+                                <div className="flex flex-col gap-4 border-t border-zinc-200 p-4 dark:border-zinc-700">
+                                  {!theme && !keywords && !overview ? (
+                                    <p className="text-sm text-zinc-600 dark:text-zinc-300">
+                                      研究テーマの情報はありません。
+                                    </p>
+                                  ) : (
+                                    <>
+                                      {theme && (
+                                        <div>
+                                          <h6 className="text-sm font-semibold text-zinc-600 dark:text-zinc-300">
+                                            テーマ
+                                          </h6>
+                                          <p className="mt-1 leading-7">
+                                            {theme}
+                                          </p>
+                                        </div>
+                                      )}
+                                      {keywords && (
+                                        <div>
+                                          <h6 className="text-sm font-semibold text-zinc-600 dark:text-zinc-300">
+                                            キーワード
+                                          </h6>
+                                          <p className="mt-1 leading-7">
+                                            {keywords}
+                                          </p>
+                                        </div>
+                                      )}
+                                      {overview && (
+                                        <div>
+                                          <h6 className="text-sm font-semibold text-zinc-600 dark:text-zinc-300">
+                                            概要
+                                          </h6>
+                                          <p className="mt-1 whitespace-pre-wrap leading-7">
+                                            {overview}
+                                          </p>
+                                        </div>
+                                      )}
+                                    </>
+                                  )}
+                                  <a
+                                    className="inline-flex min-h-11 items-center text-sm font-medium text-indigo-700 underline underline-offset-2 dark:text-indigo-300"
+                                    href={researcher.kaken_url}
+                                    rel="noreferrer"
+                                    target="_blank"
+                                  >
+                                    KAKENの研究者ページ
+                                  </a>
+                                </div>
+                              </details>
+                            </li>
+                          );
+                        })}
                       </ul>
                     )}
                   </div>
                 </article>
-              ))}
-            </div>
+              )}
+            </>
           )}
 
           {results.low_similarity_fields.length > 0 && (
